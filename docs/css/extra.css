@@ -8,3 +8,8 @@
     margin-right: 0px;
     width: 100%;
 }
+
+body
+{
+    background-image: none;
+}
