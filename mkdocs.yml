@@ -1,4 +1,5 @@
 site_name: proactis technical documentation
+site_dir: ../proactis-documentation.github.io
 pages:
     - P2P: index.md
     - Spend Analytics: index.md

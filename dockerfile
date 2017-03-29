@@ -10,5 +10,10 @@ ENTRYPOINT ["mkdocs"]
 #docker run -it -v //C/proactis-documentation/documentation-source:/content  -p 8001:8000 proactis/mkdocs:1 build
 
 
+#docker run -it -v //C/proactis-documentation/documentation-source:/content -v //C/proactis-documentation/proactis-documentation.github.io:/proactis-documentation.github.io -p 8001:8000 proactis/mkdocs:1 build
+
+
+
+
 
 
