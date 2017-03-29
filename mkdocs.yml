@@ -1,4 +1,4 @@
-site_name: proactis technical documentation
+site_name: Proactis Technical Documentation
 site_dir: ../proactis-documentation.github.io
 extra_css:
     - css/extra.css
