@@ -1,38 +1,23 @@
 # Overview
 The Accelerated Payments Facility (APF) is a self-contained “micro service” which sits between a number of systems as shown in the diagram below.
-![alt text](images/overview.bmp "Overview")
+![alt text](../images/overview.bmp "Overview")
 
+# Glossary
++ APF – Accelerated Payments Facility.   This is the central piece of software provided by PROACTIS
++ P2P – Purchase-To-Pay system.  This can be either PROACTIS own P2P system or an alternative system provided by a 3rd party such as Coda.
++ KDM – Key Decision Maker.  The responsible party for the supplier
++ AML – Anti-money laundering checks.
++ Application. The request created by the supplier to have their invoices paid as soon as possible.  Each application contains one or more invoices.
++ Payment – Internally within the APF module invoices are referred to as Payments
++ s2c –Source-To-Contract.  The supplier portal provided by PROACTIS.  Also known as Supplier Network.
 
+# Readership
+This document is aimed at developers who have been tasked with integrating their own supplier Portal system with APF.
+It would be advisable to be familiar with the general APF process before reading this document.
 
-# P2P to APF
-# Finance System to Payments Server
-This document can be used along with the sample C# program:
-	PROACTIS.AcceleratedPayments.Web.ExampleBuyerAPIClient
+# Intellectual Property
+This document contains information related to certain products and services which is proprietary to PROACTIS Group Limited and must not be disclosed, in whole or in part, to any third party.  Notably, all Intellectual property related to the deployment of the Accelerated Payment Facility is to the benefit of and remains the property of PROACTIS Group Limited.
 
+# Important Notes
+It should be noted that the PROACTIS APF product is still under active development and changes may be made as a result of testing (either internally or externally).
 
- 
-
-This document is only concerned with the integrations between the Finance System and the Payments Server.
-Currently there is only one integration between these two systems which is the flow of supplier details from the finance system to the payment server.
- 
- 
-### Authentication
-All API calls require the username and password be supplied in a base64 encoded format in the Authorisation header of the request.
-In C# the code for doing this would look like the following:
-```C#
-credentials = Convert.ToBase64String(Encoding.UTF8.GetBytes(USER + ":" + PASSWORD));
-client.DefaultRequestHeaders.Add("Authorization", "Basic " + credentials);
-```
-For example
- 
-
-If the details are incorrect then the site will respond with a 401 error
- 
-
-From https://en.wikipedia.org/wiki/Basic_access_authentication
-When the user agent wants to send the server authentication credentials it may use the Authorization field.
-The Authorization field is constructed as follows: 
-1.	The username and password are combined with a single colon.
-
-# Finance System to APF
-# APF to 3rd Party Portal

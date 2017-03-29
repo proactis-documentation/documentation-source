@@ -4,8 +4,8 @@ pages:
     - P2P: index.md
     - Spend Analytics: index.md
     - APF: 
-        - 'overview' : apf.md
+        - 'overview' : apf/overview.md
         - 'p2p to apf' : apf/overview.md
-        - 'Finance System to Payments Server' : apf/overview.md
-    - S2C: about.md
-    - DueNorth: about.md
+        - 'Finance System to Payments Server' : apf/financesystem_to_paymentserver.md
+    - S2C: index.md
+    - DueNorth: index.md
