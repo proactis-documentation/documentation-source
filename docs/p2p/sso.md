@@ -11,7 +11,13 @@ If you wish your users to use a combination of PROACTIS and SSO logins then add 
 ## Windows Authentication
 If your PROACTIS P2P server is on the same domain as your users then the system can be configured so that they are automatically signed on without the need for them to re-enter their username and password.
 
-+ Do this in IIS??
++ Ensure that Windows Authentication is enabled in IIS for your PROACTIS website
+
+It must first be installed as part of the __Web Server__ role. 
+![alt text](../img/p2p/sso/iis_feature.JPG "ServerRole")
+
+And then enabled in the authentication section of your website
+![alt text](../img/p2p/sso/iis_config.JPG "Config")
 
 + Add the following setting to the __ApplicationConfiguration.xml__ file.
 ```xml
@@ -110,3 +116,7 @@ See the [PROACTIS.ExampleApplications.ExternalLogin](https://github.com/proactis
 __Notes__
 - In order to login using the external DLL,  the user must have their NTLogon property set to True
 - Failed login attempts aren't recorded
+
+
+## Bespoke
+It is also possible to provide your users with a completely custom login process,  including replacing the login screen and adding the ability to automatically create users the first time they connect.
