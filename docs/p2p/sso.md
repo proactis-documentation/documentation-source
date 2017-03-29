@@ -73,24 +73,26 @@ Obviously if only one database is available, then this setting is unnecessary.
 
 
 ## External
-By default PROACTIS P2P validates the username and password entered by the user against the record in the dsdba.Users table.   It is however possible to customise PROACTIS so that users are validated against an external userstore such as LDAP.
+By default PROACTIS P2P validates the username and password entered by the user against the record in the __dsdba.Users__ table.   It is however possible to customise PROACTIS so that users are validated against an external userstore such as LDAP.
 
 The following steps should be followed in order to create an external validation DLL.
 
-1. Create a new C# class library with a class called Services which implements the ILogin interface.  This interface can be found in the PROACTIS.P2P.grsCustInterfaces.DLL
++ Create a new C# class library with a class called __Services__ which implements the __ILogin__ interface.  This interface can be found in __PROACTIS.P2P.grsCustInterfaces.DLL__
 
-2. Decide if your login process will be called asynchronously or not and implement the UseAsynchronousImplementation as required.
++ Decide if your login process will be called asynchronously or not and implement the UseAsynchronousImplementation as required.
 
 ```C#
     public bool UseAsynchronousImplementation => false;
 ```
-3. Implement the Login (or LoginAsync) method with your custom validate code.  This method should return True for a successfully login and False for a failure.  For security reasons it is recommended that exceptions aren't thrown informing the user why the login failed.  For example the username does not exist.
++ Implement the __Login__ (or __LoginAsync__) method with your custom validate code.  This method should return True for a successfully login and False for a failure.  For security reasons it is recommended that exceptions aren't thrown informing the user why the login failed.  For example the username does not exist.
 
-4. Compile your code,  and ensure that the resulting DLL is named *Login.DLL.   (* can be anything)
++ Compile your code,  and ensure that the resulting DLL is named *Login.DLL.   (* can be anything)
 
-5. Copy the DLL into your PROACTIS P2P/Plugins folder.
++ Copy the DLL into your __PROACTIS P2P/Plugins__ folder.
 
-7. Add the following setting into your applicationconfiguration.xml file.
++ Add the following setting into your __applicationconfiguration.xml__ file.
 ```xml
 <Setting Name="AuthenticationMethod">EXTERNAL</Setting>
 ```
+
+See the [PROACTIS.ExampleApplications.ExternalLogin](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/SSO/PROACTIS.ExampleApplications.ExternalLogin) example application for a complete sample implementation.
