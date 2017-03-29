@@ -1,4 +1,11 @@
 # P2P Single-Sign-On (SSO)
+By default PROACTIS expects the user's to enter their username and password in order to login into PROACTIS P2P.   This document lists the possible ways in which PROACTIS P2P can be configured to allow users to authenticate using Single-Sign-On.
+
+### Notes
+If you wish your users to use a combination of PROACTIS and SSO logins then add the following setting to the __ApplicationConfiguration.xml__ file.
+```xml
+<Setting Name="AllowPROACTISLogins">True</Setting>
+```
 
 
 ## Windows Authentication
@@ -6,9 +13,11 @@ If your PROACTIS P2P server is on the same domain as your users then the system 
 
 1. Do this is IIS
 
-2. Add this to the application configuaration file
-
-3. Set the NTLogon flag to 1 against the users,  and ensure that their usernames are in the format DOMAIN\Username.  For example PROACTIS\DavidBetteridge
+2. Add the following setting to the __ApplicationConfiguration.xml__ file.
+```xml
+<Setting Name="AuthenticationMethod">WINDOWS</Setting>
+```
+3. Set the __NTLogon__ flag to True against the users,  and ensure that their usernames are in the format DOMAIN\Username.  _For example PROACTIS\DavidBetteridge_
 
 
 
@@ -84,11 +93,11 @@ The following steps should be followed in order to create an external validation
 ```C#
     public bool UseAsynchronousImplementation => false;
 ```
-+ Implement the __Login__ (or __LoginAsync__) method with your custom validation code.  This method should return True for a successful login and False for a failure.  (For security reasons it is recommended that exceptions aren't thrown informing the user why the login failed.  For example _the username does not exist_)
++ Implement the __Login__ (or __LoginAsync__) method with your custom validation code.  This method should return True for a successful login and False for a failure.  (For security reasons it is not possible to return messages informing the user why the login failed.  For example _the username does not exist_)
 
 + Compile your code,  and ensure that the resulting DLL is named xyzLogin.DLL.   (xyz can be anything)
 
-+ Copy the DLL into your __PROACTIS P2P/Plugins__ folder.
++ Copy the DLL into your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder.
 
 + Add the following setting into your __applicationconfiguration.xml__ file.
 ```xml
@@ -96,3 +105,7 @@ The following steps should be followed in order to create an external validation
 ```
 
 See the [PROACTIS.ExampleApplications.ExternalLogin](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/SSO/PROACTIS.ExampleApplications.ExternalLogin) example application for a complete sample implementation.
+
+__Notes__
+- In order to login using the external DLL,  the user must have their NTLogon property set to True
+- Failed login attempts aren't recorded
