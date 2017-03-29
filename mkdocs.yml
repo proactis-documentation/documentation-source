@@ -9,7 +9,7 @@ extra_css:
     - css/extra.css
 pages:
     - P2P:
-        - 'Overview' : placeholder.md
+        - 'Overview' : p2p/Placeholder.md
         - 'Single Sign On (SSO)' : p2p/sso.md
         - 'Punchout' : placeholder.md
         - 'Invoice Posting' : placeholder.md
@@ -17,11 +17,11 @@ pages:
         - 'Nominal Validation' : placeholder.md
         - 'Imaging Integration' : placeholder.md
         - 'Import APIs':
-            - 'Invoices': p2p/overview.md
-    - Spend Analytics: index.md
+            - 'Invoices': placeholder.md
+    - Spend Analytics: placeholder.md
     - APF: 
         - 'overview' : apf/overview.md
         - 'p2p to apf' : apf/overview.md
         - 'Finance System to Payments Server' : apf/financesystem_to_paymentserver.md
-    - S2C: placeholder.md
-    - DueNorth: placeholder.md
+    - S2C: s2c/placeholder.md
+    - DueNorth: dueNorth/Placeholder.md
