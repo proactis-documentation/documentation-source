@@ -3,7 +3,7 @@ site_dir: ../proactis-documentation.github.io
 pages:
     - P2P:
         - 'overview' : p2p/overview.md
-        - 'Single Sign On (SSO)' : p2p/overview.md
+        - 'Single Sign On (SSO)' : p2p/sso.md
         - 'Punchout' : p2p/overview.md
         - 'Invoice Posting' : p2p/overview.md
         - 'Budget Checking' : p2p/overview.md
