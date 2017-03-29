@@ -1,12 +1,13 @@
 # P2P Single-Sign-On (SSO)
 By default PROACTIS expects the users to enter their username and password in order to login into PROACTIS P2P.   This document lists the possible ways in which PROACTIS P2P can be configured to allow users to authenticate using Single-Sign-On.
 
-### Notes
+!!! Notes
 If you wish your users to use a combination of PROACTIS and SSO logins then add the following setting to the __ApplicationConfiguration.xml__ file.
 ```xml
 <Setting Name="AllowPROACTISLogins">True</Setting>
 ```
 
+---
 
 ## Windows Authentication
 If your PROACTIS P2P server is on the same domain as your users then the system can be configured so that they are automatically signed on without the need for them to re-enter their username and password.
@@ -21,7 +22,7 @@ And then enabled in the authentication section of your website
 
 ![alt text](../img/p2p/sso/iis_config.JPG "Config")
 
-__Note__
+!!! Note
 If some of your users aren't on your domain,  then leave anonymous authentication enabled for them.
 
 + Add the following setting to the __ApplicationConfiguration.xml__ file.
@@ -30,7 +31,7 @@ If some of your users aren't on your domain,  then leave anonymous authenticatio
 ```
 + Set the __NTLogon__ flag to True against the users,  and ensure that their usernames are in the format DOMAIN\Username.  _For example PROACTIS\DavidBetteridge_
 
-
+---
 
 ## SAML2
 PROACTIS P2P has built in support for SSO using the industry standard [SAML2](https://en.wikipedia.org/wiki/SAML_2.0) protocol.
@@ -99,7 +100,7 @@ presented with a logon page. If the user has access to multiple databases, then 
 If this setting is not present, P2P will select the default database in the databases xml file (or the first database if no default).
 Obviously if only one database is available, then this setting is unnecessary.
 
-
+---
 
 ## External
 By default PROACTIS P2P validates the username and password entered by the user against the record in the __dsdba.Users__ table.   It is however possible to customise PROACTIS so that users are validated against an external userstore such as LDAP.
