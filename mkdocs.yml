@@ -1,7 +1,15 @@
 site_name: proactis technical documentation
 site_dir: ../proactis-documentation.github.io
 pages:
-    - P2P: index.md
+    - P2P:
+        - 'overview' : p2p/overview.md
+        - 'Single Sign On (SSO)' : p2p/overview.md
+        - 'Punchout' : p2p/overview.md
+        - 'Invoice Posting' : p2p/overview.md
+        - 'Budget Checking' : p2p/overview.md
+        - 'Nominal Validation' : p2p/overview.md
+        - 'Imaging Integration' : p2p/overview.md
+        - 'Import APIs' : p2p/overview.md
     - Spend Analytics: index.md
     - APF: 
         - 'overview' : apf/overview.md
