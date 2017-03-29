@@ -1,7 +1,14 @@
 # P2P Single-Sign-On (SSO)
 By default PROACTIS expects the users to enter their username and password in order to login into PROACTIS P2P.   This document lists the possible ways in which PROACTIS P2P can be configured to allow users to authenticate using Single-Sign-On.
 
-!!! Notes
+!!! Note
+
+    If you are installing Python on Windows, be sure to check the box to have
+    Python added to your PATH if the installer offers such an option (it's
+    normally off by default).
+
+!!! Note
+
     If you wish your users to use a combination of PROACTIS and SSO logins then add the following setting to the __ApplicationConfiguration.xml__ file.
     ```xml
     <Setting Name="AllowPROACTISLogins">True</Setting>
@@ -25,11 +32,11 @@ And then enabled in the authentication section of your website
 !!! Note
     If some of your users aren't on your domain,  then leave anonymous authentication enabled for them.
 
-    + Add the following setting to the __ApplicationConfiguration.xml__ file.
-    ```xml
-    <Setting Name="AuthenticationMethod">WINDOWS</Setting>
-    ```
-    
++ Add the following setting to the __ApplicationConfiguration.xml__ file.
+```xml
+<Setting Name="AuthenticationMethod">WINDOWS</Setting>
+```
+
 + Set the __NTLogon__ flag to True against the users,  and ensure that their usernames are in the format DOMAIN\Username.  _For example PROACTIS\DavidBetteridge_
 
 ---
