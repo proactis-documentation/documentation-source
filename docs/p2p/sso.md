@@ -14,9 +14,11 @@ If your PROACTIS P2P server is on the same domain as your users then the system 
 + Ensure that Windows Authentication is enabled in IIS for your PROACTIS website
 
 It must first be installed as part of the __Web Server__ role. 
+
 ![alt text](../img/p2p/sso/iis_feature.JPG "ServerRole")
 
 And then enabled in the authentication section of your website
+
 ![alt text](../img/p2p/sso/iis_config.JPG "Config")
 
 + Add the following setting to the __ApplicationConfiguration.xml__ file.
