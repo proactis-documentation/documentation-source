@@ -72,4 +72,25 @@ Obviously if only one database is available, then this setting is unnecessary.
 
 
 
-## Custom
+## External
+By default PROACTIS P2P validates the username and password entered by the user against the record in the dsdba.Users table.   It is however possible to customise PROACTIS so that users are validated against an external userstore such as LDAP.
+
+The following steps should be followed in order to create an external validation DLL.
+
+1. Create a new C# class library with a class called Services which implements the ILogin interface.  This interface can be found in the PROACTIS.P2P.grsCustInterfaces.DLL
+
+2. Decide if your login process will be called asynchronously or not and implement the UseAsynchronousImplementation as required.
+
+```C#
+    public bool UseAsynchronousImplementation => false;
+```
+3. Implement the Login (or LoginAsync) method with your custom validate code.  This method should return True for a successfully login and False for a failure.  For security reasons it is recommended that exceptions aren't thrown informing the user why the login failed.  For example the username does not exist.
+
+4. Compile your code,  and ensure that the resulting DLL is named *Login.DLL.   (* can be anything)
+
+5. Copy the DLL into your PROACTIS P2P/Plugins folder.
+
+7. Add the following setting into your applicationconfiguration.xml file.
+```xml
+<Setting Name="AuthenticationMethod">EXTERNAL</Setting>
+```
