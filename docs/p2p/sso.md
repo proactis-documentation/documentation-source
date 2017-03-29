@@ -21,6 +21,9 @@ And then enabled in the authentication section of your website
 
 ![alt text](../img/p2p/sso/iis_config.JPG "Config")
 
+__Note__
+If some of your users aren't on your domain,  then leave anonymous authentication enabled for them.
+
 + Add the following setting to the __ApplicationConfiguration.xml__ file.
 ```xml
 <Setting Name="AuthenticationMethod">WINDOWS</Setting>
@@ -30,11 +33,19 @@ And then enabled in the authentication section of your website
 
 
 ## SAML2
-PROACTIS P2P has built in support for SSO using the industry standard SAML2 protocol.
+PROACTIS P2P has built in support for SSO using the industry standard [SAML2](https://en.wikipedia.org/wiki/SAML_2.0) protocol.
 
-+ First generate (or obtain) a certificate and provide the public part of this to your identity provider.
++ First generate (or obtain) a local certificate and provide the public part of this to your identity provider.
+```batch
+makecert -r -pe -n "CN=your_cert_name" -sky exchange -sv mycert.pvk mycert.cer
 
-+ With in your website's customer folder create a file called saml.config.   This should be based on the following template.
+Enter yourPassword for the subject key (3 times!)
+
+pvk2pfx.exe -pvk mycert.pvk -spc mycert.cer  -pi yourPassword -pfx mycert.pfx -po yourPassword
+```
+
+
++ With in your website's customer folder create a file called __saml.config__.   This should be based on the following template.
 
 
 ```xml
