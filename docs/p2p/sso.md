@@ -1,5 +1,5 @@
 # P2P Single-Sign-On (SSO)
-By default PROACTIS expects the user's to enter their username and password in order to login into PROACTIS P2P.   This document lists the possible ways in which PROACTIS P2P can be configured to allow users to authenticate using Single-Sign-On.
+By default PROACTIS expects the users to enter their username and password in order to login into PROACTIS P2P.   This document lists the possible ways in which PROACTIS P2P can be configured to allow users to authenticate using Single-Sign-On.
 
 ### Notes
 If you wish your users to use a combination of PROACTIS and SSO logins then add the following setting to the __ApplicationConfiguration.xml__ file.
@@ -11,21 +11,22 @@ If you wish your users to use a combination of PROACTIS and SSO logins then add 
 ## Windows Authentication
 If your PROACTIS P2P server is on the same domain as your users then the system can be configured so that they are automatically signed on without the need for them to re-enter their username and password.
 
-1. Do this is IIS
++ Do this is IIS
 
-2. Add the following setting to the __ApplicationConfiguration.xml__ file.
++ Add the following setting to the __ApplicationConfiguration.xml__ file.
 ```xml
 <Setting Name="AuthenticationMethod">WINDOWS</Setting>
 ```
-3. Set the __NTLogon__ flag to True against the users,  and ensure that their usernames are in the format DOMAIN\Username.  _For example PROACTIS\DavidBetteridge_
++ Set the __NTLogon__ flag to True against the users,  and ensure that their usernames are in the format DOMAIN\Username.  _For example PROACTIS\DavidBetteridge_
 
 
 
 ## SAML2
 PROACTIS P2P has built in support for SSO using the industry standard SAML2 protocol.
 
-1 First generate (or obtain) a certificate and provide the public part of this to your identity provider
-2 With in your website's customer folder create a file called saml.config.   This should be based on the following template.
++ First generate (or obtain) a certificate and provide the public part of this to your identity provider.
+
++ With in your website's customer folder create a file called saml.config.   This should be based on the following template.
 
 
 ```xml
@@ -53,7 +54,7 @@ PROACTIS P2P has built in support for SSO using the industry standard SAML2 prot
 </SAMLConfiguration>
 ```
 
-3 Add the following settings to your application.configuration file
++ Add the following settings to your application.configuration file
 ```xml
 <Setting Name="SSOAttributeName">NameID</Setting>
 ```
