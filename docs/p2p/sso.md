@@ -2,10 +2,10 @@
 By default PROACTIS expects the users to enter their username and password in order to login into PROACTIS P2P.   This document lists the possible ways in which PROACTIS P2P can be configured to allow users to authenticate using Single-Sign-On.
 
 !!! Notes
-If you wish your users to use a combination of PROACTIS and SSO logins then add the following setting to the __ApplicationConfiguration.xml__ file.
-```xml
-<Setting Name="AllowPROACTISLogins">True</Setting>
-```
+    If you wish your users to use a combination of PROACTIS and SSO logins then add the following setting to the __ApplicationConfiguration.xml__ file.
+    ```xml
+    <Setting Name="AllowPROACTISLogins">True</Setting>
+    ```
 
 ---
 
@@ -23,12 +23,13 @@ And then enabled in the authentication section of your website
 ![alt text](../img/p2p/sso/iis_config.JPG "Config")
 
 !!! Note
-If some of your users aren't on your domain,  then leave anonymous authentication enabled for them.
+    If some of your users aren't on your domain,  then leave anonymous authentication enabled for them.
 
-+ Add the following setting to the __ApplicationConfiguration.xml__ file.
-```xml
-<Setting Name="AuthenticationMethod">WINDOWS</Setting>
-```
+    + Add the following setting to the __ApplicationConfiguration.xml__ file.
+    ```xml
+    <Setting Name="AuthenticationMethod">WINDOWS</Setting>
+    ```
+    
 + Set the __NTLogon__ flag to True against the users,  and ensure that their usernames are in the format DOMAIN\Username.  _For example PROACTIS\DavidBetteridge_
 
 ---
@@ -127,10 +128,11 @@ The following steps should be followed in order to create an external validation
 
 See the [PROACTIS.ExampleApplications.ExternalLogin](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/SSO/PROACTIS.ExampleApplications.ExternalLogin) example application for a complete sample implementation.
 
-__Notes__
-- In order to login using the external DLL,  the user must have their NTLogon property set to True
-- Failed login attempts aren't recorded
+!!! Notes
+    - In order to login using the external DLL,  the user must have their NTLogon property set to True
+    - Failed login attempts aren't recorded
 
+---
 
 ## Bespoke
 It is also possible to provide your users with a completely custom login process,  including replacing the login screen and adding the ability to automatically create users the first time they connect.
