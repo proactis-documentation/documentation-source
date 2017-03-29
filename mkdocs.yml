@@ -1,0 +1,10 @@
+site_name: proactis technical documentation
+pages:
+    - P2P: index.md
+    - Spend Analytics: index.md
+    - APF: 
+        - 'overview' : apf.md
+        - 'p2p to apf' : apf/overview.md
+        - 'Finance System to Payments Server' : apf/overview.md
+    - S2C: about.md
+    - DueNorth: about.md
