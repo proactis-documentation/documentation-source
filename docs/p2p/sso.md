@@ -84,9 +84,9 @@ The following steps should be followed in order to create an external validation
 ```C#
     public bool UseAsynchronousImplementation => false;
 ```
-+ Implement the __Login__ (or __LoginAsync__) method with your custom validate code.  This method should return True for a successfully login and False for a failure.  For security reasons it is recommended that exceptions aren't thrown informing the user why the login failed.  For example the username does not exist.
++ Implement the __Login__ (or __LoginAsync__) method with your custom validation code.  This method should return True for a successful login and False for a failure.  (For security reasons it is recommended that exceptions aren't thrown informing the user why the login failed.  For example _the username does not exist_)
 
-+ Compile your code,  and ensure that the resulting DLL is named *Login.DLL.   (* can be anything)
++ Compile your code,  and ensure that the resulting DLL is named xyzLogin.DLL.   (xyz can be anything)
 
 + Copy the DLL into your __PROACTIS P2P/Plugins__ folder.
 
