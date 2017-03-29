@@ -8,7 +8,7 @@ site_description: Technical documentation for the PROACTIS suite of products
 extra_css:
     - css/extra.css
 pages:
-    - PROACTIS: welcome.md
+    - PROACTIS: index.md
     - P2P:
         - 'Overview' : p2p/Placeholder.md
         - 'Single Sign On (SSO)' : p2p/sso.md
