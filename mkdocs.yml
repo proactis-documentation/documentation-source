@@ -30,5 +30,3 @@ pages:
 
 markdown_extensions:
     - toc:
-        permalink:
-    - admonition:

@@ -3,13 +3,8 @@ By default PROACTIS expects the users to enter their username and password in or
 
 !!! Note
 
-    If you are installing Python on Windows, be sure to check the box to have
-    Python added to your PATH if the installer offers such an option (it's
-    normally off by default).
-
-!!! Note
-
     If you wish your users to use a combination of PROACTIS and SSO logins then add the following setting to the __ApplicationConfiguration.xml__ file.
+
     ```xml
     <Setting Name="AllowPROACTISLogins">True</Setting>
     ```
@@ -135,7 +130,8 @@ The following steps should be followed in order to create an external validation
 
 See the [PROACTIS.ExampleApplications.ExternalLogin](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/SSO/PROACTIS.ExampleApplications.ExternalLogin) example application for a complete sample implementation.
 
-!!! Notes
+!!! Note
+
     - In order to login using the external DLL,  the user must have their NTLogon property set to True
     - Failed login attempts aren't recorded
 
