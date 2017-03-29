@@ -1,6 +1,6 @@
 # Overview
 The Accelerated Payments Facility (APF) is a self-contained “micro service” which sits between a number of systems as shown in the diagram below.
-![alt text](../images/overview.bmp "Overview")
+![alt text](../img/apf/overview.bmp "Overview")
 
 # Glossary
 + APF – Accelerated Payments Facility.   This is the central piece of software provided by PROACTIS

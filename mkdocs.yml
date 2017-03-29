@@ -1,5 +1,10 @@
 site_name: Proactis Technical Documentation
 site_dir: ../proactis-documentation.github.io
+repo_url: https://github.com/proactis-documentation/ExampleApplications
+repo_name: CodeExamples
+copyright: (C) PROACTIS Group Ltd - All Rights Reserved
+site_author: David Betteridge
+site_description: Technical documentation for the PROACTIS suite of products
 extra_css:
     - css/extra.css
 pages:
