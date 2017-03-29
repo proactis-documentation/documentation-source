@@ -9,18 +9,19 @@ extra_css:
     - css/extra.css
 pages:
     - P2P:
-        - 'Overview' : p2p/overview.md
+        - 'Overview' : placeholder.md
         - 'Single Sign On (SSO)' : p2p/sso.md
-        - 'Punchout' : p2p/overview.md
-        - 'Invoice Posting' : p2p/overview.md
-        - 'Budget Checking' : p2p/overview.md
-        - 'Nominal Validation' : p2p/overview.md
-        - 'Imaging Integration' : p2p/overview.md
-        - 'Import APIs' : p2p/overview.md
+        - 'Punchout' : placeholder.md
+        - 'Invoice Posting' : placeholder.md
+        - 'Budget Checking' : placeholder.md
+        - 'Nominal Validation' : placeholder.md
+        - 'Imaging Integration' : placeholder.md
+        - 'Import APIs':
+            - 'Invoices': p2p/overview.md
     - Spend Analytics: index.md
     - APF: 
         - 'overview' : apf/overview.md
         - 'p2p to apf' : apf/overview.md
         - 'Finance System to Payments Server' : apf/financesystem_to_paymentserver.md
-    - S2C: index.md
-    - DueNorth: index.md
+    - S2C: placeholder.md
+    - DueNorth: placeholder.md
