@@ -1,7 +1,15 @@
-# Single-Sign-On (SSO)
+# P2P Single-Sign-On (SSO)
 
 
 ## Windows Authentication
+If your PROACTIS P2P server is on the same domain as your users then the system can be configured so that they are automatically signed on without the need for them to re-enter their username and password.
+
+1. Do this is IIS
+
+2. Add this to the application configuaration file
+
+3. Set the NTLogon flag to 1 against the users,  and ensure that their usernames are in the format DOMAIN\Username.  For example PROACTIS\DavidBetteridge
+
 
 
 ## SAML2
