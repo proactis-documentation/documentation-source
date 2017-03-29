@@ -11,7 +11,7 @@ If you wish your users to use a combination of PROACTIS and SSO logins then add 
 ## Windows Authentication
 If your PROACTIS P2P server is on the same domain as your users then the system can be configured so that they are automatically signed on without the need for them to re-enter their username and password.
 
-+ Do this is IIS
++ Do this in IIS??
 
 + Add the following setting to the __ApplicationConfiguration.xml__ file.
 ```xml
