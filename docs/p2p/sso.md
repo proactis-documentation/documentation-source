@@ -5,10 +5,7 @@ By default PROACTIS expects the users to enter their username and password in or
 
     If you wish your users to use a combination of PROACTIS and SSO logins then add the following setting to the __ApplicationConfiguration.xml__ file.
 
-    ```xml
     <Setting Name="AllowPROACTISLogins">True</Setting>
-    ```
-
 ---
 
 ## Windows Authentication
