@@ -92,6 +92,9 @@ The fields which are available to the XSLT are listed below.
 +	DeliveryCounty
 +	DeliveryPostcode
 +	DeliveryPostTown
+
+An example XSLT document is available [here](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Punchout/Connections).
+
  
 ### cXML & OCI Returned Basket
 When the basket is returned from the supplier by default it is transformed into the correct P2P format by using an XSLT embedded within the product.  This can be replaced by your own transform by creating a file in the plugins folder called __ReturnedPunchoutBasket_{supplierCode}.xslt__ Where _{supplierCode}_ is the code of your supplier.
@@ -121,6 +124,8 @@ The XSLT must generate XML in the following format:
   </PunchOutDetail>
 </PurchaseOrder>
 ```
+
+An example XSLT document is available [here](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Punchout/BasketResponses).
 
 ### Custom Return Page
 By default the supplier posts their basket back to either __PunchoutReturned.aspx__ (for cxml) or __PunchoutReturnedOCI.aspx__ (for oci).  It is however possible for you to provide your own page for processing the returned basket.  This is configured by completing the following field against the supplier record.
