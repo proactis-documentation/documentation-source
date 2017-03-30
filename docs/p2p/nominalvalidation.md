@@ -51,6 +51,10 @@ The function should return True if all nominals are valid and False if one or mo
 </grs:NominalCheck>
 ```
 
+!!! Warning
+
+    The POXML argument is populated with an xml document based on a internal product structure which may change over time release to release.  It is recommended that you only extract information that you cannot obtain from elsewhere,  and also code defensively. 
+
 ---
 
 ## Deployment
