@@ -36,7 +36,8 @@ bool grsCustInterfaces.INominals.NominalCheck(string NominalsXML, string POXML, 
 ### Return Value
 The function should return True if all nominals are valid and False if one or more nominals are invalid.
 
-### Sample Nominal XML
+### Nominals XML
+Below is an example of the xml passed to the __NominalsXML__ argument.
 ```xml
 <grs:NominalCheck>
     <grs:Database grs:Server="Develop07" grs:DatabaseName="PROACTISIII"/>
@@ -51,9 +52,14 @@ The function should return True if all nominals are valid and False if one or mo
 </grs:NominalCheck>
 ```
 
+### POXML
+
 !!! Warning
 
     The POXML argument is populated with an xml document based on a internal product structure which may change over time release to release.  It is recommended that you only extract information that you cannot obtain from elsewhere,  and also code defensively. 
+
+### ErrorNominals
+
 
 ---
 
