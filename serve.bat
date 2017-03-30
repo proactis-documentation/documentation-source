@@ -1,0 +1,1 @@
+docker run -it -v //C/proactis-documentation/documentation-source:/content -v //C/proactis-documentation/proactis-documentation.github.io:/proactis-documentation.github.io -p 8001:8000 proactis/mkdocs:1 serve -a 0.0.0.0:8000
