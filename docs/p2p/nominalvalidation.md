@@ -11,7 +11,7 @@ If __Generic Nominal Validation__ is not suitable for your needs then a custom D
 
 ---
 
-## Getting Started
+## Implementation Steps
 
 + Create a new C# Class Library project called xyzNominalCheck. ( _xyz_ can be anything)
 
@@ -58,8 +58,15 @@ Below is an example of the xml passed to the __NominalsXML__ argument.
 
     The POXML argument is populated with an xml document based on a internal product structure which may change over time release to release.  It is recommended that you only extract information that you cannot obtain from elsewhere,  and also code defensively. 
 
-### ErrorNominals
+### Error Nominals
+The xml for the returned invalid nominals takes a similar structure to the NominalsXML argument.  For example:
 
+```xml
+<grs:Nominals xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+   <grs:Nominal grs:Coding="1720" grs:Element1="1720" grs:Element2="" grs:Element3="" grs:Element4="" grs:Element5="" grs:Element6="" grs:Element7="" grs:Element8="" grs:ValidNominal="False"/>
+   <grs:Nominal grs:Coding="4744.1100" grs:Element1="4744" grs:Element2="1100" grs:Element3="" grs:Element4="" grs:Element5="" grs:Element6="" grs:Element7="" grs:Element8="" grs:ValidNominal="False"/>
+</grs:Nominals>
+```
 
 ---
 
