@@ -1,7 +1,7 @@
 # Punch-out and Marketplaces in PROACTIS
 
 ## Overview
-Punch-out allows a user to jump from the PROACTIS P2P website into a supplier’s shopping site.  Where they can browse a catalogue and add items to a shopping basket as per a normal ecommerce site.  Once they have finished browsing they click checkout and the items are then returned to PROACTIS as new lines on their current purchase order (or requisition).
+Punch-out allows a user to jump from the PROACTIS P2P website into a supplier’s shopping site.  Where they can browse a catalogue and add items to a shopping basket as per a normal e-commerce site.  Once they have finished browsing they click checkout and the items are then returned to PROACTIS as new lines on their current purchase order (or requisition).
 For the purposes of this document, the term punch-out does not include the ability to electronically export purchase orders to suppliers in cXML format.
 
 !!!Note 
@@ -12,7 +12,7 @@ For the purposes of this document, the term punch-out does not include the abili
 ---
 
 ## Punch-thro.   
-There are three different methods of configuring punch-out within the PROACTIS P2P product.   This first is referred to as punch-thro.  This is where the buyer connects to the suppliers punchout site via the PROACTIS S2C portal. 
+There are three different methods of configuring punch-out within the PROACTIS P2P product.   This first is referred to as punch-thro.  This is where the buyer connects to the suppliers punch-out site via the PROACTIS S2C portal. 
 
 As the details of the suppliers site are configured in the PROACTIS S2C Portal the only P2P settings required are as shown below
 
@@ -28,7 +28,7 @@ As the details of the suppliers site are configured in the PROACTIS S2C Portal t
 
 ## cXML punch-out 
 
-The majority of punch-outs follow the [cXML](http://cxml.org/) standard.  This can be configured directly within the P2P product by completeing the following fields against a supplier.
+The majority of punch-outs follow the [cXML](http://cxml.org/) standard.  This can be configured directly within the P2P product by completing the following fields against a supplier.
  
 ![alt text](../img/p2p/punchout/cxml-settings.bmp "cxml")
 
@@ -133,9 +133,9 @@ This page should be placed in the Customer folder within the website.
 The default __PunchoutReturned.aspx__ page looks for the basket xml in the following form fields:
 
 1.	XML
-2.	cxml+urlencode
-3.	cxml+urlencoded
-4.	cXML+base64
+2.	cxml-urlencode
+3.	cxml-urlencoded
+4.	cXML-base64
 5.	oracleCart
 6.	the first form field
 

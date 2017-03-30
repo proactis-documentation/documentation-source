@@ -139,3 +139,36 @@ See the [PROACTIS.ExampleApplications.ExternalLogin](https://github.com/proactis
 
 ## Bespoke
 It is also possible to provide your users with a completely custom login process,  including replacing the login screen and adding the ability to automatically create users the first time they connect.
+
+The process is to :
+
++ Create a custom page in your website's customer folder called __CustomLogin__
+
++ Within that page collect any required details from the user and validate their credentials.
+
++ If the user entered valid details then log them on by:
+    -  First generating a unique token for them
+    -  Then writing the token to the __DSDBA.CustomLoginTokens__ table.
+    -  Finally redirecting the user's browser to CustomLoginAsync within the main site.
+
++ To enable your new page to be used,  the following settings should be added to the __ApplicationConfiguration__ file.
+
+```xml
+<Setting Name="AuthenticationMethod">CUSTOM</Setting>
+<Setting Name="CustomLoginURL">https://sp-db01/custom/CustomLogin.aspx</Setting>
+```
+
+See these [example pages](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/SSO/Bespoke) for a complete sample.
+
+!!! Note
+
+Upon exit form P2P, the browser will be redirected back to the custom login page with the following in the querystring “action=logout”. If the custom logon page uses automated logins then it must take notice of this parameter to not automatically log the user back in again
+
+### Return Messages
+Messages are return to the custom login page using the following query string format
+``` 
+InfoMessages=XXX&AlertMessages=YYY&ErrorMessages=ZZZ
+```
+
+Where XXX, YYY and ZZZ are base64 encoded UNICODE strings. Each encoded string contains the messages concatenate with a “|” separator. (see sample app)
+These entries will only be in the querystring if there are messages to return.
