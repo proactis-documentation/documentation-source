@@ -165,7 +165,7 @@ See these [example pages](https://github.com/proactis-documentation/ExampleAppli
 
 !!! Note
 
-    Upon exit form P2P, the browser will be redirected back to the custom login page with the following in the querystring __action=logout__. If the custom logon page uses automated logins then it must take notice of this parameter to not automatically log the user back in again
+    Upon exit from P2P, the browser will be redirected back to the custom login page with the following in the querystring __action=logout__. If the custom logon page uses automated logins then it must take notice of this parameter to not automatically log the user back in again
 
 ### Return Messages
 Messages are return to the custom login page using the following query string format
