@@ -155,8 +155,11 @@ The process is to :
 
 ```xml
 <Setting Name="AuthenticationMethod">CUSTOM</Setting>
-<Setting Name="CustomLoginURL">https://sp-db01/custom/CustomLogin.aspx</Setting>
+<Setting Name="CustomLoginURL">https://server/custom/CustomLogin.aspx</Setting>
 ```
+Where _server_ is the address of your core P2P website.
+
+
 
 See these [example pages](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/SSO/Bespoke) for a complete sample.
 
