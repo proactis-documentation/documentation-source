@@ -36,6 +36,23 @@ bool grsCustInterfaces.INominals.NominalCheck(string NominalsXML, string POXML, 
 ### Return Value
 The function should return True if all nominals are valid and False if one or more nominals are invalid.
 
+### Sample Nominal XML
+```xml
+<grs:NominalCheck>
+    <grs:Database grs:Server="Develop07" grs:DatabaseName="PROACTISIII"/>
+    
+    <grs:General grs:UserGUID="{02E0D6D9-B655-11D5-91D6-000629864A98}" grs:CompanyGUID="{A2FEEDC5-978F-11D5-8C5E-0001021ABF9B}"/>
+
+    <grs:Nominals xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+        <grs:Nominal grs:Coding="1720" grs:Element1="1720" grs:Element2="" grs:Element3="" grs:Element4="" grs:Element5="" grs:Element6="" grs:Element7="" grs:Element8="" grs:ValidNominal="False"/>
+   
+        <grs:Nominal grs:Coding="4744.1100" grs:Element1="4744" grs:Element2="1100" grs:Element3="" grs:Element4="" grs:Element5="" grs:Element6="" grs:Element7="" grs:Element8="" grs:ValidNominal="False"/>
+    </grs:Nominals>
+</grs:NominalCheck>
+```
+
+---
+
 ## Deployment
 
 You dll should be complied (and named xyzNominalCheck.dll) and then copied into your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder.
