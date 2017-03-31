@@ -154,13 +154,12 @@ The function needs to return XML with the following structure
 
 !!! Note
 
-    + You need to define one grs:Column element for each column you wish to appear in the commitment report.
+    + You need to define one __grs:Column__ element for each column you wish to appear in the commitment report.
         -   The grs:Number attribute should sequentially number the columns 1...
         -   The grs:Type attribute can be "" (blank),  Currency (for a monetary value) or Highlight (failure indicator)
-        -   The grs:BudgetType columns is used by the budget graphic.  It can be "" (blank),  Budget or Cost
+        -   The grs:BudgetType columns is used by the budget graphic.  It can be "" (blank),  Budget or Cost  
 
-
-    + You need to add one grs:Item for each line that you wish to appear on the report.  Within each __Item___ element a __Column__ element must be added for each column you defined in the __Headings__ element.
+    + You need to add one __grs:Item__ for each line that you wish to appear on the report.  Within each __Item__ element a __Column__ element must be added for each column you defined in the __Headings__ element.
         -   The grs:Number attribute should match the number of the column.
         -   The grs:Type attribute can be "" (blank),  Currency (for a monetary value) or Highlight (failure indicator)
         -   If the Type is currency,  then the CurrencySymbol and DecimalPlaces attributes should also be provided
