@@ -69,20 +69,22 @@ The function should return True if all the lines pass budget checking and False 
 ### Nominals XML
 Below is an example of the xml passed to the __NominalsXML__ argument.
 ```xml
-<grs:NominalCheck xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
-    <grs:Database grs:Server="Develop07" grs:DatabaseName="PROACTISIII"/>
-    
-    <grs:General grs:UserGUID="{02E0D6D9-B655-11D5-91D6-000629864A98}" grs:CompanyGUID="{A2FEEDC5-978F-11D5-8C5E-0001021ABF9B}"/>
+<grs:CommitmentLookup xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+<grs:Database grs:Server="localhost" grs:DatabaseName="PROACTIS" />
+<grs:General grs:UserGUID="{3A8D2AC2-6287-41DF-817A-F77B0551D80D}" grs:CompanyGUID="{3A8D2AC2-6287-41DF-817A-F77B0551D80D}" />
+<grs:Currencies><grs:Currency grs:CurrencyGUID="{2E67C438-9012-415B-AED4-8809F0012A78}" grs:Status="H1" grs:Symbol="£" grs:DecimalPlaces="2" /></grs:Currencies>
 
-    <grs:Currencies></grs:Currencies>
+<grs:NominalPeriods>
+<grs:NominalPeriod grs:Year="2017" grs:Period="1" grs:YearPeriodGUID="{3A8D2AC2-6287-41DF-817A-F77B0551D80D}" grs:Value="120.12" grs:Home1Value="120.12" grs:Home2Value="120.12" grs:NonRecoverableTax="0" grs:NonRecoverableTaxHome1="0" grs:NonRecoverableTaxHome2="0">
+<grs:Nominal grs:Coding="SALES.CONF.MARKET" grs:Element1="SALES" grs:Element2="CONF" grs:Element3="MARKET" grs:Element4="" grs:Element5="" grs:Element6="" grs:Element7="" grs:Element8=""></grs:Nominal>
+</grs:NominalPeriod>
+</grs:NominalPeriods>
 
-    <grs:NominalPeriods>
-    <grs:NominalPeriod grs:Coding="1720" grs:Element1="1720" grs:Element2="" grs:Element3="" grs:Element4="" grs:Element5="" grs:Element6="" grs:Element7="" grs:El
-    ement8="" />
-   
-        <grs:NominalPeriod grs:Coding="4744.1100" grs:Element1="4744" grs:Element2="1100" grs:Element3="" grs:Element4="" grs:Element5="" grs:Element6="" grs:Element7="" grs:Element8="" />
-    </grs:NominalPeriods>
-</grs:NominalCheck>
+</grs:CommitmentLookup>
+```
+
+The __NominalPeriods__ element is repeated for each nominal line on the purchase order.
+
 
 
 ---
