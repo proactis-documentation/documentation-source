@@ -87,6 +87,11 @@ Below is an example of the xml passed to the __NominalsXML__ argument.
 
 The __NominalPeriods__ element is repeated for each nominal line on the purchase order.
 
+### POXML
+!!! Warning
+
+    The POXML argument is populated with an xml document based on a internal product structure which may change over time from release to release.  It is recommended that you only extract information that you cannot obtain from elsewhere,  and also code defensively. 
+
 ---
 
 ## ICustCommit.CommitmentReport
@@ -120,6 +125,11 @@ Below is an example of the xml passed to the __NominalsXML__ argument.
 </grs:CommitmentLookup>
 ```
 The __NominalPeriods__ element is repeated for each nominal line on the purchase order.
+
+### POXML
+!!! Warning
+
+    The POXML argument is populated with an xml document based on a internal product structure which may change over time from release to release.  It is recommended that you only extract information that you cannot obtain from elsewhere,  and also code defensively. 
 
 ### Returned XML
 The function needs to return XML with the following structure
@@ -197,6 +207,11 @@ Below is an example of the xml passed to the __NominalsXML__ argument.
     </grs:NominalPeriod>
 </grs:NominalPeriods>
 ```
+
+### POXML
+!!! Warning
+
+    The POXML argument is populated with an xml document based on a internal product structure which may change over time from release to release.  It is recommended that you only extract information that you cannot obtain from elsewhere,  and also code defensively. 
 
 ---
 ## Example
