@@ -125,32 +125,46 @@ The __NominalPeriods__ element is repeated for each nominal line on the purchase
 The function needs to return XML with the following structure
 
 ```xml
-<grs:HeadedList xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+<grs:HeadedList xmlns:grs='http://www.getrealsystems.com/xml/xml-ns'>
 
 <grs:Headings>
-    <grs:Column Number='1' Type='' BudgetType=''>Nominal Coding</grs:Column>
-    <grs:Column Number='2' Type='Currency' BudgetType='Budget'>Budget For Year</grs:Column>
-    <grs:Column Number='3' Type='Currency' BudgetType='Cost'>Spend To Date</grs:Column>
-    <grs:Column Number='4' Type='Currency' BudgetType='Cost'>Accruals</grs:Column>
-    <grs:Column Number='5' Type='Currency' BudgetType='Cost'>This Document</grs:Column>
-    <grs:Column Number='6' Type='Currency' BudgetType=''>Remaining Budget</grs:Column>
-    <grs:Column Number='7' Type='Highlight' BudgetType=''>Highlight</grs:Column>
+    <grs:Column grs:Number='1' grs:Type=''          grs:BudgetType=''>Nominal Coding</grs:Column>
+    <grs:Column grs:Number='2' grs:Type='Currency'  grs:BudgetType='Budget'>Budget For Year</grs:Column>
+    <grs:Column grs:Number='3' grs:Type='Currency'  grs:BudgetType='Cost'>Spend To Date</grs:Column>
+    <grs:Column grs:Number='4' grs:Type='Currency'  grs:BudgetType='Cost'>Accruals</grs:Column>
+    <grs:Column grs:Number='5' grs:Type='Currency'  grs:BudgetType='Cost'>This Document</grs:Column>
+    <grs:Column grs:Number='6' grs:Type='Currency'  grs:BudgetType=''>Remaining Budget</grs:Column>
+    <grs:Column grs:Number='7' grs:Type='Highlight' grs:BudgetType=''>Highlight</grs:Column>
 </grs:Headings>
 
 <grs:Items>
-    <grs:Item GUID='{3A8D2AC2-6287-41DF-817A-F77B0551D80D}' >
-        <grs:Column Number='1' Type='Standard'>SALES.CONF.MARKETING</grs:Column>
-        <grs:Column Number='2' CurrencySymbol='£' DecimalPlaces='0' Type='Currency'>100000</grs:Column>
-        <grs:Column Number='3' CurrencySymbol='£' DecimalPlaces='0' Type='Currency'>60000</grs:Column>
-        <grs:Column Number='4' CurrencySymbol='£' DecimalPlaces='0' Type='Currency' Hyperlink='/CommitmentReport.html'>50000</grs:Column>
-        <grs:Column Number='5' CurrencySymbol='£' DecimalPlaces='0' Type='Currency'>20000</grs:Column>
-        <grs:Column Number='6' CurrencySymbol='£' DecimalPlaces='0' Type='Currency'>-10000</grs:Column>
-        <grs:Column Number='7' Type='Highlight'>true</grs:Column>
+    <grs:Item grs:GUID='{3A8D2AC2-6287-41DF-817A-F77B0551D80D}' >
+        <grs:Column grs:Number='1' grs:Type='Standard'>SALES.CONF.MARKETING</grs:Column>
+        <grs:Column grs:Number='2' grs:CurrencySymbol='£' grs:DecimalPlaces='0' grs:Type='Currency'>100000</grs:Column>
+        <grs:Column grs:Number='3' grs:CurrencySymbol='£' grs:DecimalPlaces='0' grs:Type='Currency'>60000</grs:Column>
+        <grs:Column grs:Number='4' grs:CurrencySymbol='£' grs:DecimalPlaces='0' grs:Type='Currency' Hyperlink='/CommitmentReport.html'>50000</grs:Column>
+        <grs:Column grs:Number='5' grs:CurrencySymbol='£' grs:DecimalPlaces='0' grs:Type='Currency'>20000</grs:Column>
+        <grs:Column grs:Number='6' grs:CurrencySymbol='£' grs:DecimalPlaces='0' grs:Type='Currency'>-10000</grs:Column>
+        <grs:Column grs:Number='7' grs:Type='Highlight'>true</grs:Column>
     </grs:Item>
-<grs:Items>
+</grs:Items>
 
 </grs:HeadedList>
 ``` 
+
+!!! Note
+
+    + You need to define one grs:Column element for each column you wish to appear in the commitment report.
+        -   The grs:Number attribute should sequentially number the columns 1...
+        -   The grs:Type attribute can be "" (blank),  Currency (for a monetary value) or Highlight (failure indicator)
+        -   The grs:BudgetType columns is used by the budget graphic.  It can be "" (blank),  Budget or Cost
+
+
+    + You need to add one grs:Item for each line that you wish to appear on the report.  Within each __Item___ element a __Column__ element must be added for each column you defined in the __Headings__ element.
+        -   The grs:Number attribute should match the number of the column.
+        -   The grs:Type attribute can be "" (blank),  Currency (for a monetary value) or Highlight (failure indicator)
+        -   If the Type is currency,  then the CurrencySymbol and DecimalPlaces attributes should also be provided
+        -   Optionally a hyperlink attribute can be provided.  The renders the value as an HTML <a> link.
 
 
 

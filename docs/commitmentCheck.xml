@@ -1,4 +1,4 @@
-<grs:HeadedList xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+<grs:HeadedList xmlns:grs='http://www.getrealsystems.com/xml/xml-ns'>
 
 <grs:Headings>
     <grs:Column Number='1' Type='' BudgetType=''>Nominal Coding</grs:Column>
@@ -20,6 +20,6 @@
         <grs:Column Number='6' CurrencySymbol='£' DecimalPlaces='0' Type='Currency'>-10000</grs:Column>
         <grs:Column Number='7' Type='Highlight'>true</grs:Column>
     </grs:Item>
-<grs:Items>
+</grs:Items>
 
 </grs:HeadedList>
