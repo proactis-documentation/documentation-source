@@ -1,4 +1,4 @@
-# Punch-out and Marketplaces in PROACTIS
+# Punch-out
 
 ## Overview
 Punch-out allows a user to jump from the PROACTIS P2P website into a supplier’s shopping site.  Where they can browse a catalogue and add items to a shopping basket as per a normal e-commerce site.  Once they have finished browsing they click checkout and the items are then returned to PROACTIS as new lines on their current purchase order (or requisition).
