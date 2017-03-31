@@ -12,7 +12,7 @@ pages:
     - P2P:
         - 'Overview' : p2p/Placeholder.md
         - 'Single Sign On (SSO)' : p2p/sso.md
-        - 'Punchout' : p2p/punchout.md
+        - 'Punchout / Marketplaces' : p2p/punchout.md
         - 'Nominal Validation' : p2p/nominalvalidation.md
         - 'Invoice Posting' : placeholder.md
         - 'Budget Checking' : placeholder.md
