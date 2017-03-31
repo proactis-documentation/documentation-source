@@ -54,7 +54,7 @@ decimal grsCustInterfaces.IOverSpend.GetOverspend(string NominalsXML, string POX
 
 ---
 
-## grsCustInterfaces.ICustCommit.CommitmentCheck
+## ICustCommit.CommitmentCheck
 
 ### Arguments
 
