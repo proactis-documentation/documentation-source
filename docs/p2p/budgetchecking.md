@@ -163,7 +163,7 @@ The function needs to return XML with the following structure
         -   The grs:Number attribute should match the number of the column.
         -   The grs:Type attribute can be "" (blank),  Currency (for a monetary value) or Highlight (failure indicator)
         -   If the Type is currency,  then the CurrencySymbol and DecimalPlaces attributes should also be provided
-        -   Optionally a hyperlink attribute can be provided.  The renders the value as an HTML <a> link.
+        -   Optionally a hyperlink attribute can be provided.  The renders the value as an HTML 'a' link.
 
 
 
