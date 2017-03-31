@@ -14,8 +14,8 @@ pages:
         - 'Single Sign On (SSO)' : p2p/sso.md
         - 'PunchOut / Marketplaces' : p2p/punchout.md
         - 'Nominal Validation' : p2p/nominalvalidation.md
+        - 'Budget Checking' : p2p\budgetchecking.md
         - 'Invoice Posting' : placeholder.md
-        - 'Budget Checking' : placeholder.md
         - 'Imaging Integration' : placeholder.md
         - 'Import APIs':
             - 'Invoices': placeholder.md
