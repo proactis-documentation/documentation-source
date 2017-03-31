@@ -33,10 +33,10 @@ Given a set of nominal lines from a purchase order returns the total amount that
 
 + Add a reference to __Purchasing Server\bin\PROACTIS.P2P.grsCustInterfaces.dll__
 
-+ Add a class called __Services__ which implements the __grsCustInterfaces.IOverSpend__ and __grsCustInterfaces.ICustCommit__ interface.
++ Add a class called __Services__ which implements the __grsCustInterfaces.IOverSpend__ and __grsCustInterfaces.ICustCommit__ interfaces.
 
 + Write an implementation of the __grsCustInterfaces.INominals.NominalCheck__ method.
 
 ```C#
-bool grsCustInterfaces.INominals.NominalCheck(string NominalsXML, string POXML, ref string ErrorNominals)
+
 ```
