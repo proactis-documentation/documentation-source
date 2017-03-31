@@ -168,3 +168,41 @@ The function needs to return XML with the following structure
 
 
 
+## IOverSpend.GetOverspend
+
+### Arguments
+
+| Argument      | Direction | Description
+| ------------- | --------- | ------------ |
+| NominalsXML   | In        | An xml document containing the nominals which need to be budget checked.  This also includes details of the database,  company and user. |
+| POXML         | In        | An xml document containing the entire purchase order to check.  By default this argument is blank unless the company-wide setting is enabled. |
+
+### Return Value
+The function should return the total amount (as a decimal) that the lines on the order exceed their budget.  For example if the first line exceeded by £10 and the second by £20 then you should return 30.
+
+### Nominals XML
+Below is an example of the xml passed to the __NominalsXML__ argument.
+```xml
+<grs:CommitmentLookup xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+<grs:Database grs:Server="localhost" grs:DatabaseName="PROACTIS" />
+<grs:General grs:UserGUID="{3A8D2AC2-6287-41DF-817A-F77B0551D80D}" grs:CompanyGUID="{3A8D2AC2-6287-41DF-817A-F77B0551D80D}" />
+<grs:Currencies><grs:Currency grs:CurrencyGUID="{2E67C438-9012-415B-AED4-8809F0012A78}" grs:Status="H1" grs:Symbol="£" grs:DecimalPlaces="2" /></grs:Currencies>
+
+<grs:NominalPeriods>
+    <grs:NominalPeriod grs:Year="2017" grs:Period="1" grs:YearPeriodGUID="{3A8D2AC2-6287-41DF-817A-F77B0551D80D}" grs:Value="120.12" 
+    grs:Home1Value="120.12" grs:Home2Value="120.12" grs:NonRecoverableTax="0" grs:NonRecoverableTaxHome1="0" grs:NonRecoverableTaxHome2="0">
+        <grs:Nominal grs:Coding="SALES.CONF.MARKET" grs:Element1="SALES" grs:Element2="CONF" grs:Element3="MARKET" grs:Element4="" 
+        grs:Element5="" grs:Element6="" grs:Element7="" grs:Element8=""></grs:Nominal>
+    </grs:NominalPeriod>
+</grs:NominalPeriods>
+
+---
+## Example
+
+See the [example application](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Budget%20Checking) for a complete implementation.
+
+---
+
+## Deployment
+
+You dll should be complied (and named xyzBudgetChecking.dll) and then copied into your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder.
