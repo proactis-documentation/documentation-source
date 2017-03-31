@@ -15,10 +15,10 @@ To write a custom budget checking DLL,  the following methods must be implemente
 + __CommitmentCheck__  
 Given a set of nominal lines from a purchase order returns False if at least one line on the order has failed budget checking
 
-__CommitmentReport__  
++ __CommitmentReport__  
 Given a set of nominal lines from a purchase order returns a custom table showing the available funds calculation for each.  For example the table might have columns for Original Budget,  Spend To Date,  Accruals and Remaining Budget.
 
-__GetOverspend__
++ __GetOverspend__  
 Given a set of nominal lines from a purchase order returns the total amount that the document exceeds the available budget.   This figure can be used in your authorisation workflow to route an document to the correct approver.
 
 !!! Note
@@ -35,8 +35,20 @@ Given a set of nominal lines from a purchase order returns the total amount that
 
 + Add a class called __Services__ which implements the __grsCustInterfaces.IOverSpend__ and __grsCustInterfaces.ICustCommit__ interfaces.
 
-+ Write an implementation of the __grsCustInterfaces.INominals.NominalCheck__ method.
++ Write an implementation of the __grsCustInterfaces.ICustCommit.CommitmentReport__ method.
 
 ```C#
+string grsCustInterfaces.ICustCommit.CommitmentReport(string NominalsXML, string POXML)
+```
 
++ Write an implementation of the __grsCustInterfaces.ICustCommit.CommitmentCheck__ method.
+
+```C#
+bool grsCustInterfaces.ICustCommit.CommitmentCheck(string NominalsXML, string POXML)
+```
+
++ (Optionally) Write an implementation of the __grsCustInterfaces.IOverSpend.GetOverspend__ method.
+
+```C#
+decimal grsCustInterfaces.IOverSpend.GetOverspend(string NominalsXML, string POXML)
 ```
