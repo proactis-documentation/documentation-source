@@ -15,6 +15,7 @@ POPD
 @rem Push the source code for the site
 PUSHD  C:\proactis-documentation\documentation-source
 git add -A
+git status
 git commit -m "%1"
 git push
 POPD
