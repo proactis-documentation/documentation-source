@@ -182,6 +182,7 @@ The function should return the total amount (as a decimal) that the lines on the
 
 ### Nominals XML
 Below is an example of the xml passed to the __NominalsXML__ argument.
+
 ```xml
 <grs:CommitmentLookup xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
 <grs:Database grs:Server="localhost" grs:DatabaseName="PROACTIS" />
@@ -195,6 +196,7 @@ Below is an example of the xml passed to the __NominalsXML__ argument.
         grs:Element5="" grs:Element6="" grs:Element7="" grs:Element8=""></grs:Nominal>
     </grs:NominalPeriod>
 </grs:NominalPeriods>
+```
 
 ---
 ## Example
