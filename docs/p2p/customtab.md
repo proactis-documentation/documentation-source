@@ -6,7 +6,7 @@ The P2P website can be extended by creating additional "custom" tabs.
 
 # Licence File
 
-In order to display a custom tab you will first need a licence file which includes the name of the tab.  In the example below the tab will be called Bookings and will only be visible to users with the MAY_BOOK_RESOURCES user role.
+In order to display a custom tab you will first need a licence file which includes the name of the tab.  
 
 ![alt text](../img/p2p/customtab/licencefile.bmp "Licence File")
 
@@ -14,16 +14,33 @@ In order to display a custom tab you will first need a licence file which includ
     
     Please contact your account manager for assistance with this.
 
+In this example the tab will be displayed as  __Manage Resource Bookings__ and will only be visible to users with the __MAY_BOOK_RESOURCES__ user role.
+
+![alt text](../img/p2p/customtab/newtab.JPG "New Tab")
+
 ---
 
-# Process
+# Development
 Custom tab are developed as independent websites which are then displayed as part of the core site within an iFrame.
+
+![alt text](../img/p2p/customtab/iframe.JPG "iFrame")
+
+In the screenshot above,  the blue menu bar comes from the main site,  whilst the remainder of the page (in white) is the custom tab.
+
 
 By convention the custom sites are placed within the WebSite\Custom folder and are mapped as a virtual application with in IIS.   
 
-Once the licence file has been applied then the name of the new tab will appear in the menu bar along the top of the screen.
+![alt text](../img/p2p/customtab/iis.JPG "iis")
 
-Clicking on the new tab will open the your landing page (configured in app config) within a new iframe.
+
+In order for P2P to know the URL of the page is displayed it's path needs to be added to the __web.config__ file.
+
+![alt text](../img/p2p/customtab/config.JPG "config") 
+
+
+!!! warning
+
+    The website will be reset logging out existing users after the __web.config__ file is changed.
 
 ---
 
