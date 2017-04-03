@@ -2,9 +2,19 @@
 
 The P2P website can be extended by creating additional "custom" tabs.  
 
-!!! Note
+---
 
-    In order to display a custom tab you will first need a licence file which includes the name of the tab.  Please contact your account manager for assistance with this.
+# Licence File
+
+In order to display a custom tab you will first need a licence file which includes the name of the tab.  In the example below the tab will be called Bookings and will only be visible to users with the MAY_BOOK_RESOURCES user role.
+
+![alt text](../img/p2p/customtab/licencefile.bmp "Licence File")
+
+!!! note
+    
+    Please contact your account manager for assistance with this.
+
+---
 
 # Process
 Custom tab are developed as independent websites which are then displayed as part of the core site within an iFrame.
@@ -70,7 +80,13 @@ If you wish to create a custom role,  then you will also need to insert an entry
 
 ```sql
 INSERT INTO DSDBA.Roles (GUID, Code, Description, Properties, CompanyGUID)
-SELECT newID(), 'MyCustomRole', 'Users may use custom tab', '', C.GUID
+SELECT newID(), 'MAY_BOOK_RESOURCES', 'Users may use the bookings tab', '', C.GUID
   FROM DSDBA.Companies C
 ```  
+
+---
+
+# Example Application
+Please see the [example application](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Custom%20Tab) for a complete implementation.
+
 
