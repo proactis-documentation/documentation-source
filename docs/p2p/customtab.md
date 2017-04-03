@@ -88,6 +88,14 @@ Whilst your tab is first loading the main site will be displaying the please wai
     </script>
 ```    
 
+If you wish to re-display the spinner then the following javascript can be used
+
+```javascript
+    <script type="text/javascript">
+        window.parent.showSpinner();
+    </script>
+```
+
 ---
 
 # User Role Security
