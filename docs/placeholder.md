@@ -1,1 +1,1 @@
-Placeholder text
+Please contact your account manager for information on integrating with this product.

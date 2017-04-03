@@ -20,13 +20,14 @@ pages:
         # - 'Imaging Integration' : placeholder.md
         # - 'Import APIs':
         #     - 'Invoices': placeholder.md
-    # - Spend Analytics: placeholder.md
-    # - APF: 
+    - Spend Analytics: placeholder.md
+    - APF: : placeholder.md
     #     - 'overview' : apf/overview.md
     #     - 'p2p to apf' : apf/overview.md
     #     - 'Finance System to Payments Server' : apf/financesystem_to_paymentserver.md
-    # - S2C: s2c/placeholder.md
-    # - DueNorth: dueNorth/Placeholder.md
+    - S2C: s2c/placeholder.md
+    - DueNorth: dueNorth/Placeholder.md
+    - System4: placeholder.md
 
 
 markdown_extensions:
