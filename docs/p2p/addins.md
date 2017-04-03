@@ -1,12 +1,30 @@
-# Addins
+# Add-ins
 
-This document summaries the add-in functionality available in P2P-2016 to Professional Services. Specifically it discusses the “addInClient” javaScript library that is expected to be included in each add-in page that needs to communicate with the main P2P session. 
+P2P supports the concept of 'Add-ins' which are additional custom links which can be added to any page within the core website.
+
+
 
 ---
 
-# Location
+# Setup
 
-It is assumed that add-in pages will live in AddIns sub-folder of the Customer virtual directory in the root of the web site. Indeed, the system will not function if they reside anywhere else.
+1. Ensure that a sub-folder called __Addins__ exists within the Customer virtual directory in the root of the web site. 
+
+2. If the folder doesn't already contain a file called __Addins.xml__ then create the following file.  If the file does already exist then add your new page to it.
+
+```xml
+<AddIns>
+	<Page Name="Purchasing/Orders/Plus/MultiLineEntry.asp">
+		<Link AddInURL="SampleOrderAddIn.aspx" WindowWidth="900" WindowHeight="600" WindowName="OrderTaxReset">Sample Order AddIn</Link>
+	</Page>
+</AddIns>
+```
+
+In the example above,  a link captioned __Sample Order Addin__ will be added to the __MultiLineEntry.asp__ page.  When this link is clicked a new window will open (900x600) which will display the URL __SampleOrderAddIn.aspx__
+
+3. In the same folder create your add-in page.   (_For example SampleOrderAddIn.aspx_)
+
+4. If you wish your add-in to interact with the main site,  then please read the following _Javascript_ section.
 
 ---
 
