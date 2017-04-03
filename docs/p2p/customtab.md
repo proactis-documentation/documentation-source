@@ -106,4 +106,14 @@ SELECT newID(), 'MAY_BOOK_RESOURCES', 'Users may use the bookings tab', '', C.GU
 # Example Application
 Please see the [example application](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Custom%20Tab) for a complete implementation.
 
+---
+
+# Troubleshooting
+
+If you custom tab does not appear then check the following
+
+1.   Your licence file includes the section for your custom tab.
+2.   If the RelatedRole has been specified in the licence file then the user has been granted that role.
+3.   The URL of the custom page has been specified in the __web.config__ file
+
 
