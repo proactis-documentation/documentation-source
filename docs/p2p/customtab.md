@@ -91,7 +91,7 @@ Whilst your tab is first loading the main site will be displaying the please wai
 ---
 
 # User Role Security
-By default all users have access to the new tab.  If you wish to restrict access to our certain users then the name of a user role (or a custom role) can be specified for the tab within the licence file.
+By default all users have access to the new tab.  If you wish to restrict access to only certain users then the name of a user role (or a custom role) can be specified for the tab within the licence file.
 
 If you wish to create a custom role,  then you will also need to insert an entry into the __DSDBA.Roles__ table with the same name.
 
@@ -110,7 +110,7 @@ Please see the [example application](https://github.com/proactis-documentation/E
 
 # Troubleshooting
 
-If you custom tab does not appear then check the following
+If your custom tab does not appear then check the following
 
 1.   Your licence file includes the section for your custom tab.
 2.   If the RelatedRole has been specified in the licence file then the user has been granted that role.
