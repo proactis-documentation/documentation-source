@@ -16,7 +16,7 @@ pages:
         - 'Nominal Validation' : p2p/nominalvalidation.md
         - 'Budget Checking' : p2p/budgetchecking.md
         - 'Custom Tabs' : 'p2p/customtab.md'
-        - 'Addins' : 'placeholder.md'        
+        - 'Addins' : 'p2p/addins.md'        
         - 'Invoice Posting' : placeholder.md
         - 'Imaging Integration' : placeholder.md
         - 'Import APIs':
