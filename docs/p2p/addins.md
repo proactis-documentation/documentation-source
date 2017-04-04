@@ -64,13 +64,13 @@ __kendo.xxx.min.js__, Notifications.inc, Site.css: mandatory if you wish to use 
 
  
 ## __addInClient__ 
-A core deliverable for any javaScript add-in solution, is the recognition that any single add-in page may need to make numerous AJAX calls in order to retrieve all the data it requires in order to function. Since those AJAX calls are asynchronous, the challenge is how to co-ordinate and handle their callbacks. 
- 
-The addInClient javaScript class solves the callback challenge. Through the use of jQuery Deferred/Promise functionality, it can accept any number of AJAX calls as input, will manage their respective callbacks, combine the data retrieved and make that data available to the caller.  
- 
+A core deliverable for any javaScript add-in solution, is the recognition that any single add-in page may need to make numerous AJAX calls in order to retrieve all the data it requires in order to function. Since those AJAX calls are asynchronous, the challenge is how to co-ordinate and handle their callbacks.
+
+The addInClient javaScript class solves the callback challenge. Through the use of jQuery Deferred/Promise functionality, it can accept any number of AJAX calls as input, will manage their respective callbacks, combine the data retrieved and make that data available to the caller. 
+
 The __addInClient__ class exposes the following AJAX methods. Understand that these calls are asynchronous. The return values described below are not returned directly but rather indirectly via the __MonitorAjaxCalls__ method. The methods below directly return a jQuery Promise object. 
  
-* GetSessionID() 
+* GetSessionID()
     -   Returns the current session-id 
 * GetSessionParm(keyName) 
     -  Returns the session value (as a string) stored against the specified key-name. 
