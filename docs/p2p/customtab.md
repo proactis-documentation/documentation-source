@@ -16,7 +16,7 @@ In order to display a custom tab you will first need a licence file which includ
 
 In this example the tab will be displayed as  __Manage Resource Bookings__ and will only be visible to users with the __MAY_BOOK_RESOURCES__ user role.
 
-![alt text](../img/p2p/customtab/newtab.JPG "New Tab")
+![alt text](../img/p2p/customtab/newtab.JPG "New Tab") 
 
 ---
 
@@ -37,10 +37,10 @@ In order for P2P to know the URL of the page is displayed it's path needs to be 
 
 ![alt text](../img/p2p/customtab/config.JPG "config") 
 
-
+ 
 !!! warning
 
-    The website will be reset logging out existing users after the __web.config__ file is changed.
+    After changing the application configuration file the caches in the website will need refreshing.   This can be done either by recycling the application pool,  or by performing an IIS reset.
 
 ---
 
