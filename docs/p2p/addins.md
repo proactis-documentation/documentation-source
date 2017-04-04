@@ -75,14 +75,26 @@ The __addInClient__ class exposes the following AJAX methods. Understand that th
 | ------------- | --------- |
 | GetSessionID() | Returns the current session-id |
 | GetSessionParm(keyName) | Returns the session value (as a string) stored against the specified key-name. Returns null if the session value is not present |
-| GetSessionParms(keyNames) | Accepts an array of key-names and returns the corresponding session values (or null values if the session value does not exist) Return value is a JSON array of key/value pairs First entry in return array is always the session-id. 
-| GetOrderInEdit() | Returns the full order xml (including all lines) for the order currently in edit in the current session. Returns an error if no order is currently in edit |
-| GetOrderInEditWithoutLines() |Returns the order xml with an empty LineSet xml node (i.e. order header and footer only). Returns an error if no order is currently in edit 
-| GetInvoiceInEdit() | Returns the full invoice xml (including all lines) for the invoice currently in edit in the current session. 
-| GetInvoiceInEditHeader() | Returns the invoice header xml for the invoice currently in edit in the current session. 
 
-### GetInvoiceInEditFooter 
-Returns the invoice footer xml for the invoice currently in edit in the current session. 
+### GetSessionParms(keyNames) 
+Accepts an array of key-names and returns the corresponding session values (or null values if the session value does not exist) Return value is a JSON array of key/value pairs First entry in return array is always the session-id. 
+
+### GetOrderInEdit() 
+- Returns the full order xml (including all lines) for the order currently in edit in the current session. 
+- Returns an error if no order is currently in edit.
+
+### GetOrderInEditWithoutLines() 
+- Returns the order xml with an empty LineSet xml node (i.e. order header and footer only). 
+- Returns an error if no order is currently in edit 
+
+### GetInvoiceInEdit() 
+- Returns the full invoice xml (including all lines) for the invoice currently in edit in the current session. 
+
+### GetInvoiceInEditHeader()
+- Returns the invoice header xml for the invoice currently in edit in the current session. 
+
+### GetInvoiceInEditFooter() 
+- Returns the invoice footer xml for the invoice currently in edit in the current session. 
 
 ### MonitorAjaxCalls(ajaxCalls) 
 
