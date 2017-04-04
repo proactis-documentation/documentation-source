@@ -71,10 +71,12 @@ The addInClient javaScript class solves the callback challenge. Through the use 
 The __addInClient__ class exposes the following AJAX methods. Understand that these calls are asynchronous. The return values described below are not returned directly but rather indirectly via the __MonitorAjaxCalls__ method. The methods below directly return a jQuery Promise object. 
  
 
-| Method      | Description
-| ------------- | --------- |
-| GetSessionID() | Returns the current session-id |
-| GetSessionParm(keyName) | Returns the session value (as a string) stored against the specified key-name. Returns null if the session value is not present |
+### GetSessionID()
+- Returns the current session-id.
+
+### GetSessionParm(keyName)
+- Returns the session value (as a string) stored against the specified key-name. 
+- Returns null if the session value is not present.
 
 ### GetSessionParms(keyNames) 
 Accepts an array of key-names and returns the corresponding session values (or null values if the session value does not exist) Return value is a JSON array of key/value pairs First entry in return array is always the session-id. 
