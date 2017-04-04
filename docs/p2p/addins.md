@@ -74,32 +74,34 @@ The __addInClient__ class exposes the following AJAX methods. Understand that th
 | Method      | Description
 | ------------- | --------- |
 | GetSessionID() | Returns the current session-id |
-| GetSessionParm(keyName) | - Returns the session value (as a string) stored against the specified key-name. Returns null if the session value is not present |
+| GetSessionParm(keyName) | Returns the session value (as a string) stored against the specified key-name. Returns null if the session value is not present |
 | GetSessionParms(keyNames) | Accepts an array of key-names and returns the corresponding session values (or null values if the session value does not exist) Return value is a JSON array of key/value pairs First entry in return array is always the session-id. 
 | GetOrderInEdit() | Returns the full order xml (including all lines) for the order currently in edit in the current session. Returns an error if no order is currently in edit |
 | GetOrderInEditWithoutLines() |Returns the order xml with an empty LineSet xml node (i.e. order header and footer only). Returns an error if no order is currently in edit 
-* GetInvoiceInEdit() 
-    - Returns the full invoice xml (including all lines) for the invoice currently in edit in the current session. 
-* GetInvoiceInEditHeader() 
-    - Returns the invoice header xml for the invoice currently in edit in the current session. 
-* GetInvoiceInEditFooter 
-    - Returns the invoice footer xml for the invoice currently in edit in the current session. 
- 
-* MonitorAjaxCalls(ajaxCalls) 
-    - Accepts an array of any combination of the above AJAX “Get…” methods. Since each of the above “Get…” methods actually returns a jQuery Promise object, the input to this method is actually an array of those Promise objects to be monitored.  
-    - Returns a single jQuery Promise object to which resolve/fail events can be attached 
-    - If all input “Get…” methods succeed then  
-        - All “resolve” events attached to the returned Promise, are triggered (in the order in which they were attached) 
-        - Each “resolve” event is passed the following parameters 
-        -    __Results__: an array of return values, matching the AJAX calls that were input. The array entries will be simple strings, JSON key/value arrays or xml strings, as per the return types from the above “Get…” methods.  
-        -    __AlertMessages__: an array of all alert messages output by the AJAX “Get…” messages
-        -    __InfoMessages__: an array of all info messages output by the AJAX “Get…” messages
-    - If any of input AJAX “Get…” methods fail then 
-        - All “fail” events attached to the returned Promise, are triggered (in the order in which they were attached) 
-        - Each “fail” event is passed an array of error messages. 
-        - Even if some of the input AJAX “Get…” events succeed, no “resolve” events are triggered. 
-* HandleError(errorMessages) 
-o Will test for the presence of notification services and output formal error notifications if possible. Otherwise will issue alerts for each error message. 
+| GetInvoiceInEdit() | Returns the full invoice xml (including all lines) for the invoice currently in edit in the current session. 
+| GetInvoiceInEditHeader() | Returns the invoice header xml for the invoice currently in edit in the current session. 
+
+### GetInvoiceInEditFooter 
+Returns the invoice footer xml for the invoice currently in edit in the current session. 
+
+### MonitorAjaxCalls(ajaxCalls) 
+
+- Accepts an array of any combination of the above AJAX “Get…” methods. Since each of the above “Get…” methods actually returns a jQuery Promise object, the input to this method is actually an array of those Promise objects to be monitored.  
+- Returns a single jQuery Promise object to which resolve/fail events can be attached 
+- If all input “Get…” methods succeed then  
+    - All “resolve” events attached to the returned Promise, are triggered (in the order in which they were attached) 
+    - Each “resolve” event is passed the following parameters 
+    -    __Results__: an array of return values, matching the AJAX calls that were input. The array entries will be simple strings, JSON key/value arrays or xml strings, as per the return types from the above “Get…” methods.  
+    -    __AlertMessages__: an array of all alert messages output by the AJAX “Get…” messages
+    -    __InfoMessages__: an array of all info messages output by the AJAX “Get…” messages
+- If any of input AJAX “Get…” methods fail then 
+    - All “fail” events attached to the returned Promise, are triggered (in the order in which they were attached) 
+    - Each “fail” event is passed an array of error messages. 
+    - Even if some of the input AJAX “Get…” events succeed, no “resolve” events are triggered. 
+
+### HandleError(errorMessages)
+
+Will test for the presence of notification services and output formal error notifications if possible. Otherwise will issue alerts for each error message. 
 
 
 ## XMLServices 
