@@ -61,7 +61,7 @@ __kendo.xxx.min.js__, Notifications.inc, Site.css: mandatory if you wish to use 
     <script src="../../CustomSupport/kendo.notification.min.js"></script>
     <script src="../../CustomSupport/kendo.popup.min.js"></script>
 ```
-
+---
  
 ## __addInClient__ 
 A core deliverable for any javaScript add-in solution, is the recognition that any single add-in page may need to make numerous AJAX calls in order to retrieve all the data it requires in order to function. Since those AJAX calls are asynchronous, the challenge is how to co-ordinate and handle their callbacks.
@@ -117,6 +117,7 @@ Accepts an array of key-names and returns the corresponding session values (or n
 
 Will test for the presence of notification services and output formal error notifications if possible. Otherwise will issue alerts for each error message. 
 
+---
 
 ## XMLServices 
 Exposes a set of helper methods for working with document xml (i.e. xml with the “grs” namespace). The following methods are available 
@@ -139,6 +140,8 @@ Exposes a set of helper methods for working with document xml (i.e. xml with the
 - Finds the specified immediate child element of the parent node, which also has an attribute with the specified name and value. 
 - Returns the text value of that child element. 
  
+---
+
 # Sample Add-In 
 There is a sample add-in and xml file available [here](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Addins).
 
