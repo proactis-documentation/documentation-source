@@ -28,12 +28,12 @@ Custom tab are developed as independent websites which are then displayed as par
 In the screenshot above,  the blue menu bar comes from the main site,  whilst the remainder of the page (in white) is the custom tab.
 
 
-By convention the custom sites are placed within the WebSite\Custom folder and are mapped as a virtual application with in IIS.   
+By convention the custom sites are placed within the __WebSite\Customer__ folder and are mapped as a virtual application with in IIS.   
 
 ![alt text](../img/p2p/customtab/iis.JPG "iis")
 
 
-In order for P2P to know the URL of the page is displayed it's path needs to be added to the __web.config__ file.
+In order for P2P to know the URL of the page is displayed it's path needs to be added to the __ApplicationConfig.xml__ file.
 
 ![alt text](../img/p2p/customtab/config.JPG "config") 
 
