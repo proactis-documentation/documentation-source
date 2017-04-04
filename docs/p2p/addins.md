@@ -120,18 +120,24 @@ Will test for the presence of notification services and output formal error noti
 
 ## XMLServices 
 Exposes a set of helper methods for working with document xml (i.e. xml with the “grs” namespace). The following methods are available 
-* loadDOM(xml) 
-    - Accepts an xml string and returns a jQuery DOM object 
-* getNode(parentNode, nodeName) 
-    - Accepts a parent node (or the DOM) and the name of an immediate child element. 
-    - Returns the child element 
-    - nodeName can be an array of element names. Where each name corresponds to an element that is a child of the previous name (element).  
-* attr(node, attributeName) 
-    - Returns the given attribute of the given element. 
-* getNodeAttr(parentNode, nodeName, attributeName) 
-    - Finds the specified immediate child element of the parent node and returns the specified attribute value. 
-* filterNodeAttr(parentNode, nodeName, attributeName, attributeName) 
-    - Finds the specified immediate child element of the parent node, which also has an attribute with the specified name and value. Returns the text value of that child element. 
+
+### loadDOM(xml) 
+- Accepts an xml string and returns a jQuery DOM object 
+
+### getNode(parentNode, nodeName) 
+- Accepts a parent node (or the DOM) and the name of an immediate child element. 
+- Returns the child element 
+- nodeName can be an array of element names. Where each name corresponds to an element that is a child of the previous name (element).  
+
+### attr(node, attributeName) 
+- Returns the given attribute of the given element. 
+
+### getNodeAttr(parentNode, nodeName, attributeName) 
+- Finds the specified immediate child element of the parent node and returns the specified attribute value. 
+
+### filterNodeAttr(parentNode, nodeName, attributeName, attributeName) 
+- Finds the specified immediate child element of the parent node, which also has an attribute with the specified name and value. 
+- Returns the text value of that child element. 
  
 # Sample Add-In 
 There is a sample add-in and xml file available [here](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Addins).
