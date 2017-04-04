@@ -17,7 +17,7 @@ pages:
         - 'Custom Tabs' : 'p2p/customtab.md'
         - 'Addins' : 'p2p/addins.md'        
         # - 'Invoice Posting' : placeholder.md
-        - 'Imaging Integration' 
+        - 'Imaging Integration' :
             - 'Generic Imaging' : p2p/genericimaging.md
         # - 'Import APIs':
         #     - 'Invoices': placeholder.md
