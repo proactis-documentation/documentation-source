@@ -104,12 +104,12 @@ The URL of image in a DMS.
 The xml in the DocumentDetailsXML argument is made up from some context specific details based on the document being display and the settings you have defined in the imaging settings table.
 
 ```xml
-<?xml version="1.0"?><grs:ImagingSettings xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+<?xml version='1.0'?><grs:ImagingSettings xmlns:grs='http://www.getrealsystems.com/xml/xml-ns'>
 <grs:SessionID>eb89c444-0270-4f06-b8b6-ec0303b00117#dbserver2008r2\qa#DavidB_94#en-gb</grs:SessionID>
 <grs:DocumentType>I</grs:DocumentType>
-<grs:DocumentGUID>{D79D1EE8-4B87-414B-8512-92590DFBE2E8</grs:DocumentGUID>
+<grs:DocumentGUID>{D79D1EE8-4B87-414B-8512-92590DFBE2E8}</grs:DocumentGUID>
 <grs:ImageNumber>0</grs:ImageNumber>
-<grs:CompanyGUID>{A2FEEDC5-978F-11D5-8C5E-0001021ABF9B</grs:CompanyGUID>
+<grs:CompanyGUID>{A2FEEDC5-978F-11D5-8C5E-0001021ABF9B}</grs:CompanyGUID>
 
 <grs:InvoiceImageIdentifier>DisplayNumber</grs:InvoiceImageIdentifier>
 <grs:DefaultImageSource>URL</grs:DefaultImageSource>
@@ -305,7 +305,7 @@ The xml in the DetailsXML argument is made up from some context specific details
 <grs:DocumentType>C</grs:DocumentType>
 <grs:DocumentGUID></grs:DocumentGUID>
 <grs:ImageNumber>0</grs:ImageNumber>
-<grs:CompanyGUID>{A2FEEDC5-978F-11D5-8C5E-0001021ABF9B</grs:CompanyGUID>
+<grs:CompanyGUID>{A2FEEDC5-978F-11D5-8C5E-0001021ABF9B}</grs:CompanyGUID>
 
 <grs:InvoiceImageIdentifier>DisplayNumber</grs:InvoiceImageIdentifier>
 <grs:DefaultImageSource>URL</grs:DefaultImageSource>
