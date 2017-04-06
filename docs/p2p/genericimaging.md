@@ -15,7 +15,6 @@ This document describes how to install and configure this DLL.
 
 ## Installing the Generic Imaging DLL
 
-### Application Server
 Within your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder create a file called __PROACTIS.P2P.proGenericImaging.dll__  This can be an empty text file.
 
 ---
