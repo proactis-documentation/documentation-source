@@ -48,6 +48,12 @@ Enter yourPassword for the subject key (3 times!)
 pvk2pfx.exe -pvk mycert.pvk -spc mycert.cer  -pi yourPassword -pfx mycert.pfx -po yourPassword
 ```
 
+You will need to supply the identity provider with the public part of the generated certificate along with the path to the AssertionConsumerService which will be __https://{server}/SystemLogon/AssertionConsumerService__.
+
+!!! warning
+
+    In order to use the SAML protocol your P2P website must be accessed using HTTPS not HTTP.
+
 
 + With in your website's customer folder create a file called __saml.config__.   This should be based on the following template.
 
