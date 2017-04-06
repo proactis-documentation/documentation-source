@@ -270,8 +270,8 @@ bool IProcess.ProcessImage(string DetailsXML, string DocumentXML, ref string Use
 | Argument      | Direction | Description
 | ------------- | --------- | ------------ |
 | DetailsXML   | In        | An xml document containing the details of the document currently being displayed. |
-| DocumentXML   | In        | |
-| UserMessages   | Out        | . |
+| DocumentXML   | In        | The full P2P document which is being linked to the image|
+| UserMessages   | Out        | Messages to feed back to the user |
 
 #### DetailsXML
 
@@ -328,3 +328,16 @@ In the above example the remaining fields (below) are from the __DSDBA.ImagingSe
 * DefaultURL
 
 ---
+
+## Example
+
+See the [example application](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Imaging) for a complete implementation.
+
+---
+
+## Deployment
+
+You dll should be complied (and named xyzImaging.dll) and then copied into your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder.
+
+
+
