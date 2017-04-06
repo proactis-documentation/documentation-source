@@ -76,6 +76,15 @@ Used to return either the bytes which make up the image of the URL for the image
 bool IImaging.GetImage(string DocumentDetailsXML, ref string MIMEType, ref byte[] Image, ref string URL)
 ```
 
+#### Arguments
+
+| Argument      | Direction | Description
+| ------------- | --------- | ------------ |
+| DocumentDetailsXML   | In        | An xml document containing the details of the document currently being displayed. |
+| MIMEType | Out | The type of image |
+| Image | Out | Byte[] containing the image |
+| URL | Out | URL to the image |
+
 #### MIMEType
 This should be set to the MIME type of the image.    If image will be display via an URL to another system this must be set to text/url.
 
@@ -224,6 +233,15 @@ Used to return either the bytes which make up the image of the URL for the image
 bool IProcess.GetImage(string DetailsXML, ref string MIMEType, ref byte[] Image, ref string URL)
 ```
 
+#### Arguments
+
+| Argument      | Direction | Description
+| ------------- | --------- | ------------ |
+| DetailsXML   | In        | An xml document containing the details of the document currently being displayed. |
+| MIMEType | Out | The type of image |
+| Image | Out | Byte[] containing the image |
+| URL | Out | URL to the image |
+
 #### MIMEType
 This should be set to the MIME type of the image.    If image will be display via an URL to another system this must be set to text/url.
 
@@ -281,6 +299,7 @@ The xml in the DetailsXML argument is made up from some context specific details
 ```
 
 The standard fields which are always supplied as:-
+
 * SessionID - in the format {uniqueID} # {database server} # {database name} # {user's language}
 * DocumentType - 'I' for Invoice,  'C' for Credit note',  'E' for Expense Claim and 'A' For Acceptance 
 * DocumentGUID - GUID to identify the document being displayed
