@@ -117,13 +117,14 @@ The xml in the DocumentDetailsXML argument is made up from some context specific
 ```
 
 The standard fields which are always supplied as:-
+
 * SessionID - in the format {uniqueID} # {database server} # {database name} # {user's language}
 * DocumentType - 'I' for Invoice,  'C' for Credit note',  'E' for Expense Claim and 'A' For Acceptance 
 * DocumentGUID - GUID to identify the document being displayed
 * ImageNumber
 * CompanyGUID - GUID of the company in which the document belongs
 
-In the above example the remain fields (below) are from the __DSDBA.ImagingSettings__ table.
+In the above example the remaining fields (below) are from the __DSDBA.ImagingSettings__ table.
 
 * InvoiceImageIdentifier
 * DefaultImageSource
@@ -285,7 +286,8 @@ bool IProcess.ProcessImage(string DetailsXML, string DocumentXML, ref string Use
 The xml in the DetailsXML argument is made up from some context specific details based on the document being display and the settings you have defined in the imaging settings table.
 
 ```xml
-<?xml version="1.0"?><grs:ImagingSettings xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+<?xml version="1.0"?>
+<grs:ImagingSettings xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
 <grs:SessionID>789e432f-6515-435c-8748-d88665d57119#dbserver2008r2\qa#DavidB_94#en-gb</grs:SessionID>
 <grs:DocumentType>C</grs:DocumentType>
 <grs:DocumentGUID></grs:DocumentGUID>
@@ -306,7 +308,7 @@ The standard fields which are always supplied as:-
 * ImageNumber
 * CompanyGUID - GUID of the company in which the document belongs
 
-In the above example the remain fields (below) are from the __DSDBA.ImagingSettings__ table.
+In the above example the remaining fields (below) are from the __DSDBA.ImagingSettings__ table.
 
 * InvoiceImageIdentifier
 * DefaultImageSource
