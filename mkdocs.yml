@@ -16,9 +16,11 @@ pages:
         - 'Budget Checking' : p2p/budgetchecking.md
         - 'Custom Tabs' : 'p2p/customtab.md'
         - 'Addins' : 'p2p/addins.md'        
-        # - 'Invoice Posting' : placeholder.md
         - 'Imaging Integration' :
             - 'Generic Imaging' : p2p/genericimaging.md
+            - 'Custom Imaging' : p2p/customimaging.md
+        # - 'Invoice Posting' : placeholder.md
+        # - 'Commitment Posting' : placeholder.md
         # - 'Import APIs':
         #     - 'Invoices': placeholder.md
     - Spend Analytics: placeholder.md
