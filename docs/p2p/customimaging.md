@@ -273,14 +273,27 @@ bool IProcess.ProcessImage(string DetailsXML, string DocumentXML, ref string Use
 | DocumentXML   | In        | |
 | UserMessages   | Out        | . |
 
+#### DetailsXML
+
+The DocumentGUID will contain the unique identifier for the selected image.
 
 #### DocumentXML
 
+The full internal XML for the document this image is being linked with.  The format varies depending on the type of document.
+
+!!! warning
+
+    As the internal xml format us undocumented and subject to change it is recommended that you extract as little information as possible and program defensively.
+
 #### UserMessages
 
+Allows user message to be returned to the PROACTIS website.  Not normally required.
+
+!!! notes
+
+    This method is responsible for storing the link between the scanned image and the P2P document.  For example the unique ID might be written to the __ImageReference__ column in the __dsdba.Invoices__ table.
+
 ---
-
-
 
 ### DetailsXML
 The xml in the DetailsXML argument is made up from some context specific details based on the document being display and the settings you have defined in the imaging settings table.
