@@ -27,6 +27,7 @@ For the cases where neither the built-in PROACTIS imaging solution or the Generi
     -   GetImageInfo
     -   HasImage
 
+---
 
 ### HasImage
 Controls if the View Image link is available when looking at a transaction within P2P
@@ -44,6 +45,7 @@ bool IImaging.HasImage(string DocumentDetailsXML)
 #### Return Value
 The function should return True if an image is available.
 
+---
 
 ### GetImageInfo
 Returns basic information (MimeType and NumberOfPages) for an image held against a document.
@@ -65,6 +67,7 @@ This should be set to the MIME type of the image.    If image will be display vi
 #### Return Value
 The function should return the name of pages within the document.  Normally 1
 
+---
 
 ### GetImage
 Used to return either the bytes which make up the image of the URL for the image if it's in a DMS.
@@ -86,6 +89,7 @@ The URL of image in a DMS.
 
     Either the Image _or_ URL argument should be used.
 
+---
 
 ### DocumentDetailsXML
 The xml in the DocumentDetailsXML argument is made up from some context specific details based on the document being display and the settings you have defined in the imaging settings table.
