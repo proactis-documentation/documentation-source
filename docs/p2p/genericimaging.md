@@ -14,22 +14,19 @@ This document describes how to install and configure this DLL.
 
 ## Beyond the Imaging DLL
 If the “Generic Imaging DLL” does not meet your requirements,  then a custom DLL can written which implements the __grsImageIface.IImaging__ and __grsImageIface.IProcess__ interfaces.  The application server can then be configured to call this DLL when a user wishes to “process a new invoice” or view an existing scanned image.
-The development of a custom DLL is not described within this document.
+The development of a custom DLL is not described within this page.
 
 
 
 ## Installing the Generic Imaging DLL
 
 ### Application Server
-•	Copy the supplied proGenericImaging.dll into you __Plugins__ folder.
-
-### Database Server
-•	Run the supplied __Imaging.sql__ script against the PROACTIS database.
-
+Within your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder create a file called __PROACTIS.P2P.proGenericImaging.dll__  This can be an empty text file.
+.
 
 ## Configuring the imaging DLL
 
-The “generic imaging” DLL supports two different sources for viewing scanned images.  They can be displayed either from an existing image file, or from an external URL.  Different sources can be defined for different document types.  For example, expense claims might exist as .gif files in a file share, whilst scanned images might be held in a document management system accessed via a webpage.
+The “generic imaging” DLL supports two different sources for viewing scanned images.  They can be displayed either from an existing image file on the filesystem, or from an external URL.  Different sources can be defined for different document types.  For example, expense claims might exist as .gif files in a file share, whilst scanned images might be held in a document management system accessed via a webpage.
 The configuration for the generic imaging DLL is carried out via the “Imaging Settings” snap in within the PROACTIS Management Console.
  
 ## Examples
@@ -39,7 +36,11 @@ In order to view an image via a URL held in an external DMS, the following setti
 |---------------|------------|
 |DefaultImageSource	| URL – the image is retrieved from the external system using an URL
 | InvoiceImageIdentifier | DisplayNumber – the PROACTIS invoice number is used to identify the image in the DMS.
-| DefaultURL |The tag {{ImageID}} will be replaced with the value of the InvoiceImageIdentifier when access the DMS
+| DefaultURL |The tag {{ImageID}} will be replaced with the value of the InvoiceImageIdentifier when access the DMS.
+
+![alt text](../img/p2p/imaging/config_filesystem.JPG "Configuration")
+
+
 
 ## Additional Settings
 The other available settings are detailed below:-
@@ -47,7 +48,7 @@ The other available settings are detailed below:-
 ### The image source
 The image source specifies where the image will be found and should have the value of either URL or FILE.
 
-The DLL first checks for the value of XXImageSource setting.  XX is one of the following values depending on the type of document being viewed.
+The DLL first checks for the value of {doctype}ImageSource setting.  _{doctype}_ is one of the following values depending on the type of document being viewed.
 
 -	Invoice
 -	CreditNote
@@ -64,14 +65,14 @@ The DLL then determines how to identify the image.   Images can be identified by
 - HeaderReference
 - DisplayNumber
 
-The “xxxImageIdentifier” setting specifies which of these sources will be used for the xxx document type.  If the setting is not set for the current document type then the following defaults will be used
+The “{doctype}ImageIdentifier” setting specifies which of these sources will be used for the {doctype} document type.  If the setting is not set for the current document type then the following defaults will be used
 - Invoices and Credit Notes	-	ImageReference
 - Expenses and Acceptances	-	HeaderReference
 
 If HeaderReference has been specified for the xxx document type, then the name of the reference field must also be set in either the
 - DefaultImageReference setting  
 Or
-- xxxImageReference setting.
+- {doctype}ImageReference setting.
 
 ### Viewing Images from an URL
 If the source type is determined to be a URL then the base URL is read from one of the following settings:
@@ -103,7 +104,7 @@ Next the mime type of the image file is resolved using the following settings
 - AcceptanceMIMEType
 
 If the setting is blank or does not exist, then the value of DefaultMIMEType is used.
-If the value for the MIME type is still unknown then the DLL queries the registry for find the mime type registered for the file extensions.  This is held in HKEY_LOCAL_MACHINE\Software\Classes\xxx\Content Type where xxx is the file extension.
+If the value for the MIME type is still unknown then the DLL queries the registry for find the mime type registered for the file extensions.  This is held in HKEY_LOCAL_MACHINE\Software\Classes\{fileext}\Content Type where {fileext} is the file extension.
 If a value still can’t be found then it defaults to a mime type of application/octet-stream
 Once the MIME type and Folder is known, the complete target filename is generated by appending the image identifier to the folder.  For example if the folder is c:\Images and the ImageIdentifier is PINV1234.gif then the filename c:\Images\PINV1234.gif will be displayed.
 
