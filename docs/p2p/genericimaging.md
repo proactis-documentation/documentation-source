@@ -173,6 +173,8 @@ The file can also be renamed as it’s moved when the following setting is set t
 
 If the setting is missing or blank then the DefaultFileRename setting will be used.
 
+---
+
 ## Summary of Settings
 | Setting Name	|Example	| Description
 |---------------|-----------|-----------
