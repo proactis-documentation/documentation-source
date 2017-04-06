@@ -4,6 +4,7 @@
 The PROACTIS P2P product has been designed so that it can be easily integrated with a number of different Document Management Systems (DMS).
 
 A typical PROACTIS imaging solution requires the following integration points:-
+
 1.	The scanned image needs to be associated with an invoice within PROACTIS.
 2.	Users need to be able to see the original scanned image by clicking a link within the PROACTIS web site.
 
