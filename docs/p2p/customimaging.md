@@ -421,6 +421,72 @@ The function should return xml table in the following format containing the list
 
 ![alt text](../img/p2p/imaging/search_results.JPG "Results")
 
+---
+
+## Uploading Images
++ Create a new C# Class Library project called xyzImaging. ( _xyz_ can be anything)
+
++ Add a reference to __Purchasing Server\bin\PROACTIS.P2P.grsImagingIface.dll__
+
++ Add a public class called __Upload__ which implements the __grsImageIface.IUpload interface.
+
++ Write an implementation of the following methods.
+    -   StoreNewImage
+
+
+---
+
+### StoreNewImage
+Stores an image uploaded by the user on the server
+
+![alt text](../img/p2p/imaging/upload.JPG "Upload")
+
+
+#### Signature
+
+```C#
+bool IUpload.StoreNewImage(string DetailsXML, byte[] FileContents)
+```
+
+#### Arguments
+
+| Argument      | Direction | Description
+| ------------- | --------- | ------------ |
+| DetailsXML    | In        | An xml document containing the image metadata. |
+| FileContents  | In        | Contents of the image |
+
+##### DetailsXML
+```xml
+<?xml version="1.0"?>
+<grs:ImagingSettings xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+    <grs:DocumentGUID>{7451C54A-52F0-4794-87FB-A6093AAD65AF}</grs:DocumentGUID>
+    <grs:ImageNumber>1</grs:ImageNumber>
+
+    <grs:SessionID>bd860b98-c82b-47fa-9522-a4f27f154cd6#dbserver2008r2\qa#DavidB_94#en-gb</grs:SessionID>
+    <grs:DocumentType>I</grs:DocumentType>
+    <grs:CompanyGUID>{A2FEEDC5-978F-11D5-8C5E-0001021ABF9B}</grs:CompanyGUID>
+    <grs:Reference>heading.JPG</grs:Reference>
+    <grs:FileType>JPG</grs:FileType>
+
+    <grs:InvoiceImageIdentifier>DisplayNumber</grs:InvoiceImageIdentifier>
+    <grs:DefaultImageSource>URL</grs:DefaultImageSource>
+    <grs:DefaultURL>https://sp-db01/imaging/{{ImageID}}.bmp</grs:DefaultURL>
+</grs:ImagingSettings>
+```
+
+* The DocumentGUID is a unique ID generated for this file
+* ImageNumber will always be 1
+* Reference is the name of the uploaded file
+* DocumentType is I for Invoice and C for Credit Note
+
+In the above example the following fields come from the __dsdba.ImagingSettings__ table
+
+ * InvoiceImageIdentifier
+ * DefaultImageSource
+ * DefaultURL
+
+#### Return Value
+Return TRUE for success
 
 
 ---
