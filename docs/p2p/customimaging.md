@@ -329,6 +329,86 @@ In the above example the remaining fields (below) are from the __DSDBA.ImagingSe
 
 ---
 
+## Searching for unprocessed images
++ Create a new C# Class Library project called xyzImaging. ( _xyz_ can be anything)
+
++ Add a reference to __Purchasing Server\bin\PROACTIS.P2P.grsImagingIface.dll__
+
++ Add a public class called __Search__ which implements the __grsImageIface.ISearch__ interface.
+
++ Write an implementation of the following methods.
+    -   GetImage
+
+
+---
+
+### SearchForUnprocessedImages
+Allows users to enter criteria to filter the display of unprocessed images.
+
+![alt text](../img/p2p/imaging/search.JPG "Search")
+
+```C#
+string ISearch.SearchForUnprocessedImages(string DetailsXML)
+```
+
+#### Arguments
+
+| Argument      | Direction | Description
+| ------------- | --------- | ------------ |
+| DetailsXML   | In        | An xml document containing the search criteria . |
+
+#### DetailsXML
+```xml
+<?xml version="1.0"?>
+<grs:ImagingSettings xmlns:grs="http://www.getrealsystems.com/xml/xml-ns">
+    <grs:SessionID>fd2ae334-dd29-42d3-9706-ea4883b7bedc#dbserver2008r2\qa#DavidB_94#en-gb</grs:SessionID>
+    <grs:DocumentType>I</grs:DocumentType>
+    <grs:DocumentGUID></grs:DocumentGUID>
+    <grs:ImageNumber>0</grs:ImageNumber>
+    <grs:CompanyGUID>{A2FEEDC5-978F-11D5-8C5E-0001021ABF9B}</grs:CompanyGUID>
+    <grs:MaxReturnRows>100</grs:MaxReturnRows>
+    <grs:PrimarySortColumn>DocumentDate</grs:PrimarySortColumn>
+    <grs:PrimarySortAscending>False</grs:PrimarySortAscending>
+    <grs:SupplierReference></grs:SupplierReference>
+    <grs:DateFrom></grs:DateFrom>
+    <grs:DateTo></grs:DateTo>
+    <grs:FromAddress></grs:FromAddress>
+    <grs:ToAddress></grs:ToAddress>
+    <grs:Subject></grs:Subject>
+    <grs:RuleName></grs:RuleName>
+    <grs:DateEmailedFrom></grs:DateEmailedFrom>
+    <grs:DateEmailedTo></grs:DateEmailedTo>
+    
+    <grs:DefaultImageSource>URL</grs:DefaultImageSource>
+    <grs:DefaultURL>https://sp-db01/imaging/{{ImageID}}.bmp</grs:DefaultURL>
+</grs:ImagingSettings>
+```
+
+The following fields can be ignored as they aren't applicable to this function
+ * DocumentGUID
+ * ImageNumber
+
+In the above example the following fields come from the __dsdba.ImagingSettings__ table
+ * InvoiceImageIdentifier
+ * DefaultImageSource
+ * DefaultURL
+
+
+#### Return Value
+The function should return xml table in the following format containing the list of available (unprocessed) images.
+
+```xml
+<SearchResults>
+    <Row column1='Value1' column2='Value2' />
+</SearchResults>
+```
+
+* One row should be added for each unprocessed image
+* The attribute names will be used as the column headers in the table
+* The attribute values will be used as the cell values.
+
+---
+
 ## Example
 
 See the [example application](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Imaging) for a complete implementation.
