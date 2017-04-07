@@ -419,6 +419,10 @@ The function should return xml table in the following format containing the list
 * One row should be added for each unprocessed image
 * All the attributes listed above must be supplied
 
+![alt text](../img/p2p/imaging/search_results.JPG "Results")
+
+
+
 ---
 
 ## Example
