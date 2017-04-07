@@ -337,15 +337,18 @@ In the above example the remaining fields (below) are from the __DSDBA.ImagingSe
 + Add a public class called __Search__ which implements the __grsImageIface.ISearch__ interface.
 
 + Write an implementation of the following methods.
-    -   GetImage
+    -   SearchForUnprocessedImages
 
 
 ---
 
 ### SearchForUnprocessedImages
-Allows users to enter criteria to filter the display of unprocessed images.
+Returns a list of unprocessed images based on the search criteria entered by the user.
 
 ![alt text](../img/p2p/imaging/search.JPG "Search")
+
+
+#### Signature
 
 ```C#
 string ISearch.SearchForUnprocessedImages(string DetailsXML)
@@ -385,10 +388,12 @@ string ISearch.SearchForUnprocessedImages(string DetailsXML)
 ```
 
 The following fields can be ignored as they aren't applicable to this function
+
  * DocumentGUID
  * ImageNumber
 
 In the above example the following fields come from the __dsdba.ImagingSettings__ table
+
  * InvoiceImageIdentifier
  * DefaultImageSource
  * DefaultURL
