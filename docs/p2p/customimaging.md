@@ -399,13 +399,20 @@ The function should return xml table in the following format containing the list
 
 ```xml
 <SearchResults>
-    <Row column1='Value1' column2='Value2' />
+    <Row GUID='...' 
+        SupplierReference='sup' 
+        DocumentDate='2016-1-1' 
+        DocumentImportRule = ''
+        EmailDate='2016-1-1'
+        FromAddress='david@proactis.com'
+        FromName='David Betteridge'
+        Subject='An Email'
+        ToAddress='david@proactis.com' />
 </SearchResults>
 ```
 
 * One row should be added for each unprocessed image
-* The attribute names will be used as the column headers in the table
-* The attribute values will be used as the cell values.
+* All the attributes listed above must be supplied
 
 ---
 
