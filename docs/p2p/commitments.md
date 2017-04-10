@@ -61,7 +61,7 @@ using (var tx = new TransactionScope(TransactionScopeOption.Suppress))
 
 ## Example
 
-See the [example applications](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Commitments) for a complete implementations.
+See the [example applications](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Commitments) for complete implementations.
 
 ---
 
