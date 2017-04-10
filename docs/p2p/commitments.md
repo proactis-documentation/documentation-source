@@ -60,8 +60,8 @@ using (var tx = new TransactionScope(TransactionScopeOption.Suppress))
 ---
 
 ## Example
-<!--
-See the [example application](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Nominal%20Validation) for a complete implementation.-->
+
+See the [example applications](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Commitments) for a complete implementations.
 
 ---
 
