@@ -51,7 +51,7 @@ The function should return True if an image is available.
 Returns basic information (MimeType and NumberOfPages) for an image held against a document.
 
 ```C#
-int IImaging.GetImageInfo(string DocumentDetailsXML, ref string MIMEType)
+int IImaging.GetImageInfo(string DocumentDetailsXML, out string MIMEType)
 ```
 
 #### Arguments
@@ -73,7 +73,7 @@ The function should return the name of pages within the document.  Normally 1
 Used to return either the bytes which make up the image of the URL for the image if it's in a DMS.
 
 ```c#
-bool IImaging.GetImage(string DocumentDetailsXML, ref string MIMEType, ref byte[] Image, ref string URL)
+bool IImaging.GetImage(string DocumentDetailsXML, out string MIMEType, out byte[] Image, out string URL)
 ```
 
 #### Arguments
@@ -209,7 +209,7 @@ The above table would generate the following table:
 Returns basic information (MimeType and NumberOfPages) for an image held against a document.
 
 ```C#
-int IProcess.GetImageInfo(string DetailsXML, ref string MIMEType)
+int IProcess.GetImageInfo(string DetailsXML, out string MIMEType)
 ```
 
 #### Arguments
@@ -231,7 +231,7 @@ The function should return the name of pages within the document.  Normally 1
 Used to return either the bytes which make up the image of the URL for the image if it's in a DMS.
 
 ```c#
-bool IProcess.GetImage(string DetailsXML, ref string MIMEType, ref byte[] Image, ref string URL)
+bool IProcess.GetImage(string DetailsXML, out string MIMEType, out byte[] Image, out string URL)
 ```
 
 #### Arguments
@@ -262,7 +262,7 @@ The URL of image in a DMS.
 Used to associate the image with a document.
 
 ```c#
-bool IProcess.ProcessImage(string DetailsXML, string DocumentXML, ref string UserMessages)
+bool IProcess.ProcessImage(string DetailsXML, string DocumentXML, out string UserMessages)
 ```
 
 #### Arguments
