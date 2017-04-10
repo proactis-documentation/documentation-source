@@ -30,9 +30,28 @@ void ICommitmentProcessor.ProcessCommitment(Guid commitmentGUID, string commitme
 
 ### Error Handling
 
+If your DLL fails to process the commitment entry that it a throw an exception up to the caller service
+
+For example
+```csharp
+    throw new Exception("Failed to connect to the finance system");
+```
+
+This will be recorded in the __ErrorMessage__ column of the __dbo.CommitmentsForPosting__ table and the message queue entry will be moved from the __proactis3commitmentslink__ queue into the __proactis3commitmentslinkFailed__ queue.
+
+The error message may also be viewed from the windows event log viewer on the application server.
+
 
 ### Transaction Handling
 
+By default your code will run in a database transaction provided by the calling service.  If you wish your database code to run outside of this transaction scope,  then the following code maybe used
+
+```csharp
+using (var tx = new TransactionScope(TransactionScopeOption.Suppress))
+{
+    // ... your database code here...
+}
+```
 
 ## Example
 <!--
