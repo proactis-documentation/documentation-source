@@ -12,7 +12,7 @@
 
 ---
 
-## ICommitmentProcessor.ProcessCommitment
+## ProcessCommitment Method
 
 ### Signature
 ```
