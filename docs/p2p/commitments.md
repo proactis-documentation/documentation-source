@@ -30,9 +30,9 @@ void ICommitmentProcessor.ProcessCommitment(Guid commitmentGUID, string commitme
 
 ### Error Handling
 
-If your DLL fails to process the commitment entry that it a throw an exception up to the caller service
+If your DLL fails to process the commitment entry then it can throw an exception up to the calling service.
 
-For example
+_For example_
 ```csharp
     throw new Exception("Failed to connect to the finance system");
 ```
@@ -52,6 +52,8 @@ using (var tx = new TransactionScope(TransactionScopeOption.Suppress))
     // ... your database code here...
 }
 ```
+
+---
 
 ## Example
 <!--
