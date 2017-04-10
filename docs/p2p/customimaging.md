@@ -499,7 +499,7 @@ See the [example application](https://github.com/proactis-documentation/ExampleA
 
 ## Deployment
 
-You dll should be complied (and named xyzImaging.dll) and then copied into your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder.
+Your dll should be complied (and named xyzImaging.dll) and then copied into your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder.
 
 
 
