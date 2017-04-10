@@ -1,5 +1,9 @@
 # Commitment Posting
+To allow the real time posting of commitments into a finance system a custom commitment DLL can be written which to responds to new commitments being placed on the __proactis3commitmentslink__ message qeueue (MSMQ).
 
+The format of these message queue entries is defined by the __Grouped Commitments Export__ application hook.  (This is detailed separately.)
+
+The windows service __PROACTIS P2P Client Commitments Service__ monitors the __proactis3commitmentslink__ message queue and calls the custom DLL once per message it receives.
 
 ## Implementation
 + Create a new C# Class Library project called xyzCommitmentProcessor. ( _xyz_ can be anything)
