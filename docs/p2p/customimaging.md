@@ -198,8 +198,8 @@ The above table would generate the following table:
 
 ![alt text](../img/p2p/imaging/unprocessed.JPG "Unprocessed")
 
-* There should be 1 grs:Image per scanned image.
-* The grs:Identifier attribute uniquely identities the image
+* There should be one grs:Image element for each scanned image.
+* The grs:Identifier attribute uniquely identifies the image
 * Each column required in the table should be added as a grs:Field element
 * grs:Name provides the caption for the column and grs:Value it's contents.
 
