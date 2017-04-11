@@ -12,9 +12,7 @@ This document should be used in conjunction with the __ImportAcceptances.xsd__ x
 
 The process of importing acceptances is very similar to the existing master-data (suppliers/items/nominals) and purchase document xml gateways.
 
-First the user generates an xml document containing the details of the acceptances(s) to be imported.  This xml must conform to the ImportAcceptances.xsd schema document.
-
-The user then calls a method on the grsAccGateway.Core object with in the grsAccGateway dll.  This method takes the supplied acceptance xml as its only argument.
+First the user generates an xml document containing the details of the acceptances(s) to be imported.  This xml must conform to the __ImportAcceptances.xsd__ schema document.
 
 The xml is then validated, first to ensure it conforms to the schema and then to check the supplied data is valid.  For instance does the template exist?
 
@@ -102,7 +100,7 @@ The XML gateway supports NT authentication, an example is shown below.
                          Version="1.0.0" />
 ```
 
-NB: The value of the "AuthenticationMethod" field can be WINDOWS or PROACTIS (which must be expressed in Upper Case).  If this field is missing, the gateway will default to PROACTIS and work as before.
+NB: The value of the __AuthenticationMethod__ field can be WINDOWS or PROACTIS (which must be expressed in Upper Case).  If this field is missing, the gateway will default to PROACTIS and work as before.
 
 ### Acceptances
 
