@@ -21,8 +21,8 @@ pages:
             - 'Custom Imaging' : p2p/customimaging.md
         - 'Commitment Posting' : p2p/commitments.md
         # - 'Invoice Posting' : placeholder.md
-        # - 'Import APIs':
-        #     - 'Invoices': placeholder.md
+         - 'Import APIs':
+             - 'Acceptances': p2p/acceptanceGateway.md
     - Spend Analytics: placeholder.md
     - APF: placeholder.md
     #     - 'overview' : apf/overview.md
