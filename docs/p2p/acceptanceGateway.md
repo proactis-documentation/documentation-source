@@ -48,30 +48,6 @@ The schema, documentation and error messages are all written in English.
 
 This XML gateway only supports the creation and submission of acceptances.  It does not allow users to amended, authorise or cancel acceptances.
 
-## Using the gateway
-
-For maximum flexibility, the gateway has been implemented within a single COM DLL.  This allows the gateway to be used from any programming language which supports the use of COM objects.  These include, Visual Basic, dotNet, C and C++.
-
-The grsWebService DLL contains a single creatable object called Service, which has a single method called Import.  The Import method takes an xml string containing the invoice to be imported and then returns an xml string containing the results.
-
-For example, to call the gateway from visual basic 6, the following code could be used.
-
-```vb
-'Declare variables
-Dim objGateway As object
-Dim strResultsXML As String
-
-'Create the PROACTIS XML gateway.
-
-'Note, the object is created using the createobject command rather
-'than the new command,  to make sure the gateway is under the
-'control of COM+
-Set objGateway = CreateObject("grsWebService.Service")
-
-'Pass the data to be imported into the gateway and receive the results.
-strResultsXML = objGateway.ImportDocument(strDataXML)
-```
-
 ## Worked Example
 
 This section of the document walks you through the creation of a simple document.  All the available fields are described in complete detail, within the next section.
@@ -154,8 +130,6 @@ Specifies the location at which the goods have been accepted.  The user must hav
 
 This attribute is optional/required as configured within PROACTIS.  PROACTIS may also encore the reference to be unique for a given supplier.
 
-
-
 ### References
 
 Any mandatory reference fields must be supplied.  References fields are identified by their code.  A reference field can only be supplied if it is defined as editable on the document template.
@@ -236,10 +210,10 @@ For each order, you then specify which items you would like to accept.
   - .Supply its PROACTIS Code using the SelectUsingCode
 
 -
-  - .Supply its Description using the SelectUsingDiscriptionattribute.
+  - .Supply its Description using the SelectUsingDiscription attribute.
 
 -
-  - .Supply its OrderItemGUID using the SelectUsingOrderItemGUIDattribute.
+  - .Supply its OrderItemGUID using the SelectUsingOrderItemGUID attribute.
 
 ### ItemReferences
 
@@ -265,13 +239,13 @@ Any number of comments may be added onto an acceptance document line.
 
 ### Conditions
 
-The conditions element allows you define what the condition the receipts goods are in.  For example, OK, Damanged.
+The conditions element allows you define what the condition the receipts goods are in.  For example, OK, Damaged.
 
-        <attributename="Receipted"type="pro:NonNegativeDecimal"/>
+        <attribute name="Receipted"type="pro:NonNegativeDecimal"/>
 
-                <attributename="Condition"type="pro:Char50Type"/>
+                <attribute name="Condition"type="pro:Char50Type"/>
 
-                <attributename="ControlFullyReceiptItem"type="pro:YesNoType"/>
+                <attribute name="ControlFullyReceiptItem"type="pro:YesNoType"/>
 
 - .At least one condition element must be supplied.
 
@@ -323,7 +297,7 @@ At lease one of the two methods must be used.
 
 
 
-- .The receipted quantity must be supplied, and should not exceed the outstanding quanitity from the original order.</Description>
+- .The receipted quantity must be supplied, and should not exceed the outstanding quantity from the original order.</Description>
 
 ```xml
 			<UnitOfMeasure>EA</UnitOfMeasure>
