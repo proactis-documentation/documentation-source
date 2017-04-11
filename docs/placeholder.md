@@ -1,1 +1,1 @@
-Please contact your account manager for information on integrating with this product.
+Please contact your account manager for information on integrating with this great product.
