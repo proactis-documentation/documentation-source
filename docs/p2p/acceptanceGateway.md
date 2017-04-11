@@ -70,6 +70,7 @@ Set objGateway = CreateObject("grsWebService.Service")
 
 'Pass the data to be imported into the gateway and receive the results.
 strResultsXML = objGateway.ImportDocument(strDataXML)
+```
 
 ## Worked Example
 
@@ -151,7 +152,7 @@ Specifies the location at which the goods have been accepted.  The user must hav
 
 ### @SupplierDeliveryNote
 
-This attribute is optional/required as configured within PROACTIS.  PROACTIS may also enfore the reference to be unique for a given supplier.
+This attribute is optional/required as configured within PROACTIS.  PROACTIS may also encore the reference to be unique for a given supplier.
 
 
 
