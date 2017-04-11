@@ -2,11 +2,11 @@
 
 ## Summary
 
-This section describes the structure of the XML file used for importing Purchase Order Acceptnaces into PROACTIS 3.  It is assumed that the reader of the document is familiar both with XML and PROACTIS accepances.
+This section describes the structure of the XML file used for importing Purchase Order Acceptances into PROACTIS 3.  It is assumed that the reader of the document is familiar both with XML and PROACTIS acceptances.
 
 The document also describes the validation rules, which must be passed in order for the order to be imported, and the current limitations of the acceptances gateway.
 
-This document should be used in conjunction with the _ImportAcceptances.xsd_ xml schema
+This document should be used in conjunction with the __ImportAcceptances.xsd__ xml schema
 
 ## Process Overview
 
@@ -56,26 +56,19 @@ The grsWebService DLL contains a single creatable object called Service, which h
 
 For example, to call the gateway from visual basic 6, the following code could be used.
 
-&#39;Declare variables
-
+```vb
+'Declare variables
 Dim objGateway As object
-
 Dim strResultsXML As String
 
-&#39;Create the PROACTIS XML gateway.
+'Create the PROACTIS XML gateway.
 
-&#39;Note, the object is created using the &#39;createobject&#39; command rather
+'Note, the object is created using the createobject command rather
+'than the new command,  to make sure the gateway is under the
+'control of COM+
+Set objGateway = CreateObject("grsWebService.Service")
 
-&#39;than the &#39;new&#39; command,  to make sure the gateway is under the
-
-&#39;control of COM+
-
-Set objGateway = CreateObject(&quot;grsWebService.Service&quot;)
-
-&#39;Pass the data to be imported into the gateway and receive the
-
-&#39;results.
-
+'Pass the data to be imported into the gateway and receive the results.
 strResultsXML = objGateway.ImportDocument(strDataXML)
 
 ## Worked Example
@@ -86,13 +79,17 @@ This section of the document walks you through the creation of a simple document
 
 The xml document must start with the following to lines
 
-&lt;?xml version=&quot;1.0&quot; ?&gt;
+```xml
+<?xml version="1.0" ?>
 
-&lt;pro:Import xmlns:pro=&quot; [http://www.proactis.com/xml/xml-ns](http://www.proactis.com/xml/xml-ns)&quot;&gt;
+<pro:Import xmlns:pro=" [http://www.proactis.com/xml/xml-ns](http://www.proactis.com/xml/xml-ns)">
+```
 
 And finish with
 
-&lt;/pro:Import&gt;
+```xml
+</pro:Import>
+```
 
 ### Control Block
 
@@ -100,37 +97,43 @@ A control block must then be included so that the gateway knows which database a
 
 An example control block is shown below.
 
- &lt;pro:Control           DatabaseName=&quot;PROACTIS\_LIVE&quot;
+```xml
+ <pro:Control           DatabaseName="PROACTIS\_LIVE"
 
-                           UserName=&quot;ORDER&quot;
+                           UserName="ORDER"
 
-                          Password=&quot;mysecret&quot;
+                          Password="mysecret"
 
-                                Company=&quot;MAIN&quot;
+                                Company="MAIN"
 
-                                Department=&quot;SALES&quot;
+                                Department="SALES"
 
-                                 Version=&quot;1.0.0&quot; /&gt;
+                                 Version="1.0.0" />
+```
 
 The XML gateway supports NT authentication, an example is shown below.
 
- &lt;pro:Control    DatabaseName=&quot;PROACTIS\_LIVE&quot;
+```xml
+ <pro:Control    DatabaseName="PROACTIS\_LIVE"
 
-                     AuthenticationMethod=&quot;WINDOWS&quot;
+                     AuthenticationMethod="WINDOWS"
 
-                   Company=&quot;MAIN&quot;
+                   Company="MAIN"
 
-                    Department=&quot;SALES&quot;
+                    Department="SALES"
 
-                         Version=&quot;1.0.0&quot; /&gt;
+                         Version="1.0.0" />
+```
 
-NB: The value of the &quot;AuthenticationMethod&quot; field can be WINDOWS or PROACTIS (which must be expressed in Upper Case).  If this field is missing, the gateway will default to PROACTIS and work as before.
+NB: The value of the "AuthenticationMethod" field can be WINDOWS or PROACTIS (which must be expressed in Upper Case).  If this field is missing, the gateway will default to PROACTIS and work as before.
 
 ### Acceptances
 
 The next section contains the details of the acceptance documents to be imported.  The gateway allows multiple acceptances to be included in a single xml document.  At least one acceptance document must be included.
 
-&lt;pro:Acceptance Template=&quot; **ACC**&quot; DateReceived=&quot; **2006-01-01**&quot; AcceptedAt=&quot; **MAIN**&quot; SupplierDeliveryNote=&quot; **Delivery11**&quot;&gt;
+```xml
+<pro:Acceptance Template=" **ACC**" DateReceived=" **2006-01-01**" AcceptedAt=" **MAIN**" SupplierDeliveryNote=" **Delivery11**">
+```
 
 ### @Template
 
@@ -138,11 +141,11 @@ This attribute is optional if the user only has access to a single template.  Ho
 
 ### @DateReceived
 
-This attribute is optional and will default to today&#39;s date if missing.  Must be in the format yyyy-mm-dd
+This attribute is optional and will default to today's date if missing.  Must be in the format yyyy-mm-dd
 
 ### @AcceptedAt
 
-This attribute is optional and will default to the user&#39;s default location if missing
+This attribute is optional and will default to the user's default location if missing
 
 Specifies the location at which the goods have been accepted.  The user must have access to the location.
 
@@ -156,34 +159,39 @@ This attribute is optional/required as configured within PROACTIS.  PROACTIS may
 
 Any mandatory reference fields must be supplied.  References fields are identified by their code.  A reference field can only be supplied if it is defined as editable on the document template.
 
-&lt;pro:References&gt;
+```xml
+<pro:References>
 
-&lt;pro:Reference SelectUsingCode=&quot;Bar code&quot; Value=&quot;345-223-33&quot;  /&gt;
+<pro:Reference SelectUsingCode="Bar code" Value="345-223-33"  />
 
-&lt;/pro:References&gt;
+</pro:References>
+```
 
 ### Comments
 
 Any number of comments may be added onto the acceptance document
 
-&lt;pro:Comments&gt;
+```xml
+<pro:Comments>
 
-&lt;pro:Comment&gt;&quot;Please pay quickly&quot;&lt;/pro:Comment&gt;
+<pro:Comment>"Please pay quickly"</pro:Comment>
 
-&lt;pro:Comment&gt;&quot;BarCode: 1232&quot; &lt;/pro:Comment&gt;
+<pro:Comment>"BarCode: 1232" </pro:Comment>
 
-&lt;/pro:Comments&gt;
+</pro:Comments>
+```
 
 ### Orders
 
 The purchase orders to accept are specified next.
 
-&lt;pro:Orders&gt;
+```xml
+<pro:Orders>
 
-        &lt;pro:OrderSelectUsingTemplate=&#39;GENERIC&#39;SelectUsingOrderNo=&#39;15&#39;
+        <pro:OrderSelectUsingTemplate='GENERIC' SelectUsingOrderNo='15'
 
-                  ControlFullyReceiptOrder=&#39;YES&#39;ControlItemCondition=&#39;OK&#39;&gt;
-
+                  ControlFullyReceiptOrder='YES' ControlItemCondition='OK'>
+```
 - .At least one purchase order document must be specified.
 
 - .Each order can only be specified once.
@@ -194,7 +202,7 @@ The purchase orders to accept are specified next.
   - .Supply its Template and OrderNo using the SelectUsingTemplate and SelectUsingOrderNo
 
 -
-  - .Supply its display number using the SelectUsingDisplayNoattribute.
+  - .Supply its display number using the SelectUsingDisplayNo attribute.
 
 - .If you wish to automatically receipt all items on the order then
 
@@ -213,9 +221,9 @@ The purchase orders to accept are specified next.
 
 For each order, you then specify which items you would like to accept.
 
-&lt;pro:Items&gt;
+<pro:Items>
 
-        &lt;pro:ItemSelectUsingCode=&#39;0300&#39;&gt;
+        <pro:ItemSelectUsingCode='0300'>
 
 - .At least one item must be specified
 
@@ -236,33 +244,33 @@ For each order, you then specify which items you would like to accept.
 
 Any mandatory item level reference fields must be supplied.  References fields are identified by their code.  A reference field can only be supplied if it is defined as editable on the document template.
 
-&lt;pro:ItemReferences&gt;
+<pro:ItemReferences>
 
-&lt;pro:ItemReference SelectUsingCode=&quot;Bar code&quot; Value=&quot;345-223-33&quot;  /&gt;
+<pro:ItemReference SelectUsingCode="Bar code" Value="345-223-33"  />
 
-&lt;/pro:ItemReferences&gt;
+</pro:ItemReferences>
 
 ### Item Comments
 
 Any number of comments may be added onto an acceptance document line.
 
-&lt;pro:ItemComments&gt;
+<pro:ItemComments>
 
-&lt;pro:ItemComment&gt;&quot;Please pay quickly&quot;&lt;/pro:Comment&gt;
+<pro:ItemComment>"Please pay quickly"</pro:Comment>
 
-&lt;pro:ItemComment&gt;&quot;BarCode: 1232&quot; &lt;/pro:Comment&gt;
+<pro:ItemComment>"BarCode: 1232" </pro:Comment>
 
-&lt;/pro:ItemComments&gt;
+</pro:ItemComments>
 
 ### Conditions
 
 The conditions element allows you define what the condition the receipts goods are in.  For example, OK, Damanged.
 
-        &lt;attributename=&quot;Receipted&quot;type=&quot;pro:NonNegativeDecimal&quot;/&gt;
+        <attributename="Receipted"type="pro:NonNegativeDecimal"/>
 
-                &lt;attributename=&quot;Condition&quot;type=&quot;pro:Char50Type&quot;/&gt;
+                <attributename="Condition"type="pro:Char50Type"/>
 
-                &lt;attributename=&quot;ControlFullyReceiptItem&quot;type=&quot;pro:YesNoType&quot;/&gt;
+                <attributename="ControlFullyReceiptItem"type="pro:YesNoType"/>
 
 - .At least one condition element must be supplied.
 
@@ -275,16 +283,16 @@ The conditions element allows you define what the condition the receipts goods a
 - .If you wish to receipt the entire outstanding balance for the item then
 
 -
-  - .Don&#39;t supplied any nominal information
+  - .Don't supplied any nominal information
 
 -
-  - .Don&#39;t supplied the receipted attribute
+  - .Don't supplied the receipted attribute
 
 -
   - .Set the ControlFullyReceiptItem attribute to YES.
 
 -
-  - .Don&#39;t supply any other delivery conditions for the line.
+  - .Don't supply any other delivery conditions for the line.
 
 - .If no nominal information is provided, then the nominals will be receipted on a first-come-first-served basis.
 
@@ -294,11 +302,11 @@ The conditions element allows you define what the condition the receipts goods a
 
 If required, the receipted quantity can be allocated at nominal level.
 
-&lt;pro:Nominals&gt;
+<pro:Nominals>
 
-&lt;pro:NominalSelectUsingNominalCoding=&#39;0300.0990.0610.ACT&#39;  Receipted=&#39;1&#39;/&gt;
+<pro:NominalSelectUsingNominalCoding='0300.0990.0610.ACT'  Receipted='1'/>
 
-&lt;/pro:Nominals&gt;
+</pro:Nominals>
 
 
 
