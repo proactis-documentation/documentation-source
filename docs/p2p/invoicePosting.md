@@ -1,7 +1,7 @@
 # Invoice Export
 To allow the real time posting of documents into external systems; typically finance systems; a custom export DLL can be written which to responds to new documents being placed in the __dbo.DocumentsForPosting__ database table.
 
-The format of document xml which is stored in this table is defined by the various document export application hooks.  (These are detailed separately.)
+The format of the document xml which is stored in this table is defined by the various document export application hooks.  (These are detailed separately.)
 
 !!! note
 
@@ -168,6 +168,11 @@ Edit the file __"ConfigurationFolder\PROACTIS.P2P.AccountingExportService.exe.co
 ```
 
 Your dll should be complied (and named xyzExportProcessor.dll) and then copied into your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder.
+
+As the __PROACTIS P2P Accounting Export Service__ starts it will write a message to Windows Event Log listing the databases/plugins which will be used.
+
+![alt text](../img/p2p/exports/servicestartup.JPG "Upload")
+
 
 ## Database
 
