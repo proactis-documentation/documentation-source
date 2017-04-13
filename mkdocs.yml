@@ -20,7 +20,7 @@ pages:
             - 'Generic Imaging' : p2p/genericimaging.md
             - 'Custom Imaging' : p2p/customimaging.md
         - 'Commitment Posting' : p2p/commitments.md
-        # - 'Invoice Posting' : placeholder.md
+        - 'Invoice Posting' : p2p/invoicePosting.md
         - 'Import APIs' :
             - 'Acceptances': p2p/acceptanceGateway.md
     - Spend Analytics: placeholder.md

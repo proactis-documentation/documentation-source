@@ -238,7 +238,7 @@ If required, the receipted quantity can be allocated at nominal level.
   - Supply its CommitmentDate in the format yyyy-mm-dd using the SelectUsingCommitmentDate attribute.
 
 At lease one of the two methods must be used.
-- .The receipted quantity must be supplied, and should not exceed the outstanding quantity from the original order.</Description>
+- The receipted quantity must be supplied, and should not exceed the outstanding quantity from the original order.</Description>
 
 ```xml
 			<UnitOfMeasure>EA</UnitOfMeasure>
