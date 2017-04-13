@@ -1,7 +1,11 @@
-# Document Export
-To allow the real time posting of documents into external systems; typically finance systems a custom export DLL can be written which to responds to new documents being placed in the __dbo.InvoicesForPosting__ database table.
+# Invoice Export
+To allow the real time posting of documents into external systems; typically finance systems a custom export DLL can be written which to responds to new documents being placed in the __dbo.DocumentsForPosting__ database table.
 
 The format of document xml which is stored in this table is defined by the various document export application hooks.  (These are detailed separately.)
+
+!!! note
+
+    Although titled _Invoice Export_ this process also applied to other document types such as Credit Notes and Expense Claims
 
 
 ## Implementation
@@ -41,7 +45,7 @@ ExportProcessorInitialiseResult Initialise(int numberOfDocuments, string databas
 
 | Argument      | Direction | Description
 | ------------- | --------- | ------------ |
-| numberOfDocuments    | In        | The number of pending documents in the __dbo.InvoicesForPosting__ table. Will always be > 0|
+| numberOfDocuments    | In        | The number of pending documents in the __dbo.DocumentsForPosting__ table. Will always be > 0|
 | databaseTitle  | In        | Title of the p2p database |
 | databaseName  | In        | Name of the p2p database |
 | databaseServer  | In        | Name of the p2p database server |
@@ -122,7 +126,7 @@ This is the more traditional model where each document is process in it's own tr
 3. Each call to ProcessDocument is in it's own transaction
 4. The final call to PostingComplete is not in a transaction.
 
-If an exception is thrown by __ProcessDocument__ then the error message is record in the __dbo.InvoicesForPosting__ table and process continues with the next document.
+If an exception is thrown by __ProcessDocument__ then the error message is record in the __dbo.DocumentsForPosting__ table and process continues with the next document.
 
 
 ### SingleTransactionForAllDocuments 
@@ -165,3 +169,6 @@ Edit the file __"ConfigurationFolder\PROACTIS.P2P.AccountingExportService.exe.co
 
 Your dll should be complied (and named xyzExportProcessor.dll) and then copied into your __PROACTIS P2P/Plugins__  (or __Plugins/[database-title]__) folder.
 
+## Database
+
+The pending documents are held in the database table __dbo.DocumentsForPosting__.  In order to maintain compatibility with legacy code there is a view of this table called __dbo.InvoicesForPosting__.  For all new development the use of the base table is preferred. 
