@@ -1,5 +1,5 @@
 # Document Export
-To allow the real time posting of documents into external systems; typically finance systems a custom export DLL can be written which to responds to new documents being placed in the __dbo.InvoicesForPosting__ database table..
+To allow the real time posting of documents into external systems; typically finance systems a custom export DLL can be written which to responds to new documents being placed in the __dbo.InvoicesForPosting__ database table.
 
 The format of document xml which is stored in this table is defined by the various document export application hooks.  (These are detailed separately.)
 
@@ -11,17 +11,19 @@ The format of document xml which is stored in this table is defined by the vario
 
 + Add a class called __Services__ which implements the __grsCustInterfaces.IExportProcessor__ interface.
 
-+ Write an implementation of the following methods
++ Write implementations of the following methods:
     - __grsCustInterfaces.IExportProcessor.Initialise__.
     - __grsCustInterfaces.IExportProcessor.ProcessDocument__.
-    - __grsCustInterfaces. IExportProcessor.PostingComplete__.
+    - __grsCustInterfaces.IExportProcessor.PostingComplete__.
 
 ---
 
 ## Initialise Method
 
+This method is called once when the pending documents have been retrieved from the database.  This method is typically used to make connections to external systems (databases) and to specify the transaction handling model to be used.
+
 ### Signature
-```csharp
+```
 ExportProcessorInitialiseResult IExportProcessor.Initialise(int numberOfDocuments, string databaseTitle, string databaseName, string databaseServer)
 ```
 
