@@ -1,5 +1,5 @@
 # Invoice Export
-To allow the real time posting of documents into external systems; typically finance systems a custom export DLL can be written which to responds to new documents being placed in the __dbo.DocumentsForPosting__ database table.
+To allow the real time posting of documents into external systems; typically finance systems; a custom export DLL can be written which to responds to new documents being placed in the __dbo.DocumentsForPosting__ database table.
 
 The format of document xml which is stored in this table is defined by the various document export application hooks.  (These are detailed separately.)
 
