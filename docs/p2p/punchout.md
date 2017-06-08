@@ -221,13 +221,14 @@ The xslt needs to generate xml in the following format
 ``` 
 
 ## Troubleshooting
-The default XSLTs used for processing the returned baskets may create the following reference fields against the generated items
+The default XSLTs used for processing the returned baskets may create the following reference fields against the generated items:
+
 1. ContractReference
 2. PartID
 
-If however either of these references already exist in dsdba.CompanyReferences table but without a category of 'global' then the following error will be reported.
+If however either of these references already exist in __dsdba.CompanyReferences__ table but without a category of 'global' then the following error will be reported.
 ```
-There is already a reference of type template with a code of ContractReference. This reference cannot be linked to an item.
+__There is already a reference of type template with a code of ContractReference. This reference cannot be linked to an item.__
 ```
 
 The solution is to either convert the reference field to a global one,  or drop a custom XSLT into the plugins folder which uses a different reference field.
