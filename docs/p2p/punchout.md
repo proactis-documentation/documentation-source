@@ -228,7 +228,7 @@ The default XSLTs used for processing the returned baskets may create the follow
 
 If however either of these references already exist in __dsdba.CompanyReferences__ table but without a category of 'global' then the following error will be reported.
 ```
-__There is already a reference of type template with a code of ContractReference. This reference cannot be linked to an item.__
+There is already a reference of type template with a code of ContractReference. This reference cannot be linked to an item.
 ```
 
 The solution is to either convert the reference field to a global one,  or drop a custom XSLT into the plugins folder which uses a different reference field.
