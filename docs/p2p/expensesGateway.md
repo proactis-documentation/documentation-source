@@ -199,14 +199,15 @@ Example
 ```xml
 <pro:ExpenseClaim  Template='EXP' Status='OK' DocumentNumber='exp 52487'>
 ```
+---
 
 ## Control Block
-The attributes supported by the control block within the xml are listed below:
+The attributes supported by the control block element within the xml are listed below:
 
 | Attribute Name  | Description                                                                                |
 |-----------------|--------------------------------------------------------------------------------------------|
-| DatabaseName    | This is the title of,the database as shown to the user on the logon screen.                |
-| UserName        | The LoginID of the,PROACTIS user.,This user must have,permission to create expense claims. |
+| DatabaseName    | This is the title of the database as shown to the user on the logon screen.                |
+| UserName        | The LoginID of the,PROACTIS user. This user must have,permission to create expense claims. |
 | Password        | Password for above user.                                                                   |
 | EncodedPassword | Encoded version of the password.  (No longer supported)                                    |
 | Company | The user must have access to the company.  If missing, the user’s default company will be used.    |
@@ -218,3 +219,21 @@ The attributes supported by the control block within the xml are listed below:
 
 ### Notes
 1. The control block must be provided
+
+---
+
+## Import/ExpenseClaim
+The attributes supported by the ExpenseClaim element within the xml are listed below:
+
+| Attribute Name  | Description                                                                                |
+|-----------------|--------------------------------------------------------------------------------------------|
+| Template | The expense claims template’s code used to create the claim.  The user must have permission to use this template. |
+| Title | The title of the expense claim. |
+| ClaimDate | The date of the claim.  If missing the date will default to today.  All dates are in the format yyyy-mm-dd |
+| ClaimFor | The LoginID of the user we are entering the claim for. The user must have permission to enter claims for this user. If missing the claim is entered for the user as specified in the control block. |
+| SaveMethod | How will the Expense claim be saved to the database.  If missing, it will default to submit. Possible settings are </br>  SAVE.  Allows the user to manually edit the claim <br/> SUMBIT. Submits the claim for authorisation. This option is not available if the ‘Must submit claim for completion’ user property is set. <br/> CODING. Submits the claim for coding.  A user must be defined for this user for this option to be available.
+
+### Notes
+1. At least one claim must be provided
+
+---
