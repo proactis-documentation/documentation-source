@@ -1,3 +1,8 @@
+# Docker setup
+#git config --global user.name "David Betteridge"
+#git config --global user.email "DavidABetteridge@gmail.com"
+
+
 FROM python:latest
 EXPOSE 8000
 RUN pip install mkdocs
