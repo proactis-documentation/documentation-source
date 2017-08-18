@@ -84,7 +84,7 @@ The next section contains the details of the invoices to be imported.  The gatew
               ImageReference='10'/>
 ```
 
-###  Notes
+####  Notes
 * The template must be an invoicing template, which the user has access to.
 * If the template is not provided, then the gateway attempts to automatically select one.  This is only possible if the user only has access to a single template.  In order to pick a template, the gateway must first determine if the invoice is a stand-alone or order based.
 * The gateway assumes the invoice is a standalone invoice if either
@@ -92,7 +92,7 @@ The next section contains the details of the invoices to be imported.  The gatew
   * The authorisation pool is specified
 
   Otherwise, the invoice is treated as an order based invoice.
-  
+
 * The tray must an invoicing tray, which the user has access to.
 * If the tray is missing, then the user’s default tray is used.
 * The supplier invoice number must unique for this supplier
@@ -118,10 +118,38 @@ Then the orders and items against which the invoice will be matched are listed.
 </pro:ParentOrders>
 ```
 
-### Notes
+#### Notes
 * The items refer to the item lines on the orders, not the nominal period lines.  Quantities will be allocated to the nominals on a first-come-first-severed basis if the details are not specified in the import document.
 * Depending on the type of item, either the Price plus Quantity should be provided or the Value.
 * The position is used to specify the item on the purchase order or an order amendment. For example, if the order has three lines, and has an amendment for an additional line, then a position of 4 would refer to the new line on the order amendment.
 * If no parent orders are specified then the invoice can only be registered.  In this case, the supplier must set.
 * In additional to the nominal coding, a commitment date can also be specified to help identify the order nominal to invoice.
 
+### Tax
+As well as the purchase orders, the invoice must also include the tax details.
+
+```xml
+<pro:TaxDetails>
+  <pro:Tax Band='VAT' BandNumber='1' Code='STD' GrossValue='1.18' TaxValue='0.18'/>
+ </pro:TaxDetails>
+```
+
+#### Notes
+* If the TaxValue is missing, then it will be automatically calculated.
+* The Band can be identified by either its name (Band) or number (BandNumber). If neither is specified then the first band is assumed.
+
+### Supplier
+If the supplier is a one-off supplier, then their address details must also be set.
+
+```xml
+<pro:SupplierAddress  Name='Accounts' 
+                      Line1='12 The close' 
+                      Line2='East Kettlewell' 
+                      Line3='' 
+                      Line4='' 
+                      Town='YORK' 
+                      County='North Yorkshire' 
+                      Country='UK'/>
+```
+#### Notes
+* The address is ignored if it is not a one-off supplier
