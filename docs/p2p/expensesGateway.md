@@ -166,7 +166,7 @@ An example errors block is shown below
 
 ### Errors/Error
 | Attribute Name | Description |
-----------------|:------------: |
+----------------|------------ |
 | Number | Internal Error Number - this may change between releases |
 | Message | The error message (in English) | 
 | Source | Optional attribute describing where the error occurred.
@@ -175,3 +175,27 @@ An example errors block is shown below
 * The error block may occur anywhere within the document.  For example, if a line is invalid, the errors block will be appended to that line.
 
 * It is possible for an errors block to contain more than one error.
+
+### ErrorHandlingModes
+The reporting of errors can be configured by setting the **ErrorHandlingMode** attribute within the control block.  The table below describes the available modes
+
+| Mode | Description |
+----------------|------------ |
+| EMBED | The processed XML is returned, but we the error message stored in additional **pro:Errors/pro:Error** nodes. This is the default mode if the attribute is not supplied. |
+| THROWERRORS | The errors are thrown as SOAP exceptions back to the calling code, the message is an xml document describing the errors |
+| THROWXML | The errors are thrown as SOAP exceptions back to the calling code; the message is the processed xml document, which contains all the errors. |
+| THROWTEXT | The errors are thrown as OAP exceptions back to the calling code, the message is an human readable text describing the errors. |
+
+### Success
+If a claim has been successfully imported, then two new attributes will be added the ExpenseClaim node.
+1.      The first attribute is Status, and will have a value of OK
+2.      The second attribute is DocumentNumber, and this will contain the claims internal number.
+
+
+#### Note
+* If the XML contains multiple expense claims, then as long as the control block is valid, it is possible for some expense claims to be imported and other claims to be rejected.
+
+Example
+```xml
+<pro:ExpenseClaim  Template='EXP' Status='OK' DocumentNumber='exp 52487'>
+```
