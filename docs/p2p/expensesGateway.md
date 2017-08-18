@@ -161,7 +161,7 @@ An example errors block is shown below
 <pro:Errors>
   <pro:Error Number='-1072898030' 
              Message='XML is not valid according to the schema. Element content is incomplete according to the DTD/Schema. Expecting: {http://www.proactis.com/xml/xml-ns}ExpenseClaim'/>
-</ pro:Errors>
+</pro:Errors>
 ```
 
 ### Errors/Error
@@ -186,10 +186,10 @@ The reporting of errors can be configured by setting the **ErrorHandlingMode** a
 | THROWXML | The errors are thrown as SOAP exceptions back to the calling code; the message is the processed xml document, which contains all the errors. |
 | THROWTEXT | The errors are thrown as OAP exceptions back to the calling code, the message is an human readable text describing the errors. |
 
-### Success
+## Success
 If a claim has been successfully imported, then two new attributes will be added the ExpenseClaim node.
-1.      The first attribute is Status, and will have a value of OK
-2.      The second attribute is DocumentNumber, and this will contain the claims internal number.
+1. The first attribute is Status, and will have a value of OK
+2. The second attribute is DocumentNumber, and this will contain the claims internal number.
 
 
 #### Note
@@ -199,3 +199,22 @@ Example
 ```xml
 <pro:ExpenseClaim  Template='EXP' Status='OK' DocumentNumber='exp 52487'>
 ```
+
+## Control Block
+The attributes supported by the control block within the xml are listed below:
+
+| Attribute Name  | Description                                                                                |
+|-----------------|--------------------------------------------------------------------------------------------|
+| DatabaseName    | This is the title of,the database as shown to the user on the logon screen.                |
+| UserName        | The LoginID of the,PROACTIS user.,This user must have,permission to create expense claims. |
+| Password        | Password for above user.                                                                   |
+| EncodedPassword | Encoded version of the password.  (No longer supported)                                    |
+| Company | The user must have access to the company.  If missing, the user’s default company will be used.    |
+| Department | The user must have access to the department.  If missing, the user’s default department will be used. |
+| Version | Must be 1.0.0 |
+| WriteErrorsToDatabase | Not currently used. |
+| AuthenticationMethod | PROACTIS or WINDOWS.  For WINDOWS authentication, the username and password must not be supplied. |
+| ErrorHandlingMode | Describes how error messages will be handled.  See the error handling section for details. |
+
+### Notes
+1. The control block must be provided
