@@ -73,7 +73,7 @@ NB: The value of the __AuthenticationMethod__ field can be WINDOWS or PROACTIS (
 
 ### Invoice
 
-The next section contains the details of the invoices to be imported.  The gateway allows multiple claims to be included in a single xml document.  At least one invoice must be included.
+The next section contains the details of the invoices to be imported.  The gateway allows multiple documents to be included in a single xml document.  At least one invoice must be included.
 
 ```xml
 <pro:Invoice  InvoiceDate='2003-08-27'              
@@ -236,7 +236,7 @@ NB: The value of the __AuthenticationMethod__ field can be WINDOWS or PROACTIS (
 
 ### Invoice
 
-The next section contains the details of the invoices to be imported.  The gateway allows multiple claims to be included in a single xml document.  At least one invoice must be included.
+The next section contains the details of the invoices to be imported.  The gateway allows multiple documents to be included in a single xml document.  At least one invoice must be included.
 
 ```xml
 <pro:Invoice InvoiceDate="2003-08-27"              
@@ -336,14 +336,14 @@ When a piece of data has been processed, then an extra attribute called status w
 
 Note: Nodes without this attribute have not been processed.
 
-he supplied XML is first validated against the **ImportPurchaseCreditNotes.xsd** schema.  If the invoice fails validation then the details are of the failure are appended to the supplied xml in the form of an errors block
+he supplied XML is first validated against the **ImportPurchaseInvoices.xsd** schema.  If the invoice fails validation then the details are of the failure are appended to the supplied xml in the form of an errors block
 
 An example errors block is shown below
 
 ```xml
 <pro:Errors>
   <pro:Error Number='-1072898030' 
-             Message='XML is not valid according to the schema. Element content is incomplete according to the DTD/Schema. Expecting: {http://www.proactis.com/xml/xml-ns}ExpenseClaim'/>
+             Message='XML is not valid according to the schema. Element content is incomplete according to the DTD/Schema. Expecting: {http://www.proactis.com/xml/xml-ns}Invoice'/>
 </pro:Errors>
 ```
 
