@@ -92,6 +92,7 @@ The next section contains the details of the invoices to be imported.  The gatew
   * The authorisation pool is specified
 
   Otherwise, the invoice is treated as an order based invoice.
+  
 * The tray must an invoicing tray, which the user has access to.
 * If the tray is missing, then the user’s default tray is used.
 * The supplier invoice number must unique for this supplier
