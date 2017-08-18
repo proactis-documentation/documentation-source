@@ -142,3 +142,36 @@ Each item on the claim must contain one or more nominals
                Ratio='1'/>
 </pro:Nominals>
 ```
+
+
+## Error Handling
+ 
+By default the import routine will return the XML amended to include status and error information.
+
+When a piece of data has been processed, then an extra attribute called status will be added to the node, this will contain either OK or FAILED.  
+
+Note: Nodes without this attribute have not been processed.
+
+The supplied XML is first validated against the __ImportExpenseClaims.XSD__ schema.  If the xml fails validation then the details are of the failure are appended to the supplied xml in the form of an errors block
+
+
+An example errors block is shown below
+
+```xml
+<pro:Errors>
+  <pro:Error Number='-1072898030' 
+             Message='XML is not valid according to the schema. Element content is incomplete according to the DTD/Schema. Expecting: {http://www.proactis.com/xml/xml-ns}ExpenseClaim'/>
+</ pro:Errors>
+```
+
+### Errors/Error
+| Attribute Name | Description |
+----------------|:------------: |
+| Number | Internal Error Number - this may change between releases |
+| Message | The error message (in English) | 
+| Source | Optional attribute describing where the error occurred.
+
+#### Notes
+* The error block may occur anywhere within the document.  For example, if a line is invalid, the errors block will be appended to that line.
+
+* It is possible for an errors block to contain more than one error.
