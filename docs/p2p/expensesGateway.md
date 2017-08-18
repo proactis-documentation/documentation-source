@@ -237,3 +237,32 @@ The attributes supported by the ExpenseClaim element within the xml are listed b
 1. At least one claim must be provided
 
 ---
+
+## Import/ExpenseClaim/Comments/Comment
+The attributes supported by the Comment element within the xml are listed below:
+
+| Attribute Name  | Description                                                                                |
+|-----------------|--------------------------------------------------------------------------------------------|
+| ELEMENT  TEXT | The text of the comment |
+
+ ### Notes
+1. A claim can have any number of comments.
+
+---
+
+## Import/ExpenseClaim/References/Reference
+The attributes supported by the Reference element within the xml are listed below:
+
+| Attribute Name  | Description                                                                                |
+|-----------------|--------------------------------------------------------------------------------------------|
+| Code | The reference's code |
+| Caption | The reference’s caption |
+| Position | The references position
+| Value | The value of the reference
+
+ ### Notes
+1. Any mandatory reference fields must be supplied
+2. A reference can be identified by its Code, Caption or Position
+3. The Code should be used if possible.
+
+---
