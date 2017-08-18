@@ -186,7 +186,7 @@ The reporting of errors can be configured by setting the **ErrorHandlingMode** a
 | THROWXML | The errors are thrown as SOAP exceptions back to the calling code; the message is the processed xml document, which contains all the errors. |
 | THROWTEXT | The errors are thrown as OAP exceptions back to the calling code, the message is an human readable text describing the errors. |
 
-## Success
+## Successful Response
 If a claim has been successfully imported, then two new attributes will be added the ExpenseClaim node.
 1. The first attribute is Status, and will have a value of OK
 2. The second attribute is DocumentNumber, and this will contain the claims internal number.
@@ -231,7 +231,7 @@ The attributes supported by the Import/ExpenseClaim element within the xml are l
 | Title | The title of the expense claim. |
 | ClaimDate | The date of the claim.  If missing the date will default to today.  All dates are in the format yyyy-mm-dd |
 | ClaimFor | The LoginID of the user we are entering the claim for. The user must have permission to enter claims for this user. If missing the claim is entered for the user as specified in the control block. |
-| SaveMethod | How will the Expense claim be saved to the database.  If missing, it will default to submit. Possible settings are </br>  SAVE.  Allows the user to manually edit the claim <br/> SUMBIT. Submits the claim for authorisation. This option is not available if the ‘Must submit claim for completion’ user property is set. <br/> CODING. Submits the claim for coding.  A user must be defined for this user for this option to be available.
+| SaveMethod | How will the Expense claim be saved to the database.  If missing, it will default to submit. Possible settings are </br>  SAVE.  Allows the user to manually edit the claim <br/> SUBMIT. Submits the claim for authorisation. This option is not available if the ‘Must submit claim for completion’ user property is set. <br/> CODING. Submits the claim for coding.  A user must be defined for this user for this option to be available.
 
 ### Notes
 1. At least one claim must be provided
