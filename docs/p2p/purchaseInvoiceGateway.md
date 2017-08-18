@@ -153,3 +153,46 @@ If the supplier is a one-off supplier, then their address details must also be s
 ```
 #### Notes
 * The address is ignored if it is not a one-off supplier
+
+
+### Comments
+It is possible to add one or more comments to an invoice
+ 
+```xml
+<pro:Comments>
+  <pro:Comment>Please pay quickly</pro:Comment>
+</pro:Comments>
+```
+
+#### Notes
+* It is not currently possible to view comments from within the PROACTIS website.
+ 
+### References
+It is also possible to set the reference fields on the invoice
+
+```xml
+<pro:References>
+          <pro:Reference Caption='Bar code' 
+                         Value='345-223-33'
+          <pro:Reference Position='2' 
+                         Value='BACS'
+          <pro:Reference Code='Colour' 
+                         Value='Red'
+</pro:References>
+```
+
+#### Notes
+* Any mandatory reference fields without default values must be set.
+* Either the code, caption or the position can be specified
+
+ 
+
+The invoice then finishes with a closing tag:
+
+</pro:Invoice>
+
+ 
+
+Finally the XML must be closed as follows:
+
+</pro:Import>
