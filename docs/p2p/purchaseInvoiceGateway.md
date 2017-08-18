@@ -25,7 +25,7 @@ The current release of the invoice gateway is subjected to the following invoice
 
 ---
 
-## Order Based Invoices - Worked Example
+## Order Based Invoices
 
 This section of the document walks you through the creation of a simple order based invoice. 
 
@@ -198,7 +198,7 @@ Finally the XML must be closed as follows:
 
 ---
 
-## Standalone Invoices - Worked Example
+## Standalone Invoices
 
 This section of the document walks you through the creation of a simple standalone invoice. This is a type of invoices which is not matched to parent purchase orders.
 
@@ -326,4 +326,55 @@ A line can optionally have its nominal coding specified.
 * The NominalMask must refer to a nominal mask attached to the item master.
 * The quantities must sum to the quantities set against the parent item.
 
- 
+---
+## Error Handling
+
+
+By default the import routine will return the XML amended to include status and error information.
+
+When a piece of data has been processed, then an extra attribute called status will be added to the node, this will contain the value OK, FAILED or REGISTERED.  OK means the invoice was fully imported successfully.  FAILED means the invoice could not be imported.  REGISTERED means the initial values of the invoice have been successfully imported but a problem occurred when trying to set specific item details requiring the invoice to be matched manually.
+
+Note: Nodes without this attribute have not been processed.
+
+he supplied XML is first validated against the **ImportPurchaseCreditNotes.xsd** schema.  If the invoice fails validation then the details are of the failure are appended to the supplied xml in the form of an errors block
+
+An example errors block is shown below
+
+```xml
+<pro:Errors>
+  <pro:Error Number='-1072898030' 
+             Message='XML is not valid according to the schema. Element content is incomplete according to the DTD/Schema. Expecting: {http://www.proactis.com/xml/xml-ns}ExpenseClaim'/>
+</pro:Errors>
+```
+
+### Errors/Error
+| Attribute Name | Description |
+----------------|------------ |
+| Number | Internal Error Number - this may change between releases |
+| Message | The error message (in English) | 
+| Source | Optional attribute describing where the error occurred.
+
+#### Notes
+* The error block may occur anywhere within the document.  For example, if a line is invalid, the errors block will be appended to that line.
+
+* It is possible for an errors block to contain more than one error.
+
+### ErrorHandlingModes
+The reporting of errors can be configured by setting the **ErrorHandlingMode** attribute within the control block.  The table below describes the available modes
+
+| Mode | Description |
+----------------|------------ |
+| EMBED | The processed XML is returned, but we the error message stored in additional **pro:Errors/pro:Error** nodes. This is the default mode if the attribute is not supplied. |
+| THROWERRORS | The errors are thrown as SOAP exceptions back to the calling code, the message is an xml document describing the errors |
+| THROWXML | The errors are thrown as SOAP exceptions back to the calling code; the message is the processed xml document, which contains all the errors. |
+| THROWTEXT | The errors are thrown as OAP exceptions back to the calling code, the message is an human readable text describing the errors. |
+
+## Successful Response
+If a document has been successfully imported, then two new attributes will be added the documents's node.
+1. The first attribute is Status, and will have a value of OK
+2. The second attribute is DocumentNumber, and this will contain the invoices generated number.
+
+
+#### Note
+* If the XML contains multiple documents, then as long as the control block is valid, it is possible for some documents to be imported and other to be rejected.
+
