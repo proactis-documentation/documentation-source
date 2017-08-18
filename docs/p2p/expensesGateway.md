@@ -257,12 +257,31 @@ The attributes supported by the Reference element within the xml are listed belo
 |-----------------|--------------------------------------------------------------------------------------------|
 | Code | The reference's code |
 | Caption | The reference’s caption |
-| Position | The references position
-| Value | The value of the reference
+| Position | The references position |
+| Value | The value of the reference |
 
- ### Notes
+### Notes
 1. Any mandatory reference fields must be supplied
 2. A reference can be identified by its Code, Caption or Position
 3. The Code should be used if possible.
 
 ---
+
+## Import/ExpenseClaim/Items/Item
+The attributes supported by the Item element within the xml are listed below:
+
+| Attribute Name  | Description                                                                                |
+|-----------------|--------------------------------------------------------------------------------------------|
+| PROACTISCode | The item must be available for use from the template. |
+| Price | The item must allow the user to change the price, and the item’s ‘enter net value’ setting must be turned off.  If missing, the price from the item master will be used. |
+| Quantity | The item’s ‘Enter Net Value’ setting must be turned off.  If missing,  a quantity of 1 will be assumed. |
+| NetValue |  The item’s ‘Enter Net Value’ setting must be turned on. |
+| ClaimDate |  Must be in the format yyyy-mm-dd |
+| Description |  The item must allow the user to change the description. If missing, the description from the item master will be used. |
+| Receipt | Does the user have a receipt? |
+| TaxReceipt | Is the receipt a tax receipt?  (Receipt must be set to YES) |
+| TaxCode | Allows a different tax code (Band1) to be used for the line. If missing uses the tax rules defined against the template. |
+| TaxOverride |  Allows the line tax to be manually set. |
+
+### Notes
+1. The claim must contain at least one item.
