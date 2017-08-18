@@ -23,10 +23,11 @@ The current release of the invoice gateway is subjected to the following invoice
 * As with the other XML gateways, an XML document can only contain documents for a single department.
 * The schema, documentation and error messages are all written in English.
 
+---
 
 ## Order Based Invoices - Worked Example
 
-This section of the document walks you through the creation of a simple document. 
+This section of the document walks you through the creation of a simple order based invoice. 
 
 ### XML Document
 
@@ -180,19 +181,149 @@ It is also possible to set the reference fields on the invoice
                          Value='Red'
 </pro:References>
 ```
-
 #### Notes
 * Any mandatory reference fields without default values must be set.
 * Either the code, caption or the position can be specified
 
- 
-
 The invoice then finishes with a closing tag:
 
+```xml
 </pro:Invoice>
-
- 
+```
 
 Finally the XML must be closed as follows:
-
+```xml
 </pro:Import>
+```
+
+---
+
+## Standalone Invoices - Worked Example
+
+This section of the document walks you through the creation of a simple standalone invoice. This is a type of invoices which is not matched to parent purchase orders.
+
+The gateway assumes the invoice is a standalone invoice if 
+* One or more non-order items are supplied
+* A standalone purchase invoice is specified.
+* The authorisation pool is specified
+
+### Control Block
+
+A control block must then be included so that the gateway knows which database and company to import the documents into.  This has the same structure as the control block for the other XML gateways.
+
+An example control block is shown below.
+
+```xml
+ <pro:Control DatabaseName="PROACTIS"
+              UserName="DAVIDBETTERIDGE"
+              Password="mysecret"
+              Company="MAIN"
+              Department="SOLUTIONS"
+              Version="1.0.0" />
+```
+
+The XML gateway supports NT authentication, an example is shown below.
+
+```xml
+ <pro:Control    DatabaseName="PROACTIS\_LIVE"
+                 AuthenticationMethod="WINDOWS"
+                 Company="MAIN"
+                 Department="SOLUTIONS"
+                 Version="1.0.0" />
+```
+
+NB: The value of the __AuthenticationMethod__ field can be WINDOWS or PROACTIS (which must be expressed in Upper Case).  If this field is missing, the gateway will default to PROACTIS and work as before.
+
+### Invoice
+
+The next section contains the details of the invoices to be imported.  The gateway allows multiple claims to be included in a single xml document.  At least one invoice must be included.
+
+```xml
+<pro:Invoice InvoiceDate="2003-08-27"              
+            SupplierInvoiceNumber="PR-234" 
+            Template="PINV" 
+            Tray="Standard" 
+            GrossValue="1"
+            AuthorisationPool="PISA"
+            Supplier="510632"
+ImageReference="10"/>
+```
+
+#### Notes
+* The template must be a standalone invoicing template, which the user has access to.
+* If the template is not provided, then the gateway attempts to automatically select one.  This is only possible if the user only has access to a single template. 
+* The tray must an invoicing tray, which the user has access to.
+* If the tray is missing, then the user’s default tray is used.
+* The supplier invoice number must unique for this supplier
+* The invoice date should be in the format yyyy-mm-dd
+* The ImageReference value also supports Settlement Discount, so if you have settlement discount switched on; use this field to enter the percentage discount – this must be a number only if settlement discount is active.
+* Post-match authorisation is supported by the invoice XML gateway – simply activate this property on the supplier and set the supplier on the invoice… post-match authorisation will be adopted.
+* The Supplier attribute must be supplied for standalone invoices.
+* The authorisation pool must be supplied if the template is used for standalone invoices and the company level setting is configured to use pools for authorisation.  (This is no longer recommended)
+
+### Standalone Tax Details
+
+The next section contains the summary Tax information.
+
+```xml
+ <pro:TaxDetails>
+                  <pro:Tax Band="UKVAT" 
+                           BandNumber="1"
+                           Code="ST"
+                           GrossValue="11.75"/>
+          </pro:TaxDetails> 
+```
+
+#### Notes
+* The Band can be identified by either its name (Band) or number (BandNumber). If neither is specified then the first band is assumed.
+
+
+
+### Standalone Line Detail
+
+The line details can now be specified.  
+
+```xml
+            <pro:NonOrderItems>
+                  <pro:NonOrderItem SelectUsingPROACTISCode='TEST' 
+                                    SelectUsingDescription='A test item' 
+                                    SelectUsingSupplierItemCode='TEST001'
+                                    Price='1' 
+                                    Quantity='10'
+                                    Description='my  test item'
+                                    NetValue=''
+                                    UnitOfMeasure='each'
+                                  ShortCutEntry='ABC'>
+```
+ 
+#### Notes
+
+1. Items are identified using a combination of the following attributes.  At least one attribute must be supplied, and the item must be uniquely identified.
+    * SelectUsingPROACTISCode
+    * SelectUsingDescription
+    * SelectUsingSupplierItemCode
+
+2. For goods items the Price and Quantity can be specified.
+3. For service items (data-entry-by-value) the net value can be specified.
+4. The description and unit of measure can be replaced on all items regardless of the item master settings.
+5. The short cut entry can be used to default the coding on all nominal lines.  The short cut list must be specified on the invoice template.
+
+### Standalone Line Nominals
+
+A line can optionally have its nominal coding specified.
+
+```xml
+                <pro:NonOrderItemNominals>
+                        <pro:NonOrderItemNominal AccountingElement1='1111'                                                                 
+                                                 AccountingElement2='AAAA' 
+                                                 NominalMask='DEFAULT' 
+                                                 ShortCutEntry='My entry' 
+                                                 Quantity='10'>
+```
+
+#### Notes
+* If no nominals are specified, then a single nominal line will automatically be created. It’s coding will be provided by PROACTIS.
+* The NominalMask must refer to a nominal mask attached to the item master.
+* The quantities must sum to the quantities set against the parent item.
+
+ 
