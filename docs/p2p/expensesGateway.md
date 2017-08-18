@@ -201,7 +201,7 @@ Example
 ```
 ---
 
-## Control Block
+## Control Block Element
 The attributes supported by the control block element within the xml are listed below:
 
 | Attribute Name  | Description                                                                                |
@@ -222,8 +222,8 @@ The attributes supported by the control block element within the xml are listed 
 
 ---
 
-## Import/ExpenseClaim
-The attributes supported by the ExpenseClaim element within the xml are listed below:
+## ExpenseClaim Element
+The attributes supported by the Import/ExpenseClaim element within the xml are listed below:
 
 | Attribute Name  | Description                                                                                |
 |-----------------|--------------------------------------------------------------------------------------------|
@@ -238,20 +238,20 @@ The attributes supported by the ExpenseClaim element within the xml are listed b
 
 ---
 
-## Import/ExpenseClaim/Comments/Comment
-The attributes supported by the Comment element within the xml are listed below:
+## Comment Element
+The attributes supported by the Import/ExpenseClaim/Comments/Comment and Import/ExpenseClaim/Items/Item/Comments/Comment elements within the xml are listed below:
 
 | Attribute Name  | Description                                                                                |
 |-----------------|--------------------------------------------------------------------------------------------|
 | ELEMENT  TEXT | The text of the comment |
 
- ### Notes
+### Notes
 1. A claim can have any number of comments.
 
 ---
 
-## Import/ExpenseClaim/References/Reference
-The attributes supported by the Reference element within the xml are listed below:
+## Reference Element
+The attributes supported by the Import/ExpenseClaim/References/Reference and Import/ExpenseClaim/Items/Item/References/Reference elements within the xml are listed below:
 
 | Attribute Name  | Description                                                                                |
 |-----------------|--------------------------------------------------------------------------------------------|
@@ -267,8 +267,8 @@ The attributes supported by the Reference element within the xml are listed belo
 
 ---
 
-## Import/ExpenseClaim/Items/Item
-The attributes supported by the Item element within the xml are listed below:
+## Item Element
+The attributes supported by the Import/ExpenseClaim/Items/Item element within the xml are listed below:
 
 | Attribute Name  | Description                                                                                |
 |-----------------|--------------------------------------------------------------------------------------------|
@@ -285,3 +285,19 @@ The attributes supported by the Item element within the xml are listed below:
 
 ### Notes
 1. The claim must contain at least one item.
+
+---
+
+## Nominal Element
+The attributes supported by the Import/ExpenseClaim/Items/Item/Nominals/Nominal element within the xml are listed below:
+
+| Attribute Name  | Description                                                                                |
+|-----------------|--------------------------------------------------------------------------------------------|
+| Ratio |  Ratio of this nominal to the other nominals on the line.  If missing, the ratio will be set to 1. |
+| AccountingElement1-8 |  The nominal must pass the standard PROACTIS rules for nominal validation. |
+| NominalMask |  Applies the coding from a nominal mask attached to the item. |
+ 
+### Notes
+1. The item must contain at least one nominal
+2. Any accounting elements attached to the item/user/department/template or company will be preset by default, in exactly the same way as normal expense claims are created.
+---
