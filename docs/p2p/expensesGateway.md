@@ -6,7 +6,7 @@ This document describes the structure of the XML file used for importing Expense
 
 The document also describes the validation rules, which must be passed in order for the claim to be imported, and the current limitations of the expense claim gateway.
 
-This document should be used in conjunction with the __ImportExpenseClaims.xsd__ xml schema
+This document should be used in conjunction with the __ImportExpenseClaims.xsd__ xml schema.
 
 
 ## Process Overview
