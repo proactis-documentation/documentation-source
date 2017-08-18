@@ -23,6 +23,7 @@ pages:
         - 'Invoice Posting' : p2p/invoicePosting.md
         - 'Import APIs' :
             - 'Acceptances': p2p/acceptanceGateway.md
+            - 'Expenses': p2p/expensesGateway.md
     - Spend Analytics: placeholder.md
     - APF: placeholder.md
     #     - 'overview' : apf/overview.md
