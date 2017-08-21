@@ -97,9 +97,12 @@ This method takes the following arguments:
 
 !!! Note
 
-    The order can be identified by either of the following arguments
+    The order can be identified by either of the following arguments:
+    
       1. TemplateLabel and numeric Number
+      
       2. The DisplayNumber
+
     If the DisplayNumber is supplied, then the TemplateLabel and Number are ignored.
 
 ### Cancellation Reason
