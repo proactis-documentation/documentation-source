@@ -92,7 +92,7 @@ The next section contains the details of the Credit Notes to be imported.  The g
   + The supplier credit note number must unique for this supplier
   + The credit note date should be in the format yyyy-mm-dd
 
-+### Credit Note Items
+### Credit Note Items
 Then the parent documents (credit notes and/or credit notes) and items against which the credit note will be matched are listed.
 
 ```xml
