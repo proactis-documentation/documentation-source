@@ -24,6 +24,7 @@ pages:
         - 'Import APIs' :
             - 'Acceptances': p2p/acceptanceGateway.md
             - 'Expenses': p2p/expensesGateway.md
+            - 'Purchase Credit Notes': p2p/purchaseCreditNoteGateway.md
             - 'Purchase Invoices': p2p/purchaseInvoiceGateway.md
     - Spend Analytics: placeholder.md
     - APF: placeholder.md
