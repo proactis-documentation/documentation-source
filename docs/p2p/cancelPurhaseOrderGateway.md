@@ -8,7 +8,7 @@ It is assumed that the reader of the document is familiar both with XML and PROA
 
 The document also describes the validation rules, which must be passed in order for the order to be cancelled and any current limitations of the gateway.
 
-This document should be used in conjunction with the AuthenticateUser.xsd xml schema
+This document should be used in conjunction with the **AuthenticateUser.xsd** xml schema
 
 
 ---
@@ -71,23 +71,49 @@ The XML gateway supports NT authentication, an example is shown below.
 
 NB: The value of the __AuthenticationMethod__ field can be WINDOWS or PROACTIS (which must be expressed in Upper Case).  If this field is missing, the gateway will default to PROACTIS and work as before.
 
-### Order Identification
-There are two ways in which the purchase order to cancel can be identified. 
+### Web Services
 
+There are two different web services available depending on how the purchase order will be identified.
 
-Either supply the order’s
-1. TemplateLabel and numeric Number
-Or
-2. The DisplayNumber
+#### CancelOrderByGUID
+If you know the order's internal GUID; then the **CancelOrderByGUID** method should be used.
+This method takes the following arguments:
 
- 
-If the DisplayNumber is supplied, then the TemplateLabel and Number are ignored.
++ ControlXML
++ OrderGUID
++ CancellationReason
++ Comments
 
-An error will be reported if either the order doesn’t exist, or it’s not in a state to be cancelled.
+#### CancelOrder
+If you only know the order's document number; then the **CancelOrder** method should be used.
+This method takes the following arguments:
 
++ ControlXML
++ TemplateLabel
++ OrderNumber
++ DisplayNumber
++ CancellationReason
++ Comments
+
+!!! note
+  The order can be identified by either of the following arguments
+    1. TemplateLabel and numeric Number
+    2. The DisplayNumber
+  If the DisplayNumber is supplied, then the TemplateLabel and Number are ignored.
 
 ### Cancellation Reason
-The reason for cancellation the order must be supplied.  Reasons are defined in the List snapin within the PROACTIS management console.
+The reason for cancellation the order must be supplied.  Reasons are defined in the List snap-in within the PROACTIS management console.
 
 ### Comments
 Finally, any additional comments can be supplied.
+
+## Errors
+If the order does not exist,  or is not in a state where it can be cancelled then the gateway will throw the following fault:
+**The order is not available for cancellation**
+
+## Example Code
+
+See the following example applications:
+
+* [Cancel Order](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Gateways/PROACTIS.ExampleApplication.CancelOrder)
+( [Cancel Order by GUID](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Gateways/PROACTIS.ExampleApplication.CancelOrderByGUID)
