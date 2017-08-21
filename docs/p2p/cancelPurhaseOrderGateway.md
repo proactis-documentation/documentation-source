@@ -95,11 +95,12 @@ This method takes the following arguments:
 + CancellationReason
 + Comments
 
-!!! note
-  The order can be identified by either of the following arguments
-    1. TemplateLabel and numeric Number
-    2. The DisplayNumber
-  If the DisplayNumber is supplied, then the TemplateLabel and Number are ignored.
+!!! Note
+
+    The order can be identified by either of the following arguments
+      1. TemplateLabel and numeric Number
+      2. The DisplayNumber
+    If the DisplayNumber is supplied, then the TemplateLabel and Number are ignored.
 
 ### Cancellation Reason
 The reason for cancellation the order must be supplied.  Reasons are defined in the List snap-in within the PROACTIS management console.
@@ -116,4 +117,5 @@ If the order does not exist,  or is not in a state where it can be cancelled the
 See the following example applications:
 
 * [Cancel Order](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Gateways/PROACTIS.ExampleApplication.CancelOrder)
-( [Cancel Order by GUID](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Gateways/PROACTIS.ExampleApplication.CancelOrderByGUID)
+
+* [Cancel Order by GUID](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Gateways/PROACTIS.ExampleApplication.CancelOrderByGUID)
