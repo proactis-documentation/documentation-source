@@ -9,7 +9,7 @@ The document also describes the validation rules, which must be passed in order 
 This document should be used in conjunction with the **ImportPurchaseCreditNotes.xsd** xml schema
 
 
-!!! Limitations of the Gateway
+## Limitations of the Gateway
 
 The initial release of the credit note gateway is subjected to the following limitations.  
 * It is not possible to set the supplier’s branch on the credit note.  The default invoicing branch will be selected.
@@ -86,14 +86,13 @@ The next section contains the details of the Credit Notes to be imported.  The g
 ```
 
 !!! Note
-* The template must be a credit note template, which the user has access to.
-* The tray must an invoicing tray, which the user has access to.
-* If the tray is missing, then the user’s default tray is used.
-* The supplier credit note number must unique for this supplier
-* The credit note date should be in the format yyyy-mm-dd
+  + The template must be a credit note template, which the user has access to.
+  + The tray must an invoicing tray, which the user has access to.
+  + If the tray is missing, then the user’s default tray is used.
+  + The supplier credit note number must unique for this supplier
+  + The credit note date should be in the format yyyy-mm-dd
 
-
-### Credit Note Items
++### Credit Note Items
 Then the parent documents (credit notes and/or credit notes) and items against which the credit note will be matched are listed.
 
 ```xml
