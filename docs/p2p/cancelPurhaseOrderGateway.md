@@ -100,13 +100,13 @@ This method takes the following arguments:
     The order can be identified by either of the following arguments:
     
       1. TemplateLabel and numeric Number
-      
+
       2. The DisplayNumber
 
     If the DisplayNumber is supplied, then the TemplateLabel and Number are ignored.
 
 ### Cancellation Reason
-The reason for cancellation the order must be supplied.  Reasons are defined in the List snap-in within the PROACTIS management console.
+The reason for cancellation the order must be supplied.  Reasons are defined in the **List** snap-in within the PROACTIS management console.
 
 ### Comments
 Finally, any additional comments can be supplied.
