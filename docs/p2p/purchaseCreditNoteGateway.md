@@ -85,7 +85,7 @@ The next section contains the details of the Credit Notes to be imported.  The g
 
 ```
 
-!!! Note
+#### Notes
   + The template must be a credit note template, which the user has access to.
   + The tray must an invoicing tray, which the user has access to.
   + If the tray is missing, then the user’s default tray is used.
