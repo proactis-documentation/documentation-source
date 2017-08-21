@@ -99,11 +99,11 @@ This method takes the following arguments:
 
     The order can be identified by either of the following arguments:
     
-      1. TemplateLabel and numeric Number
+      1. TemplateLabel and numeric OrderNumber
 
       2. The DisplayNumber
 
-    If the DisplayNumber is supplied, then the TemplateLabel and Number are ignored.
+    If the DisplayNumber is supplied, then the TemplateLabel and OrderNumber are ignored.
 
 ### Cancellation Reason
 The reason for cancellation the order must be supplied.  Reasons are defined in the **List** snap-in within the PROACTIS management console.
