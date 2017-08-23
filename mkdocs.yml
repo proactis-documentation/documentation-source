@@ -10,6 +10,8 @@ extra_css:
 pages:
     - PROACTIS: index.md
     - P2P:
+        - 'Configuration' :
+            - 'Application Configuration' : p2p/applicationConfigurationSettings.md
         - 'Single Sign On (SSO)' : p2p/sso.md
         - 'PunchOut / Marketplaces' : p2p/punchout.md
         - 'Nominal Validation' : p2p/nominalvalidation.md
