@@ -6,7 +6,7 @@ The application configuration values control how the P2P product works at a serv
 
 ![alt text](../img/p2p/admin/proactis_server_admin_appConfig.PNG "Configuration")
 
-!!! Notes
+!!! Note
 
     The Category is only used to organise the settings and is ignored by the server.
 
