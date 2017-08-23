@@ -1,6 +1,6 @@
-# Application Configuration Settings
+# Server Level - Settings
 
-# Configuration
+# ApplicationConfiguration.xml
 
 The application configuration values control how the P2P product works at a server level.  These can be configured by either directly amending the **ApplicationConfiguration.xml** found in the **ConfigurationFolder** or by using the **PROACTIS Server Administration** tool.
 
