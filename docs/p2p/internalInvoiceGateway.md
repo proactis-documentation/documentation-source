@@ -200,4 +200,4 @@ If a document has been successfully imported, then two new attributes will be ad
 
 See the following example applications:
 
-* [Create Standalone Invoice](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Gateways/PROACTIS.ExampleApplication.CreateInvoice)
+* [Create Internal Invoice](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Gateways/PROACTIS.ExampleApplication.CreateInternalInvoice)
