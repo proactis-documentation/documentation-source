@@ -13,6 +13,7 @@ The user receives the error **“New transaction cannot enlist in specified tran
 
 ### Solutions 
 There are various different causes to this error, the following should be checked. 
+
 1.    Network DTC is enabled on the application server, and allows outbound transactions. The server may require a reboot for any changes to these settings to take effect. 
 2.    Network DTC is enabled on the database server, and allows inbound transactions. The server may require a reboot for any changes to these settings to take effect. 
 3.    The two servers can successfully ping each other using both their IP addresses and their names.  If they can’t ping by name, try adding an entry to the hosts file on the machine. 
@@ -30,6 +31,7 @@ If the server reports a warning message saying that the CID values are the same 
 
 ### dcomcnfg.exe
 Enable MSDTC to allow the network transaction. To do this, follow these steps: 
+
 * Click Start, and then click Run. 
 * In the Run dialog box, type **dcomcnfg.exe**, and then click OK. 
 * In the Component Services window, expand Component Services, expand Computers, and then expand My Computer. 
