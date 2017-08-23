@@ -35,7 +35,7 @@ The xml document must start with the following to lines
 
 ```xml
 <?xml version="1.0" ?>
-<pro:Import xmlns:pro="[http://www.proactis.com/xml/xml-ns](http://www.proactis.com/xml/xml-ns)">
+<pro:Import xmlns:pro="http://www.proactis.com/xml/xml-ns">
 ```
 
 And finish with
@@ -370,7 +370,8 @@ The reporting of errors can be configured by setting the **ErrorHandlingMode** a
 | THROWTEXT | The errors are thrown as OAP exceptions back to the calling code, the message is an human readable text describing the errors. |
 
 ## Successful Response
-If a document has been successfully imported, then two new attributes will be added the documents's node.
+If a document has been successfully imported, then two new attributes will be added the document's node.
+
 1. The first attribute is Status, and will have a value of OK
 2. The second attribute is DocumentNumber, and this will contain the invoices generated number.
 
@@ -378,3 +379,8 @@ If a document has been successfully imported, then two new attributes will be ad
 #### Note
 * If the XML contains multiple documents, then as long as the control block is valid, it is possible for some documents to be imported and other to be rejected.
 
+## Example Code
+
+See the following example applications:
+
+* [Create Standalone Invoice](https://github.com/proactis-documentation/ExampleApplications/tree/master/P2P/Gateways/PROACTIS.ExampleApplication.CreateInvoice)
