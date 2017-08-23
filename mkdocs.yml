@@ -25,6 +25,7 @@ pages:
             - 'Acceptances': p2p/acceptanceGateway.md
             - 'Cancel Purchase Order': p2p/cancelPurhaseOrderGateway.md
             - 'Expenses': p2p/expensesGateway.md
+            - 'Internal Invoices': p2p/internalInvoiceGateway.md
             - 'Purchase Credit Notes': p2p/purchaseCreditNoteGateway.md
             - 'Purchase Invoices': p2p/purchaseInvoiceGateway.md
     - Spend Analytics: placeholder.md
