@@ -28,6 +28,7 @@ pages:
             - 'Internal Invoices': p2p/internalInvoiceGateway.md
             - 'Purchase Credit Notes': p2p/purchaseCreditNoteGateway.md
             - 'Purchase Invoices': p2p/purchaseInvoiceGateway.md
+        - 'Troubleshooting' : 'p2p/troubleshooting.md'                    
     - Spend Analytics: placeholder.md
     - APF: placeholder.md
     #     - 'overview' : apf/overview.md
