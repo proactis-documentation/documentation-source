@@ -83,6 +83,7 @@ The ID corresponds to the topic help file. So an ID of Logon would correspond to
 ### AltText
 This is to provide the user with a tool-tip type text pop-up, when they hover their mouse over the link. You may add more descriptive text to the link.
 
+---
 
 ## The Help File
 
@@ -104,7 +105,7 @@ The help files are well-formed XML files. Each file is broken into three distinc
 ### File Sections
 In this part of the document, I’ll be discussing the various sections and how they fit together. I was contemplating which order to discuss each element, or section, in the order that they appear, or alphabetically, and have decided on alphabetically. 
 
-It is also important to discuss some notation. All values surrounded by double chevrons (<< >>) indicate actual values. Where shown, these actual values are case sensitive, so <<yes>> is not the same as <<Yes>> since the second value begins with a capitol letter. Where there are two or more possible values, they are separated by a vertical bar (|), indicating an or possibility, for instance <<yes>> | <<no>> would be indicating possible values of ‘yes’ or ‘no’ only. If one of these values acts as a default value, i.e. if no value is entered this value is assumed, it would look like this, where the value <<no>> is the default value;  <<yes>> | default <<no>>. 
+It is also important to discuss some notation. All values surrounded by double chevrons (<< >>) indicate actual values. Where shown, these actual values are case sensitive, so &lt;&lt;yes>> is not the same as &lt;&lt;Yes>> since the second value begins with a capital letter. Where there are two or more possible values, they are separated by a vertical bar (|), indicating an or possibility, for instance &lt;&lt;yes>> | &lt;&lt;no>> would be indicating possible values of ‘yes’ or ‘no’ only. If one of these values acts as a default value, i.e. if no value is entered this value is assumed, it would look like this, where the value &lt;&lt;no>> is the default value;  &lt;&lt;yes>> | default &lt;&lt;no>>. 
 
 So, armed with this information, let’s take a look at each element in alphabetical order.
 
