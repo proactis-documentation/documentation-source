@@ -250,7 +250,7 @@ grs:Type (mandatory) | &lt;&lt;external>> &#124; &lt;&lt;page>> &#124; &lt;&lt;t
 
 ## grs:List
 
-The **&lt;grs:List>** element is considered to be a formatting type element, in that it appears as a child element within the **&lt;grs:Content>** element, and describes the way that the content appears to the user. Its purpose is to provide either a bulleted or numbered list. The list gets converted into an HTML unordered, or bulleted, list (<UL>) or ordered, or numbered, list (<OL>).
+The **&lt;grs:List>** element is considered to be a formatting type element, in that it appears as a child element within the **&lt;grs:Content>** element, and describes the way that the content appears to the user. Its purpose is to provide either a bulleted or numbered list. The list gets converted into an HTML unordered, or bulleted, list (&lt;UL>) or ordered, or numbered, list (&lt;OL>).
 
 ### Format
 
