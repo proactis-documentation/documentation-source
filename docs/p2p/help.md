@@ -324,3 +324,34 @@ Text
 None, the **&lt;grs:Note>** element has no attributes.
 
 ---
+
+## grs:Paragraph
+
+This element is classed as a formatting element, and describes a paragraph within the help content. It may have a heading or not, and it may contain text and links, or just text or just links.
+
+### Format
+```xml
+<grs:Paragraph 
+    grs:Title=paragraph title >
+</grs:Paragraph>
+```
+
+### Position
+Always appears as a child of the **&lt;grs:Content>** element, in any order, and any amount of times.
+
+### Content
+May contain multiple occurrences of the following:
+```xml
+<grs:Link>
+Text
+```
+ 
+### Attributes
+| Name | Value | Meaning |
+|------|-------|---------|
+grs:Title (optional) | string | If present, creates a title for the paragraph in bold.
+
+---
+
+
+ 
