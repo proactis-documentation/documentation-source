@@ -210,3 +210,39 @@ grs:Source (mandatory) | string | The location of the image file, including the 
  
 ---
 
+## grs:Link
+ 
+This element allows the user to provide a link to either a page help document, a topic help document or an external link using the HTML standard anchor format. If the link type is set to either **&lt;&lt;page>>** or **&lt;&lt;topic>>** then the grs:ID attribute is used to construct the Help system’s custom hyperlinks, otherwise if the link type is set to **&lt;&lt;external>>** then the grs:HREF attribute is used to construct a standard HTML hyperlink.
+
+### Format
+```xml
+<grs:Link 
+    grs:AltText=mouse over text
+    grs:DisplayName=link text name
+    grs:ID=page or topic ID
+    grs:HREF=HTML anchor format HREF
+    grs:Type=link type />
+```
+ 
+### Position
+**&lt;grs:Link>** element may appear multiple times as a child of a the following:
+
+```xml
+<grs:Paragraph>
+<grs:ListEntry>
+<grs:Note>
+<grs:RelatedDocuments>
+```
+  
+### Content
+None, the **&lt;grs:Link>** element is an empty element and may contain no child elements nor text.
+
+### Attributes
+| Name | Value | Meaning |
+|------|-------|---------|
+grs:AltText (optional) | string | Sets the link’s tool-tip text. This is visible when the user holds their cursor over the link.
+grs:DisplayName (mandatory) | string | Sets the text of the hyperlink, the display name.
+grs:HREF (mandatory) | string | Only mandatory when the grs:Type is set to **&lt;&lt;external>>**. When used, sets up the HTML anchor tag HREF attribute to create a standard anchor tag.
+grs:ID (mandatory) | string | Only mandatory when the grs:Type is set to **&lt;&lt;page>>** &#124; **&lt;&lt;topic>>**. When used, sets up the HTML anchor tag HREF attribute to create a help system specific anchor tag.
+grs:Type (mandatory) | **&lt;&lt;external>>** &#124; **&lt;&lt;page>>** &#124; **&lt;&lt;topic>>** |  Defines the type of the link. Both **&lt;&lt;page>>** and **&lt;&lt;topic>>** are used make the help application create Help system tags, while the **&lt;&lt;external>>** option creates a standard HTML anchor tag.
+ 
