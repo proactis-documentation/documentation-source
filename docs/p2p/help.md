@@ -140,9 +140,7 @@ None, the <**grs:Content>** element contains no attributes.
 
 ## grs:Help
 
-The <**grs:Help>** element is the outermost element of the help file, and is also known as the root element. It contains a reference to the type of help that this file reflects and the ID of the help that it corresponds to. It also contains the Get Real Systems Ltd. namespace declaration, which is outside the scope of this document. However, the Get Real Systems Ltd. namespace declaration looks like this:
-
-xmlns:grs=”http://www.getrealsystems.com/xml/xml-ns”
+The <**grs:Help>** element is the outermost element of the help file, and is also known as the root element. It contains a reference to the type of help that this file reflects and the ID of the help that it corresponds to. It also contains the Get Real Systems Ltd. namespace declaration, which is outside the scope of this document. However, the Get Real Systems Ltd. namespace declaration looks like this: **xmlns:grs=”http://www.getrealsystems.com/xml/xml-ns”**
 
 ### Format
 ```xml 
@@ -164,15 +162,15 @@ xmlns:grs=”http://www.getrealsystems.com/xml/xml-ns”
 The <**grs:Help>** element is allowed one each of the following child elements, but never any text:
 
 ```xml
-+ <grs:Title>
-+ <grs:Content>
-+ <grs:RelatedDocuments>
+<grs:Title>
+<grs:Content>
+<grs:RelatedDocuments>
 ```
  
 ### Attributes
 | Name | Value | Meaning |
 |------|-------|---------|
-grs:Type (mandatory) | << Page >> | << Topic >> | Sets the type of help file. Since help files can be categorised into two distinct types, only one of these types is permissable. |
+grs:Type (mandatory) | << Page >> &#124; << Topic >> | Sets the type of help file. Since help files can be categorised into two distinct types, only one of these types is permissable. |
 grs:ID (mandatory) | string | This attribute would correspond to the help topic ID or the page ID (name) to which this help file refers. |
  
 ---
