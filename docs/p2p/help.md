@@ -298,3 +298,29 @@ None, the **&lt;grs:ListEntry>** element has no attributes.
 
 ---
 
+## grs:Note
+
+The **&lt;grs:Note>** element is classed as a formatting element, and is converted to the word ‘Note’ underlined and in italics, followed by a hyphen then the text of the note, thus:
+
+_Note_ – The text of the element goes here.
+
+### Format
+```xml
+<grs:Note>
+</grs:Note>
+```
+
+### Position
+The **&lt;grs:Note>** element always appears as a child of the **&lt;grs:Content>** element.
+
+### Content
+May contain multiple occurrences of the following:
+```xml
+<grs:Link>
+Text
+```
+
+### Attributes
+None, the **&lt;grs:Note>** element has no attributes.
+
+---
