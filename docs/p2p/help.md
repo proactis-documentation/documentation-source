@@ -16,22 +16,24 @@ By selecting the help button, they are presented with a pop-up help window that 
 ## Location of Help Files
 Help files can exists in one of two locations within the PROACTIS Web Site.
 
-* The Help Directory within the core product (normally *C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P\website\Help*)
+* The Help Directory within the main site (normally *C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P\website\Help*)
 * The Help Directory within the customer folder. (normally *C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P\Customer\Help*)
 
-By default PROACTIS is installed with a very basic help sample within the Core product and no customer directory defined. It is recommended that any site developing their own user defined help create a help directory within the customer folder as this will enable upgrading of PROACTIS without any reconfiguration of the help system.
+By default PROACTIS is installed with a very basic help sample within the core product and no customer directory defined. It is strongly recommended that any site developing their own user defined help create a help directory within the customer folder as this will enable upgrading of PROACTIS without any reconfiguration of the help system.
 
 When PROACTIS initialises it checks whether a help folder exists within the customer area of the web site. If it does it looks in this location for help topics otherwise it default to the help folder contained within the current build folder.
 
-If a Help directory does not exist within the customer area the simplest way to create one is to copy the structure from the help directory within the build. 
+If a Help directory does not exist within the customer area the simplest way to create one is to copy the structure from the help directory within the main site. 
 
 1. On the application server create a new folder called *Customer* within the **C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P** folder.
 2. Into this new folder copy the entire help folder from **C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P\website**
-3. Within IIS,  add the customer folder as a virtual folder within the main website.
+3. Within IIS,  add the customer folder as a virtual folder called **Customer** within the main website.
 
 ![alt text](../img/p2p/admin/help_folders.PNG "Help Folders")
+*Windows Folder Structure*
 
 ![alt text](../img/p2p/admin/help_iis.PNG "Help Folder in IIS")
+*IIS Structure*
 
 ### Important File
 Two important files are found within the XML folder 
