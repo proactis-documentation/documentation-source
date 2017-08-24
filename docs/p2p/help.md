@@ -353,5 +353,25 @@ grs:Title (optional) | string | If present, creates a title for the paragraph in
 
 ---
 
+## grs:RelatedDocuments
 
+**&lt;grs:RelatedDocuments>** element provides a standardised way for the Help system developer to link topics and pages together and provide links to external documents. All links appearing as children to this element appear at the very bottom of the help content page, divided into three groups:
+
+1. Related Pages
+2. Related Topics
+3. Related Links
+
+### Format
+```xml
+<grs:RelatedDocuments>
+</grs:RelatedDocuments>
+```
  
+### Position
+**&lt;grs:RelatedDocuments>** element only appears as child of the **&lt;grs:Help>** element, and only ever appears once.
+
+### Content
+May contain any number of **&lt;grs:Link>** elements.
+
+### Attributes
+None, the **&lt;grs:RelatedDocuments>** element contains no attributes.
