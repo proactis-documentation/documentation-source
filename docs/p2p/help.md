@@ -140,7 +140,7 @@ None, the <**grs:Content>** element contains no attributes.
 
 ## grs:Help
 
-The <**grs:Help>** element is the outermost element of the help file, and is also known as the root element. It contains a reference to the type of help that this file reflects and the ID of the help that it corresponds to. It also contains the Get Real Systems Ltd. namespace declaration, which is outside the scope of this document. However, the Get Real Systems Ltd. namespace declaration looks like this: **xmlns:grs=”http://www.getrealsystems.com/xml/xml-ns”**
+The **&lt;grs:Help>** element is the outermost element of the help file, and is also known as the root element. It contains a reference to the type of help that this file reflects and the ID of the help that it corresponds to. It also contains the Get Real Systems Ltd. namespace declaration, which is outside the scope of this document. However, the Get Real Systems Ltd. namespace declaration looks like this: **xmlns:grs=”http://www.getrealsystems.com/xml/xml-ns”**
 
 ### Format
 ```xml 
@@ -152,14 +152,14 @@ The <**grs:Help>** element is the outermost element of the help file, and is als
 ```
 
 ### Position
-<**grs:Help>** element always appears as the outermost element of every help file. In other words, there are no other elements that appear outside this element, other than the XML processing instruction, which is outside the scope of this document. An example of the processing instruction can be seen below:
+**&lt;grs:Help>** element always appears as the outermost element of every help file. In other words, there are no other elements that appear outside this element, other than the XML processing instruction, which is outside the scope of this document. An example of the processing instruction can be seen below:
 
 ```xml
 <?xml version=”1.0”?>
 ```
 
 ### Content
-The <**grs:Help>** element is allowed one each of the following child elements, but never any text:
+The **&lt;grs:Help>** element is allowed one each of the following child elements, but never any text:
 
 ```xml
 <grs:Title>
