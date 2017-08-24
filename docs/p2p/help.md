@@ -180,3 +180,33 @@ grs:ID (mandatory) | string | This attribute would correspond to the help topic 
  
 ---
 
+## grs:Image
+ 
+The **&lt;grs:Image>** element is classed as a formatting element, in that it describes the content and how it is shown. It is intended to be used to show illustrations, such as screen shots, embedding them within the help file. It has no child elements, and no text nodes, in other words it must me an empty element.
+
+### Format
+```xml
+<grs:Image 
+    grs:AltText=mouse over text
+    grs:Border=image border
+    grs:Caption=image caption
+    grs:Source=image file location/>
+```
+ 
+### Position
+**&lt;grs:Image>** element always appears as a child of the **&lt;grs:Content>** element, in any order and any amount of times.
+
+### Content
+None, the **&lt;grs:Image>** element never contains any child elements nor any text.
+
+### Attributes
+
+| Name | Value | Meaning |
+|------|-------|---------|
+grs:AltText (optional) |  string |  Sets the image tool-tip text. This is visible when the user holds their cursor over the image. |
+grs:Border (optional) |  &lt;&lt;yes>> &#124; default &lt;&lt;no>> | If set, sets a 1 pixel width black border around the image. |
+grs:Caption (optional) | string | If entered, sets an italicised caption underneath the picture.  |
+grs:Source (mandatory) | string | The location of the image file, including the image name. Is always with respect to the Help  |folder within the Images subfolder located beneath the application root. |
+ 
+---
+
