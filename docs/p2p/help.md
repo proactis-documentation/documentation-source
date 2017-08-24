@@ -16,6 +16,64 @@ By selecting the help button, they are presented with a pop-up help window that 
 
 PICTURE
 
+## Location of Help Files
+Help files can exists in one of two locations within the PROACTIS Web Site.
+* The Help Directory within each Core build version
+* The Help Directory within the customer folder.
+
+By default PROACTIS is installed with help within the Core build and no customer directory defined. It is recommended that any site developing their own user defined help create a help directory within the customer folder as this will enable upgrading of PROACTIS without any reconfiguration of the help system.
+
+When PROACTIS initialises it checks whether a help folder exists within the customer area of the web site. If it does it looks in this location for help topics otherwise it default to the help folder contained within the current build folder.
+
+If a Help directory does not exist within the customer area the simplest way to create one is to copy the structure from the help directory within the build. 
+
+PICTURE
+
+### Important File
+Two important files are found within the XML folder 
+* TOC.XML
+* ExternalContext.XML
+
+These are edited by administrators to provide the links to the files that they have written and stored in the external directory.
+
+### Creating Help Topics
+
+These can be created in any editor WORD etc. and saved within the **Customer\Help\External** directory.
+
+Files can be saved in multiple formats (HTML, Word .Doc , PDF ) although perhaps the easiest to manage are the .MHT files that can be saved from later versions of Microsoft Word. This creates a single web file that contains any graphics etc used within the document
+
+
+### TOC Entries
+This file holds a listing of topics and a link to the appropriate help contents. It supports both the original help and the new simplified help documented here.
+
+EXAMPLE HERE
+
+Help topics can be indented / embedded in a hierarchical structure as shown below.
+ 
+```xml
+	<grs:HelpTopic…….>
+		<grs:HelpTopic……./>
+		<grs:HelpTopic……./>
+	</grs:HelpTopic>
+```
+
+To create a help topic that points to a user defined help topic saved as *HELPINFO.HTM* in the external directory the following format is required.
+
+```xml
+<grs:HelpTopic grs:External="True"  grs:DisplayName="New Help Item" grs:ID="HelpInfo.HTM" grs:AltText="Tool tip about the help item."/>
+```
+
+### Context Page Entries
+The link between pages and help topics are maintained within the **ExternalContext.XML** file.
+ 
+The ID attribute is the name of the user defined help topic saved in the external directory
+The ContextPage attribute is the ID of the PROACTIS web site page. This Context Page setting can be identified by 
+
+TODO
+
+
+---
+
 ## Context Sensitive Help
 As mentioned above, context sensitive help relates to specific pages, and when the help button is pressed, the help page that is displayed relates to page from which the help was requested. This is controlled through the page name, a unique name that is assigned to each and every web page. The page name may be seen as a comment at the top of the HTML source for each page, by right clicking in any blank area of a PROACTIS webpage, and selecting the view source option from the pop-up menu. An example of this can be seen below:
 
