@@ -272,3 +272,29 @@ Only the **&lt;grs:ListEntry>** element is allowed as a child of the **&lt;grs:L
 grs:Type (mandatory) | &lt;&lt;bullet>> &#124; &lt;&lt;number>> | Sets the type of list, either bulleted or numbered.
  
 ---
+
+## grs:ListEntry
+ 
+**&lt;grs:ListEntry>** element describes each point in a list, and is classed as a formatting element. There is a separate element per point in the list, with each **&lt;grs:ListEntry>** being converted into an individual HTML list item (&lt;LI>). 
+
+### Format
+```xml
+<grs:ListEntry>
+</grs:ListEntry>
+```
+ 
+### Position
+**&lt;grs:ListEntry>** element must be a child of **&lt;grs:List>** element only.
+
+### Content
+May contain multiple occurrences of the following:
+```xml
+<grs:Link>
+Text
+```
+
+### Attributes
+None, the **&lt;grs:ListEntry>** element has no attributes.
+
+---
+
