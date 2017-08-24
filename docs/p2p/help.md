@@ -36,6 +36,8 @@ Help/Pages/**Home/Logon.xml**
 
 As discussed, if this file is not a well-formed XML document or is not in the expected location, the default XML file will be used, indicating that there is not help associated with this page.
 
+---
+
 ## Topical Help
 On the other hand, Topical help refers to more general types of help such as how to create a purchase order, rather than the specifics of a single page. Topical help is navigated and governed by the TOC (Table Of Contents), which can be seen in the left hand pane when viewing the help window. The TOC appears as a tree list (see figure 2) with each topic described as a link, or anchor, to the desired topic. 
 
@@ -61,6 +63,8 @@ The folders and file names of our files would be:
 + Help/Topics/LoggingIn/**ChangeUserPassword.xml**
 + Help/Topics/LoggingIn/**LogonCompany.xml**
 
+---
+
 ## The TOC (Table Of Contents)
 
 ### What is the TOC?
@@ -69,7 +73,7 @@ The TOC, or table of contents, is an XML file that contains a reference to each 
 
 PICTURE
 
-This TOC gives rise to the tree-view type of structure that can be seen on the left hand side in figure 2. You can see, for instance that the topic Creating an order falls under the topic Orders, which itself falls under the topic Purchasing. If you know a little XML, you’ll notice that each <**grs:HelpTopic>** tag relates to a corresponding <**/grs:HelpTopic>** closing tag if it contains any children. If it doesn’t contain any children, it is simply an empty tag; viz. <**grs:HelpTopic />**. 
+This TOC gives rise to the tree-view type of structure that can be seen on the left hand side in figure 2. You can see, for instance that the topic Creating an order falls under the topic Orders, which itself falls under the topic Purchasing. If you know a little XML, you’ll notice that each **&lt;grs:HelpTopic>** tag relates to a corresponding **&lt;/grs:HelpTopic>** closing tag if it contains any children. If it doesn’t contain any children, it is simply an empty tag; viz. **&lt;grs:HelpTopic />**. 
 
 ### How does the TOC work?
 The TOC is effectively a container with which to hold and manage the table of contents. As mentioned previously, the structure reflects the hierarchical nature of the data. Each HelpTopic tag holds all the information needed to display the corresponding help topic file. Below is an explanation of each HelpTopic attribute:
