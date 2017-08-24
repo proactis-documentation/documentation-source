@@ -2,7 +2,7 @@
 
 PROACTIS online help, is a mechanism for bundling help with the PROACTIS application, help that is relevant to what the user is currently doing. The user gets to the online help through the help button, located at the top right of each web page (as shown below).
 
-PICTURE
+![alt text](../img/p2p/admin/help_button.png "Help Button")
 
 
 In order for the help button to be display,  the following setting needs to be added to the **Application Configuration** settings.
@@ -14,7 +14,7 @@ In order for the help button to be display,  the following setting needs to be a
 
 By selecting the help button, they are presented with a pop-up help window that defaults to the context of the page from where the user called it. This is called context sensitive help, help which is sensitive to the current page. The other form of help is topical help. The topics may be seen in the left hand pane of the help window (see figure 2), and usually relate to tasks as a whole rather than specific pages, such as creating a purchase order.
 
-PICTURE
+![alt text](../img/p2p/admin/help_toc.png "Help TOC")
 
 ## Location of Help Files
 Help files can exists in one of two locations within the PROACTIS Web Site.
