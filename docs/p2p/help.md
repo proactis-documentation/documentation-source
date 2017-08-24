@@ -69,7 +69,7 @@ The TOC, or table of contents, is an XML file that contains a reference to each 
 
 PICTURE
 
-This TOC gives rise to the tree-view type of structure that can be seen on the left hand side in figure 2. You can see, for instance that the topic Creating an order falls under the topic Orders, which itself falls under the topic Purchasing. If you know a little XML, you’ll notice that each <**grs:HelpTopic>** tag relates to a corresponding **</grs:HelpTopic>** closing tag if it contains any children. If it doesn’t contain any children, it is simply an empty tag; viz. **<grs:HelpTopic />**. 
+This TOC gives rise to the tree-view type of structure that can be seen on the left hand side in figure 2. You can see, for instance that the topic Creating an order falls under the topic Orders, which itself falls under the topic Purchasing. If you know a little XML, you’ll notice that each <**grs:HelpTopic>** tag relates to a corresponding <**/grs:HelpTopic>** closing tag if it contains any children. If it doesn’t contain any children, it is simply an empty tag; viz. <**grs:HelpTopic />**. 
 
 ### How does the TOC work?
 The TOC is effectively a container with which to hold and manage the table of contents. As mentioned previously, the structure reflects the hierarchical nature of the data. Each HelpTopic tag holds all the information needed to display the corresponding help topic file. Below is an explanation of each HelpTopic attribute:
@@ -110,7 +110,7 @@ So, armed with this information, let’s take a look at each element in alphabet
 
 ---
 
- ## grs:Content
+## grs:Content
 
 The <grs:Content> element defines the content that the user sees in the right hand pane of the help screen, barring the title at the top and the related documents at the bottom. It has no attributes and merely acts as a container for various formatting elements, such as the <grs:Paragraph> element. 
 
@@ -121,16 +121,59 @@ The <grs:Content> element defines the content that the user sees in the right ha
 ```
 
 ### Position
-<grs:Content> element always appears as a child of the <grs:Help> root element. It only ever appears once within the help document and usually contains numerous child elements.
+<**grs:Content>** element always appears as a child of the <**grs:Help>** root element. It only ever appears once within the help document and usually contains numerous child elements.
 
 ### Content
 The following child elements are permissible in any order, and with any amount of occurrences, but never any text:
 
+```xml
 * <grs:Image>
 * <grs:List>
 * <grs:Note>
 * <grs:Paragraph>
+```
 
 ### Attributes
-None, the <grs:Content> element contains no attributes.
+None, the <**grs:Content>** element contains no attributes.
+
+---
+
+## grs:Help
+
+The <**grs:Help>** element is the outermost element of the help file, and is also known as the root element. It contains a reference to the type of help that this file reflects and the ID of the help that it corresponds to. It also contains the Get Real Systems Ltd. namespace declaration, which is outside the scope of this document. However, the Get Real Systems Ltd. namespace declaration looks like this:
+
+xmlns:grs=”http://www.getrealsystems.com/xml/xml-ns”
+
+### Format
+```xml 
+<grs:Help 
+    grs:Type=help document type
+    grs:ID=identifier
+    xmlns:grs=”http://www.getrealsystems.com/xml/xml-ns” >
+</grs:Help>
+```
+
+### Position
+<**grs:Help>** element always appears as the outermost element of every help file. In other words, there are no other elements that appear outside this element, other than the XML processing instruction, which is outside the scope of this document. An example of the processing instruction can be seen below:
+
+```xml
+<?xml version=”1.0”?>
+```
+
+### Content
+The <**grs:Help>** element is allowed one each of the following child elements, but never any text:
+
+```xml
++ <grs:Title>
++ <grs:Content>
++ <grs:RelatedDocuments>
+```
+ 
+### Attributes
+| Name | Value | Meaning |
+|------|-------|---------|
+grs:Type (mandatory) | << Page >> | << Topic >> | Sets the type of help file. Since help files can be categorised into two distinct types, only one of these types is permissable. |
+grs:ID (mandatory) | string | This attribute would correspond to the help topic ID or the page ID (name) to which this help file refers. |
+ 
+---
 
