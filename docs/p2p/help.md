@@ -45,12 +45,13 @@ These are edited by administrators to provide the links to the files that they h
 
 ### Creating Help Topics
 
-These can be created in any editor WORD etc. and saved within the **Customer\Help\External** directory.
+PROACTIS supports two different methods of defining help files.   The easiest (and most commonly used) is to create files using an editor such as Microsoft Word and then save them to the **Customer\Help\External** directory.
 
-Files can be saved in multiple formats (HTML, Word .Doc , PDF ) although perhaps the easiest to manage are the .MHT files that can be saved from later versions of Microsoft Word. This creates a single web file that contains any graphics etc used within the document
+These files can be saved in multiple formats (HTML, Word .Doc , PDF ),  but your users will need an application installed locally in order to display them.
 
+Instead of creating files which are downloaded to the user's machine it also possible to define files using *xml* which are then converted into web pages.  The format of this xml is described in detail later in this document.
 
-### TOC Entries
+### Table Of Contents (toc.xml)
 This file holds a listing of topics and a link to the appropriate help contents..
 
 ```xml
@@ -169,34 +170,10 @@ The folders and file names of our files would be:
 
 ---
 
-## The TOC (Table Of Contents)
-
-### What is the TOC?
-
-The TOC, or table of contents, is an XML file that contains a reference to each topical help file, and how it relates to the topics around it, i.e. who it’s parent topics are, and who it’s child topics are. It’s worth noting that the TOC does NOT relate to any pages, i.e. context help; it only provides access to the topics. For more information about context help and topical help, see the sections above. An example of the TOC can be seen below (figure 3):
-
-PICTURE
-
-This TOC gives rise to the tree-view type of structure that can be seen on the left hand side in figure 2. You can see, for instance that the topic Creating an order falls under the topic Orders, which itself falls under the topic Purchasing. If you know a little XML, you’ll notice that each **&lt;grs:HelpTopic>** tag relates to a corresponding **&lt;/grs:HelpTopic>** closing tag if it contains any children. If it doesn’t contain any children, it is simply an empty tag; viz. **&lt;grs:HelpTopic />**. 
-
-### How does the TOC work?
-The TOC is effectively a container with which to hold and manage the table of contents. As mentioned previously, the structure reflects the hierarchical nature of the data. Each HelpTopic tag holds all the information needed to display the corresponding help topic file. Below is an explanation of each HelpTopic attribute:
-
-### DisplayName
-This attribute controls what the user sees for the link in the help window. 
-
-### ID
-The ID corresponds to the topic help file. So an ID of Logon would correspond to a help file called ‘Logon.xml’ in the Topic folder located within the Help folder.
-
-### AltText
-This is to provide the user with a tool-tip type text pop-up, when they hover their mouse over the link. You may add more descriptive text to the link.
-
----
-
-## The Help File
+## Defining help files using XML
 
 ### Description
-Since we have covered the help mechanism structure, we can now have a closer look at the help file itself, the file that holds the content of the help, the content that the user will see and interact with. As mentioned, each topic and page has its own help file, with the page help files kept in a folder structure that mimics the site structure, and topic help files are kept in user defined folders.
+Since we have covered the help mechanism structure, we can now have a closer look at the definition of an xml help file, the file that holds the content of the help, the content that the user will see and interact with. As mentioned, each topic and page has its own help file, with the page help files kept in a folder structure that mimics the site structure, and topic help files are kept in user defined folders.
 
 ### File Contents
 The help files are well-formed XML files. Each file is broken into three distinct sections; Title, Contents, and Related Documents, each of which will be discussed in more detail later. These three sections are all held together with a root element whose purpose is contain these sections, as well as confirm the help Type, ID and namespace. Again, the details of these will be discussed later. Each section in turn may contain child elements, links and paragraphs, for instance. Below, is an outline of a help file document, and with its sections displayed:
