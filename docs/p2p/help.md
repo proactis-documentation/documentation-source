@@ -7,10 +7,7 @@ PROACTIS online help, is a mechanism for bundling help with the PROACTIS applica
 
 In order for the help button to be display,  the following setting needs to be added to the **Application Configuration** settings.
 
-| Setting | Default Value | Type | Description |
-|---------|-------|------|-------------|
-| ShowHelp| False | Boolean | Display the help button at the top right of the window | 
-
+![alt text](../img/p2p/admin/show_help.PNG "Show Help")
 
 By selecting the help button, they are presented with a pop-up help window that defaults to the context of the page from where the user called it. This is called context sensitive help, help which is sensitive to the current page. The other form of help is topical help. The topics may be seen in the left hand pane of the help window (see figure 2), and usually relate to tasks as a whole rather than specific pages, such as creating a purchase order.
 
