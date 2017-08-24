@@ -244,5 +244,31 @@ grs:AltText (optional) | string | Sets the link’s tool-tip text. This is visib
 grs:DisplayName (mandatory) | string | Sets the text of the hyperlink, the display name.
 grs:HREF (mandatory) | string | Only mandatory when the grs:Type is set to **&lt;&lt;external>>**. When used, sets up the HTML anchor tag HREF attribute to create a standard anchor tag.
 grs:ID (mandatory) | string | Only mandatory when the grs:Type is set to **&lt;&lt;page>>** &#124; **&lt;&lt;topic>>**. When used, sets up the HTML anchor tag HREF attribute to create a help system specific anchor tag.
-grs:Type (mandatory) | **&lt;&lt;external>>** &#124; **&lt;&lt;page>>** &#124; **&lt;&lt;topic>>** |  Defines the type of the link. Both **&lt;&lt;page>>** and **&lt;&lt;topic>>** are used make the help application create Help system tags, while the **&lt;&lt;external>>** option creates a standard HTML anchor tag.
+grs:Type (mandatory) | &lt;&lt;external>> &#124; &lt;&lt;page>> &#124; &lt;&lt;topic>> |  Defines the type of the link. Both **&lt;&lt;page>>** and **&lt;&lt;topic>>** are used make the help application create Help system tags, while the **&lt;&lt;external>>** option creates a standard HTML anchor tag.
  
+---
+
+## grs:List
+
+The **&lt;grs:List>** element is considered to be a formatting type element, in that it appears as a child element within the **&lt;grs:Content>** element, and describes the way that the content appears to the user. Its purpose is to provide either a bulleted or numbered list. The list gets converted into an HTML unordered, or bulleted, list (<UL>) or ordered, or numbered, list (<OL>).
+
+### Format
+
+```xml
+<grs:List 
+    grs:Type=list type >
+</grs:List>
+```
+
+### Position
+**&lt;grs:List>** element appears always as a child of the **&lt;grs:Content>** element, in any order and any amount of times.
+
+### Content
+Only the **&lt;grs:ListEntry>** element is allowed as a child of the **&lt;grs:List>** element, and no text.
+
+### Attributes
+| Name | Value | Meaning |
+|------|-------|---------|
+grs:Type (mandatory) | &lt;&lt;bullet>> &#124; &lt;&lt;number>> | Sets the type of list, either bulleted or numbered.
+ 
+---
