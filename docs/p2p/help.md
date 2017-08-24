@@ -112,7 +112,7 @@ So, armed with this information, let’s take a look at each element in alphabet
 
 ## grs:Content
 
-The <grs:Content> element defines the content that the user sees in the right hand pane of the help screen, barring the title at the top and the related documents at the bottom. It has no attributes and merely acts as a container for various formatting elements, such as the <grs:Paragraph> element. 
+The **&lt;grs:Content>** element defines the content that the user sees in the right hand pane of the help screen, barring the title at the top and the related documents at the bottom. It has no attributes and merely acts as a container for various formatting elements, such as the **&lt;grs:Paragraph>** element. 
 
 ### Format
 ```xml
@@ -121,20 +121,20 @@ The <grs:Content> element defines the content that the user sees in the right ha
 ```
 
 ### Position
-<**grs:Content>** element always appears as a child of the <**grs:Help>** root element. It only ever appears once within the help document and usually contains numerous child elements.
+**&lt;grs:Content>** element always appears as a child of the **&lt;grs:Help>** root element. It only ever appears once within the help document and usually contains numerous child elements.
 
 ### Content
 The following child elements are permissible in any order, and with any amount of occurrences, but never any text:
 
 ```xml
-* <grs:Image>
-* <grs:List>
-* <grs:Note>
-* <grs:Paragraph>
+<grs:Image>
+<grs:List>
+<grs:Note>
+<grs:Paragraph>
 ```
 
 ### Attributes
-None, the <**grs:Content>** element contains no attributes.
+None, the **&lt;grs:Content>** element contains no attributes.
 
 ---
 
