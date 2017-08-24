@@ -9,22 +9,29 @@ In order for the help button to be display,  the following setting needs to be a
 
 ![alt text](../img/p2p/admin/show_help.PNG "Show Help")
 
-By selecting the help button, they are presented with a pop-up help window that defaults to the context of the page from where the user called it. This is called context sensitive help, help which is sensitive to the current page. The other form of help is topical help. The topics may be seen in the left hand pane of the help window (see figure 2), and usually relate to tasks as a whole rather than specific pages, such as creating a purchase order.
+By selecting the help button, they are presented with a pop-up help window that defaults to the context of the page from where the user called it. This is called context sensitive help, help which is sensitive to the current page. The other form of help is topical help. The topics may be seen in the left hand pane of the help window (see below), and usually relate to tasks as a whole rather than specific pages, such as creating a purchase order.
 
 ![alt text](../img/p2p/admin/help_toc.PNG "Help TOC")
 
 ## Location of Help Files
 Help files can exists in one of two locations within the PROACTIS Web Site.
-* The Help Directory within each Core build version
-* The Help Directory within the customer folder.
 
-By default PROACTIS is installed with help within the Core build and no customer directory defined. It is recommended that any site developing their own user defined help create a help directory within the customer folder as this will enable upgrading of PROACTIS without any reconfiguration of the help system.
+* The Help Directory within the core product (normally *C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P\website\Help*)
+* The Help Directory within the customer folder. (normally *C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P\Customer\Help*)
+
+By default PROACTIS is installed with a very basic help sample within the Core product and no customer directory defined. It is recommended that any site developing their own user defined help create a help directory within the customer folder as this will enable upgrading of PROACTIS without any reconfiguration of the help system.
 
 When PROACTIS initialises it checks whether a help folder exists within the customer area of the web site. If it does it looks in this location for help topics otherwise it default to the help folder contained within the current build folder.
 
 If a Help directory does not exist within the customer area the simplest way to create one is to copy the structure from the help directory within the build. 
 
-PICTURE
+1. On the application server create a new folder called *Customer* within the **C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P** folder.
+2. Into this new folder copy the entire help folder from **C:\Program Files (x86)\PROACTIS Group Ltd\PROACTIS P2P\website**
+3. Within IIS,  add the customer folder as a virtual folder within the main website.
+
+![alt text](../img/p2p/admin/help_folders.PNG "Help Folders")
+
+![alt text](../img/p2p/admin/help_iis.PNG "Help Folder in IIS")
 
 ### Important File
 Two important files are found within the XML folder 
