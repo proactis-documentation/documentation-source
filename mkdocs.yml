@@ -32,7 +32,8 @@ pages:
             - 'Purchase Credit Notes': p2p/purchaseCreditNoteGateway.md
             - 'Purchase Invoices': p2p/purchaseInvoiceGateway.md
         - 'Troubleshooting' : 'p2p/troubleshooting.md'                    
-    - Spend Analytics: placeholder.md
+    - Spend Analytics: 
+        - 'Invoice Import' : 'spendAnalytics/invoiceImport.md'
     - APF: placeholder.md
     #     - 'overview' : apf/overview.md
     #     - 'p2p to apf' : apf/overview.md

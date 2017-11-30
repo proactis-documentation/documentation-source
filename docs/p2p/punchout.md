@@ -176,7 +176,7 @@ The Supplier Code Mapped From field specifies how the supplier code in the retur
 
 
 ## Customisation
-The xml used for the initial connection is generated using an xslt embedded within the product.  It is possible to provide your own xslt by creating a file in the plugins folder called __MarketPlaceConnection_{marketPlaceName}.xslt__.  Where _{marketPlaceName}_ is the name of the configured marketplace.
+The xml used for the initial connection is generated using an xslt embedded within the product.  It is possible to provide your own xslt by creating a file in the plugins folder called __MarketPlaceConnection_{marketPlaceName}.xslt__.  Where _{marketPlaceName}_ is the name of the configured marketplace. For example MarketPlaceConnection_EGS.xslt
 The fields passed into the xml are listed below:
 
 +	DepartmentCode
@@ -193,7 +193,7 @@ The fields passed into the xml are listed below:
 +	PunchoutSenderIdentity
 +	PunchoutSenderSharedSecret
 
-When the basket is returned from the market place by default it is transformed into the correct format by using an XSLT embedded within the product.  It is possible to provide your own xslt by creating a file in the plugins folder called __MarketPlaceResult_{marketPlaceName}.xslt__.  Where _{marketPlaceName}_ is the name of the configured marketplace.
+When the basket is returned from the market place by default it is transformed into the correct format by using an XSLT embedded within the product.  It is possible to provide your own xslt by creating a file in the plugins folder called __MarketPlaceResult_{marketPlaceName}.xslt__.  Where _{marketPlaceName}_ is the name of the configured marketplace.  For example MarketPlaceResult_EGS.xslt
 The xslt needs to generate xml in the following format
 ```xml
 <PurchaseOrder>
