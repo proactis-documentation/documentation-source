@@ -3,7 +3,7 @@
 if [%1]==[] goto usage
 
 @echo on
-docker run -it -v //C/code/documentation-source:/content -v //C/code/proactis-documentation.github.io:/proactis-documentation.github.io -p 8001:8000 proactis/mkdocs:1 build
+docker run -it -v //C/code/documentationsource:/content -v //C/code/proactis-documentation.github.io:/proactis-documentation.github.io -p 8001:8000 proactis/mkdocs:1 build
 
 @rem Push the generated site
 PUSHD  C:\code\proactis-documentation.github.io
@@ -13,7 +13,7 @@ git push
 POPD
 
 @rem Push the source code for the site
-PUSHD  C:\code\documentation-source
+PUSHD  C:\code\documentationsource
 git add -A
 git status
 git commit -m "%1"
