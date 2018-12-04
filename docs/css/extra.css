@@ -1,25 +1,54 @@
-/* PROACTIS Blue */
-.navbar {
-    background-image: none;
-    background-color: rgb(70,130,180);
+
+/* Make the header bar a bit taller */
+.md-header{
+	height:63px;
 }
 
-/* Fill the entire screen */
-.container {
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 100%;
-}
-
-/* 
-To decrease the gap between the LH menu and the content we need to 
-set the width of the first DIV in the .container to be 300px rather than 25% */
-.container > .col-md-3 {
-    width: 300px !important;
-}
-
-/* Remove the squared paper background image */ 
-body
+/* Style the Proactis logo */
+.md-header-nav__button img
 {
-    background: none;
+	height:50px;
+	width: auto;
+	margin-left: 20%;
+	margin-top: 3%;	
+}
+
+/* Emphasis the title */
+.md-header-nav__topic{
+	font-style: bold;
+}
+
+/* Emphasise the headings */
+.md-header-nav__button{
+		margin: 0px;
+		padding: 0px;		
+}
+
+/* Hide the link to github and the edit page icons */
+.md-source__icon, .md-source__repository, .md-footer-nav, .md-content__icon {
+	visibility: hidden;
+}
+
+/* Move the page title to the right a bit so it's inline with the centre pane contents */
+.md-header-nav__title {
+	padding-left: 15%;
+	padding-top: 1%;
+	font-size: 2.6rem;
+	font-family: arial;
+}
+
+
+/* Make fonts smaller */
+.md-typeset {
+	font-size: 1.2rem;
+}
+
+/* Make table fonts smaller */
+.md-typeset table:not([class]){
+	font-size: 1.0rem;
+}
+
+/* Make fonts in navigatation pane on the right smaller */
+.md-nav {
+	font-size: 1.1rem;
 }

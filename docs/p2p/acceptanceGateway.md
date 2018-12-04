@@ -6,7 +6,7 @@ This section describes the structure of the XML file used for importing Purchase
 
 The document also describes the validation rules, which must be passed in order for the document to be imported, and the current limitations of the acceptances gateway.
 
-This document should be used in conjunction with the __ImportAcceptances.xsd__ xml schema
+This document should be used in conjunction with the __ImportAcceptances.xsd__ xml schema.
 
 ## Process Overview
 
@@ -20,29 +20,14 @@ The document is then created within PROACTIS using the existing purchasing engin
 
 Although the Acceptance XML gateway mimics the PROACTIS web application wherever possible, it is subject to the following limitations.
 
-### Stock
+- **Stock** - It is not currently possible to book items into stock.
+- **Recoding** - It is not possible to recode the nominals on the acceptance.
+- **Companies** - As with the other XML gateways, an XML document can only contain documents for a single company.
+- **Departments** - As with the other XML gateways, an XML document can only contain documents for a single department.
+- **Language** - The schema, documentation and error messages are all written in English.
+- **Actions** - This XML gateway only supports the creation and submission of acceptances.  It does not allow users to amended, authorise or cancel acceptances.
 
-It is not currently possible to book items into stock.
-
-### Recoding
-
-It is not possible to recode the nominals on the acceptance.
-
-### Companies
-
-As with the other XML gateways, an XML document can only contain documents for a single company.
-
-### Departments
-
-As with the other XML gateways, an XML document can only contain documents for a single department.
-
-### Language
-
-The schema, documentation and error messages are all written in English.
-
-### Actions
-
-This XML gateway only supports the creation and submission of acceptances.  It does not allow users to amended, authorise or cancel acceptances.
+---
 
 ## Worked Example
 
@@ -54,7 +39,7 @@ The xml document must start with the following to lines
 
 ```xml
 <?xml version="1.0" ?>
-<pro:Import xmlns:pro="[http://www.proactis.com/xml/xml-ns](http://www.proactis.com/xml/xml-ns)">
+<pro:Import xmlns:pro="http://www.proactis.com/xml/xml-ns">
 ```
 
 And finish with
@@ -98,23 +83,13 @@ The next section contains the details of the acceptance documents to be imported
 <pro:Acceptance Template="ACC" DateReceived="2006-01-01" AcceptedAt="MAIN" SupplierDeliveryNote="Delivery11">
 ```
 
-### @Template
+| Attribute | Description | 
+| ------------ | ------------- 
+| @Template |  This attribute is optional if the user only has access to a single template.  However, it is recommended that a value is explicitly supplied where possible. | 
+| @DateReceived | This attribute is optional and will default to today's date if missing.  Must be in the format yyyy-mm-dd | 
+| @AcceptedAt | This attribute is optional and will default to the user's default location if missing. Specifies the location at which the goods have been accepted.  The user must have access to the location.
+| @SupplierDeliveryNote | This attribute is optional/required as configured within PROACTIS.  PROACTIS may also encore the reference to be unique for a given supplier.  | 
 
-This attribute is optional if the user only has access to a single template.  However, it is recommended that a value is explicitly supplied where possible.
-
-### @DateReceived
-
-This attribute is optional and will default to today's date if missing.  Must be in the format yyyy-mm-dd
-
-### @AcceptedAt
-
-This attribute is optional and will default to the user's default location if missing
-
-Specifies the location at which the goods have been accepted.  The user must have access to the location.
-
-### @SupplierDeliveryNote
-
-This attribute is optional/required as configured within PROACTIS.  PROACTIS may also encore the reference to be unique for a given supplier.
 
 ### References
 
