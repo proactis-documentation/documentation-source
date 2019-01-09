@@ -23,7 +23,8 @@ theme:
 plugins: []
 
 nav:
-    - Invoice Capture: placeholder.md  
+    - Invoice Capture:
+        - 'Document Export' : 'invoicecapture/documentExport.md'
     - Marketplace: placeholder.md
     - P2P:
         - 'Budget Checking' : p2p/budgetchecking.md
@@ -50,12 +51,16 @@ nav:
         - 'Troubleshooting' : 'p2p/troubleshooting.md'     
         - 'Web site customisation' :
             - 'Addins' : 'p2p/addins.md'
-            - 'Custom Tabs' : 'p2p/customtab.md'        
+            - 'Custom Tabs' : 'p2p/customtab.md'
+    - 'ProContract': 
+        - 'Proactis Product Integration': 
+            - 'Source to Contract': 'procontract/PCtoS2CIntegration.md'
     - 'Source to Contract' :
             - 'Supplier Management': 's2c/srm.md'
             - 'Contract Management': 's2c/contracts.md'
             - 'Sourcing': 's2c/sourcing.md'
             - 'Users': 's2c/users.md'
+
 markdown_extensions:
     - admonition: 
     - codehilite:
