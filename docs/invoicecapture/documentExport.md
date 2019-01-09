@@ -14,7 +14,7 @@ The response sections included below all assume the web service call is successf
 
 Authentication with Invoice Capture is performed with the use of an API key. This key is a one-time generated key, which can be used by the third party to generate an access token prior to each API call.  Access tokens are valid for up to 3 hours, but expire after 10 minutes of inactivity.
 
-You can get the API for your Invoice Capture instance by contacting Proactis support.
+You can get the API key for your Invoice Capture instance by contacting Proactis support.
 
 All URLs given are relative to the root of your Invoice Capture instance.
 
